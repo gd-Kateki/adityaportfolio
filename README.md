@@ -30,6 +30,7 @@ assets/
   css/enhancements.css     Responsive components and accessibility
   css/site-shell.css       Shared navigation, footer, spacing and interaction states
   css/hierarchy.css        Homepage previews and consistent interior-page introductions
+  css/glass.css            Frosted surfaces with reduced-transparency and contrast fallbacks
   css/motion.css           Native page transitions and control animations
   css/game-case.css        Unified game case-study layouts
   css/cases/               Existing case-study themes and extracted layout rules
