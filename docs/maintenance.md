@@ -28,7 +28,7 @@ Run commands from the project root. Build helpers live in `scripts/lib/`; browse
 - Contact uses an honest `mailto:` action and explicit copy-email button. There is no backend or simulated submission success. Add a verified delivery service before reintroducing a contact form.
 - Case-study art directions are preserved. Extracted `*-layout.css` files contain legacy one-off styles; consolidate these gradually when revising those pages.
 - Original game PNGs are archived in `design/originals/games/`; optimized WebP copies stay in `assets/images/games/`. Pages use approximately 1.8 MB of gallery images rather than the roughly 64 MB originals; project grids use separate small thumbnails. The original favicon is retained, with a 64px copy used by the site.
-- The 404 page resolves links for a custom-domain root or GitHub Pages project deployment. For another subdirectory host, update its base URL logic.
+- The 404 page uses the build-time `SITE_BASE_PATH` for its links. The GitHub Pages workflow configures it automatically; manual subdirectory deployments must set it explicitly.
 
 ## Shared website experience
 

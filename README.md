@@ -50,6 +50,7 @@ Keep existing case-study filenames so shared links remain valid. The build regen
 | `npm run build` | Recreate `dist/` from source |
 | `npm run check` | Validate the current build |
 | `npm test` | Build and validate pages, assets, links, and scripts |
+| `npm run test:pages` | Verify root and GitHub Pages project-path hosting |
 | `npm run test:browser` | Optional browser checks; requires Playwright, Chrome, and a running preview |
 | `npm run test:motion` | Optional animation checks with the same prerequisites |
 
@@ -57,4 +58,4 @@ Keep existing case-study filenames so shared links remain valid. The build regen
 
 Publish the **contents of `dist/`**, after `npm test` passes. Use `npm run build` as the hosting build command and `dist` as the output directory. This replaces the previous arrangement where generated pages lived in the repository root. Public page URLs are unchanged.
 
-No remote hosting settings have been changed and nothing has been published. See [publishing instructions](docs/publishing.md) and [maintenance notes](docs/maintenance.md).
+A GitHub Pages workflow is included in `.github/workflows/pages.yml`. Select **GitHub Actions** in the repository's Pages settings, then push these changes to `main` or run the workflow manually. No remote settings have been changed and nothing has been published. See [publishing instructions](docs/publishing.md) and [maintenance notes](docs/maintenance.md).

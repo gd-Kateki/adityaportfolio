@@ -24,7 +24,7 @@ for(const file of pages){
  if(/\{\{/.test(html))fail(file,'Unresolved template');
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  for(const id of new Set(ids))if(ids.filter(x=>x===id).length>1)fail(file,`Duplicate id ${id}`);
- for(const match of html.matchAll(/\b(?:src|href)="([^"]+)"/g)){
+ for(const match of html.replace(/<base\b[^>]*>/g,'').matchAll(/\b(?:src|href)="([^"]+)"/g)){
   const url=match[1];if(/^(https?:|mailto:|data:|javascript:)/.test(url))continue;
   const [p,hash]=url.split('#');const target=decodeURIComponent((p||file).split('?')[0]);
   links++;if(!fs.existsSync(target)){fail(file,`Missing ${target}`);continue}

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { caseTools, reserveImageSpace } from './lib/page-shell.mjs';
 import { root, output } from './lib/paths.mjs';
+import { siteBasePath } from './lib/site-config.mjs';
 // Only this generated directory may be cleared; never follow a linked output folder.
 if(path.dirname(output)!==root || path.basename(output)!=='dist') throw new Error('Unsafe build output');
 if(fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) throw new Error('Build output must not be a symbolic link');
@@ -23,6 +24,7 @@ function explorer(featured=false){
 }
 for(const file of fs.readdirSync(path.join(root,'src/pages')).filter(f=>f.endsWith('.html'))){
  let html=read(`src/pages/${file}`);
+ html=html.replace('{{site-base-path}}',siteBasePath);
  const project=projects.find(p=>p.url===file);
  if(project) html=caseTools(html,project);
  if(project) html=reserveImageSpace(html,root,fs);
