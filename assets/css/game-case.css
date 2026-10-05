@@ -1,0 +1,55 @@
+/* Game case studies share the portfolio palette and component proportions. */
+.game-case .proj-hero { max-width:1200px; padding:140px 24px 0; margin:auto; display:flex; flex-direction:column; }
+.game-case .proj-hero-img { order:2; width:100%; height:auto; max-height:620px; object-fit:cover; border-radius:24px; margin-top:36px; background:#deded8; }
+.game-case .proj-hero-overlay { display:none; }
+.game-case .case-jump { display:flex; gap:8px; flex-wrap:wrap; max-width:1152px; margin:24px auto 0; padding:0 24px; }
+.game-case .case-jump a { text-decoration:none; color:var(--text-secondary); padding:9px 14px; border:1px solid #d4d5cf; border-radius:100px; font-size:11px; }
+.game-case .case-jump a:hover { background:#fff; color:#111; }
+.game-case .proj-num { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--text-muted); margin-bottom:14px; }
+.game-case .proj-hero .proj-title { font-size:clamp(36px,6vw,72px); letter-spacing:-2px; line-height:1.1; }
+.game-case .proj-type { color:var(--text-secondary); margin:18px 0 30px; font-size:14px; }
+.game-case .proj-meta-row { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; border-top:1px solid #d9dbd5; padding-top:24px; }
+.game-case .proj-meta-label { color:var(--text-muted); text-transform:uppercase; font-size:10px; letter-spacing:1.5px; margin-bottom:8px; }
+.game-case .proj-meta-value { font-size:13px; font-weight:600; }
+.game-case .proj-content { max-width:900px; margin:auto; padding:60px 24px 0; }
+.game-case .proj-section { padding:24px 0 46px; }
+.game-case .proj-section-label { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--text-muted); margin-bottom:14px; }
+.game-case .proj-section-title { font-size:clamp(25px,4vw,34px); letter-spacing:-1px; margin-bottom:24px; line-height:1.2; }
+.game-case .proj-section .proj-body { padding:0; }
+.game-case .proj-body p { font-size:15px; line-height:1.85; color:var(--text-secondary); margin-bottom:18px; }
+.game-case .proj-pull { margin:28px 0 0; padding:24px 28px; border-left:2px solid #34393c; font:italic 23px/1.5 Georgia,serif; background:#eeede8; border-radius:0 16px 16px 0; }
+.game-case .proj-list { padding-left:20px; color:var(--text-secondary); font-size:14px; }
+.game-case .proj-list li { margin:14px 0; line-height:1.8; padding-left:8px; }
+.game-case .process-steps { display:grid; gap:14px; counter-reset:steps; }
+.game-case .process-step { padding:24px 26px 24px 65px; position:relative; background:#ffffffb8; border:1px solid #ddded7; border-radius:18px; counter-increment:steps; }
+.game-case .process-step::before { content:counter(steps,decimal-leading-zero); position:absolute; left:23px; top:26px; color:var(--text-muted); font-size:12px; }
+.game-case .process-step-title { font-weight:700; font-size:15px; margin-bottom:8px; }
+.game-case .process-step-body { color:var(--text-secondary); font-size:13px; line-height:1.8; }
+.game-case .proj-tools-grid { display:flex; flex-wrap:wrap; gap:10px; }
+.game-case .proj-tool { padding:8px 16px; background:#e9e8e2; border-radius:100px; font-size:12px; font-weight:600; }
+.game-case .btn { display:inline-flex; gap:8px; align-items:center; padding:12px 20px; border:1px solid #c9ccc5; border-radius:100px; color:#171717; font-size:13px; text-decoration:none; }
+.game-case .btn svg { flex-shrink:0; width:16px; height:16px; }
+.game-case .sys-icon svg { width:18px; height:18px; }
+.game-case .proj-gallery { padding:60px 24px; background:#eeede8; }
+.game-case .proj-gallery-inner { max-width:1100px; margin:auto; }
+.game-case .proj-gallery .section-label { font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:2px; margin-bottom:12px; }
+.game-case .proj-gallery .section-title { margin-bottom:30px; }
+.game-case .proj-gallery-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.game-case .gallery-item { padding:12px; background:#ffffffb8; border-radius:20px; border:1px solid #d9dbd4; }
+.game-case .gallery-item.wide { grid-column:1/-1; }
+.game-case .proj-gallery-img { width:100%; height:auto; border-radius:12px; }
+.game-case .gallery-caption { color:var(--text-secondary); padding:10px 8px 0; font-size:11px; }
+.game-case .characters-grid,.game-case .systems-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.game-case .char-card,.game-case .sys-card { border:1px solid #deded8; padding:24px; border-radius:20px; background:#fff9; }
+.game-case .char-name,.game-case .sys-title { font-weight:700; margin-bottom:8px; }
+.game-case .char-role { color:#626975; font-size:11px; margin-bottom:14px; }
+.game-case .char-desc,.game-case .sys-desc { font-size:13px; line-height:1.8; color:var(--text-secondary); }
+@media(max-width:640px) {
+ .game-case .proj-hero { padding:120px 16px 0; }
+ .game-case .proj-hero .proj-title { letter-spacing:-1px; }
+ .game-case .proj-meta-row { grid-template-columns:1fr 1fr; }
+ .game-case .proj-content { padding:30px 20px 0; }
+ .game-case .proj-gallery { padding:45px 16px; }
+ .game-case .proj-gallery-grid,.game-case .characters-grid,.game-case .systems-grid { grid-template-columns:1fr; }
+ .game-case .proj-pull { font-size:20px; padding:20px; }
+}

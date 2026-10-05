@@ -1,0 +1,95 @@
+.layout-1 { padding-top: 140px; padding-bottom: 40px; }
+.layout-2 { justify-content:center; margin-bottom:12px; }
+.layout-3 { font-size: clamp(38px, 6vw, 64px); font-weight:900; letter-spacing:-1.5px; text-align:center; }
+.layout-4 { font-size:15px; color:var(--text-muted); text-align:center; max-width:540px; margin: 12px auto 0; }
+.layout-5 { max-width:800px; margin:0 auto; padding:20px 24px 100px; }
+.layout-6 { margin-bottom:56px; }
+.layout-7 { margin-bottom:28px; }
+.layout-8 { display:flex; flex-direction:column; gap:24px; }
+.layout-9 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-10 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-11 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-12 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-13 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-14 { font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px; padding-left: 20px; list-style-type: disc; }
+.layout-15 { margin-bottom: 6px; }
+.layout-16 { margin-bottom: 6px; }
+.layout-17 { margin-bottom: 6px; }
+.layout-18 { margin-bottom: 0; }
+.layout-19 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-20 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-21 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-22 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-23 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-24 { font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px; padding-left: 20px; list-style-type: disc; }
+.layout-25 { margin-bottom: 6px; }
+.layout-26 { margin-bottom: 6px; }
+.layout-27 { margin-bottom: 0; }
+.layout-28 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-29 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-30 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-31 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-32 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-33 { font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px; padding-left: 20px; list-style-type: disc; }
+.layout-34 { margin-bottom: 6px; }
+.layout-35 { margin-bottom: 6px; }
+.layout-36 { margin-bottom: 6px; }
+.layout-37 { margin-bottom: 6px; }
+.layout-38 { margin-bottom: 0; }
+.layout-39 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-40 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-41 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-42 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-43 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-44 { font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px; padding-left: 20px; list-style-type: disc; }
+.layout-45 { margin-bottom: 6px; }
+.layout-46 { margin-bottom: 6px; }
+.layout-47 { margin-bottom: 6px; }
+.layout-48 { margin-bottom: 0; }
+.layout-49 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-50 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-51 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-52 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-53 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-54 { font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px; padding-left: 20px; list-style-type: disc; }
+.layout-55 { margin-bottom: 6px; }
+.layout-56 { margin-bottom: 6px; }
+.layout-57 { margin-bottom: 0; }
+.layout-58 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-59 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-60 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-61 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-62 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-63 { font-size:13.5px; color:var(--text-secondary); line-height:1.75; margin-bottom:20px; padding-left: 20px; list-style-type: disc; }
+.layout-64 { margin-bottom: 6px; }
+.layout-65 { margin-bottom: 6px; }
+.layout-66 { margin-bottom: 0; }
+.layout-67 { margin-bottom:56px; }
+.layout-68 { margin-bottom:28px; }
+.layout-69 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm); }
+.layout-70 { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.layout-71 { font-size:18px; font-weight:800; color:var(--text-primary); margin-bottom:2px; }
+.layout-72 { font-size:13.5px; font-weight:600; color:var(--accent-hover); }
+.layout-73 { font-size:12.5px; color:var(--text-muted); font-weight:600; }
+.layout-74 { font-size:13.5px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px; }
+.layout-75 { margin-bottom:56px; }
+.layout-76 { margin-bottom:28px; }
+.layout-77 { display:grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap:16px; }
+.layout-78 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-sm); }
+.layout-79 { font-size:14px; font-weight:800; margin-bottom:8px; color:var(--text-primary); }
+.layout-80 { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }
+.layout-81 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-sm); }
+.layout-82 { font-size:14px; font-weight:800; margin-bottom:8px; color:var(--text-primary); }
+.layout-83 { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }
+.layout-84 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-sm); }
+.layout-85 { font-size:14px; font-weight:800; margin-bottom:8px; color:var(--text-primary); }
+.layout-86 { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }
+.layout-87 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-sm); }
+.layout-88 { font-size:14px; font-weight:800; margin-bottom:8px; color:var(--text-primary); }
+.layout-89 { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }
+.layout-90 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-sm); }
+.layout-91 { font-size:14px; font-weight:800; margin-bottom:8px; color:var(--text-primary); }
+.layout-92 { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }
+.layout-93 { background:rgba(255,255,255,0.94); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; box-shadow:var(--shadow-sm); }
+.layout-94 { font-size:14px; font-weight:800; margin-bottom:8px; color:var(--text-primary); }
+.layout-95 { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }

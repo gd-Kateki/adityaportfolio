@@ -1,0 +1,127 @@
+.layout-1 { margin:0 14px 12px; }
+.layout-2 { margin-top:4px; }
+.layout-3 { width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--amber),var(--violet));display:flex;align-items:center;justify-content:center;font-size:14px; }
+.layout-4 { margin-top:8px; }
+.layout-5 { display:flex;align-items:center;justify-content:center;height:100%;font-size:22px; }
+.layout-6 { width:44%; }
+.layout-7 { margin-top:8px; }
+.layout-8 { margin-top:8px; }
+.layout-9 { display:flex;align-items:center;justify-content:center;height:100%;font-size:22px; }
+.layout-10 { display:flex;align-items:center;justify-content:center;height:100%;font-size:22px; }
+.layout-11 { display:flex;align-items:center;justify-content:center;height:100%;font-size:30px; }
+.layout-12 { margin-top:8px; }
+.layout-13 { display:flex;align-items:center;justify-content:center;height:100%;font-size:20px; }
+.layout-14 { width:44%; }
+.layout-15 { display:flex;align-items:center;justify-content:center;height:100%;font-size:20px; }
+.layout-16 { width:21%; }
+.layout-17 { display:flex;align-items:center;justify-content:center;height:100%;font-size:20px; }
+.layout-18 { width:20%; }
+.layout-19 { margin-top:8px; }
+.layout-20 { flex:1; }
+.layout-21 { margin-top:10px; }
+.layout-22 { height:45%; }
+.layout-23 { height:60%; }
+.layout-24 { height:50%; }
+.layout-25 { height:75%; }
+.layout-26 { height:100%; }
+.layout-27 { height:80%; }
+.layout-28 { height:65%; }
+.layout-29 { display:flex;align-items:center;justify-content:center;height:100%;font-size:18px; }
+.layout-30 { color:#5BAD7A; }
+.layout-31 { display:flex;align-items:center;justify-content:center;height:100%;font-size:18px; }
+.layout-32 { color:var(--amber); }
+.layout-33 { color:var(--amber); }
+.layout-34 { flex:1; }
+.layout-35 { background:#0A0A0F; }
+.layout-36 { padding:12px 14px 0;font-size:10px;color:var(--muted); }
+.layout-37 { margin:6px 14px;color:var(--parch-dim);font-weight:600; }
+.layout-38 { padding:4px 14px 0;font-size:10px;color:var(--muted); }
+.layout-39 { height:180px;display:flex;flex-direction:column;gap:8px; }
+.layout-40 { height:9px;background:var(--ash);border-radius:3px;width:100%; }
+.layout-41 { height:9px;background:var(--ash);border-radius:3px;width:88%; }
+.layout-42 { height:9px;background:var(--ash);border-radius:3px;width:100%; }
+.layout-43 { height:9px;background:var(--ash);border-radius:3px;width:65%; }
+.layout-44 { height:18px; }
+.layout-45 { height:9px;background:var(--ash);border-radius:3px;width:100%; }
+.layout-46 { height:9px;background:var(--ash);border-radius:3px;width:80%; }
+.layout-47 { display:flex;padding:6px 14px;gap:16px;font-size:18px;color:var(--muted);border-top:1px solid var(--border); }
+.layout-48 { font-style:italic; }
+.layout-49 { margin-left:auto;color:var(--amber);font-size:14px;font-weight:600; }
+.layout-50 { margin-top:8px; }
+.layout-51 { color:var(--parch-dim); }
+.layout-52 { flex-wrap:wrap;height:auto;padding-bottom:4px; }
+.layout-53 { margin-top:12px; }
+.layout-54 { font-size:11px;color:var(--amber); }
+.layout-55 { margin-top:10px; }
+.layout-56 { height:88px; }
+.layout-57 { height:55%; }
+.layout-58 { height:70%; }
+.layout-59 { height:100%; }
+.layout-60 { height:85%; }
+.layout-61 { height:60%; }
+.layout-62 { height:45%; }
+.layout-63 { height:35%; }
+.layout-64 { margin-top:8px; }
+.layout-65 { color:#e05555; }
+.layout-66 { margin:0 14px;padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);font-size:12px;color:var(--parch-dim); }
+.layout-67 { float:right;color:var(--amber); }
+.layout-68 { font-size:10px;padding:3px 10px;border-radius:100px;background:rgba(232,168,56,0.15);color:var(--amber);border:1px solid rgba(232,168,56,0.3); }
+.layout-69 { color:var(--amber);font-size:11px; }
+.layout-70 { margin-top:6px; }
+.layout-71 { height:30px;margin:0;font-size:11px;border-radius:100px; }
+.layout-72 { color:var(--amber);font-size:11px; }
+.layout-73 { margin-top:6px;display:flex;align-items:center;gap:8px;font-size:11px;color:#5BAD7A; }
+.layout-74 { color:var(--amber);font-size:11px; }
+.layout-75 { margin-top:6px; }
+.layout-76 { height:30px;margin:0;font-size:11px;border-radius:100px; }
+.layout-77 { display:flex;flex-direction:column;gap:10px; }
+.layout-78 { display:flex;align-items:center;gap:10px; }
+.layout-79 { width:32px;height:32px;border-radius:6px;background:#0D0D12;border:1px solid var(--border);flex-shrink:0; }
+.layout-80 { font-size:11px;color:var(--parchment);font-weight:600; }
+.layout-81 { font-size:10px;color:var(--muted); }
+.layout-82 { display:flex;align-items:center;gap:10px; }
+.layout-83 { width:32px;height:32px;border-radius:6px;background:#E8A838;flex-shrink:0; }
+.layout-84 { font-size:11px;color:var(--parchment);font-weight:600; }
+.layout-85 { font-size:10px;color:var(--muted); }
+.layout-86 { display:flex;align-items:center;gap:10px; }
+.layout-87 { width:32px;height:32px;border-radius:6px;background:#F5F0E8;flex-shrink:0; }
+.layout-88 { font-size:11px;color:var(--parchment);font-weight:600; }
+.layout-89 { font-size:10px;color:var(--muted); }
+.layout-90 { display:flex;align-items:center;gap:10px; }
+.layout-91 { width:32px;height:32px;border-radius:6px;background:#7B6FA0;flex-shrink:0; }
+.layout-92 { font-size:11px;color:var(--parchment);font-weight:600; }
+.layout-93 { font-size:10px;color:var(--muted); }
+.layout-94 { display:flex;align-items:center;gap:10px; }
+.layout-95 { width:32px;height:32px;border-radius:6px;background:#5BAD7A;flex-shrink:0; }
+.layout-96 { font-size:11px;color:var(--parchment);font-weight:600; }
+.layout-97 { font-size:10px;color:var(--muted); }
+.layout-98 { display:flex;align-items:center;gap:10px; }
+.layout-99 { width:32px;height:32px;border-radius:6px;background:#181820;border:1px solid var(--border);flex-shrink:0; }
+.layout-100 { font-size:11px;color:var(--parchment);font-weight:600; }
+.layout-101 { font-size:10px;color:var(--muted); }
+.layout-102 { margin-bottom:18px; }
+.layout-103 { font-size:9px;color:var(--muted);margin-bottom:4px; }
+.layout-104 { font-family:'Fraunces',serif;font-size:28px;color:var(--parchment);line-height:1.1; }
+.layout-105 { font-family:'Fraunces',serif;font-size:18px;color:var(--parch-dim);font-style:italic; }
+.layout-106 { font-size:9px;color:var(--muted);margin-bottom:4px; }
+.layout-107 { font-size:14px;color:var(--parchment);font-weight:600; }
+.layout-108 { font-size:12px;color:var(--parch-dim); }
+.layout-109 { font-size:11px;color:var(--muted); }
+.layout-110 { font-size:9px;color:var(--ash);letter-spacing:2px;text-transform:uppercase; }
+.layout-111 { margin-bottom:14px; }
+.layout-112 { font-size:9px;color:var(--muted);margin-bottom:6px; }
+.layout-113 { height:40px;background:var(--amber);border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--ink); }
+.layout-114 { margin-bottom:14px; }
+.layout-115 { font-size:9px;color:var(--muted);margin-bottom:6px; }
+.layout-116 { height:40px;border:1px solid var(--border);border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--parchment); }
+.layout-117 { margin-bottom:14px; }
+.layout-118 { font-size:9px;color:var(--muted);margin-bottom:6px; }
+.layout-119 { display:flex;gap:6px; }
+.layout-120 { padding:5px 14px;border-radius:100px;background:var(--amber);color:var(--ink);font-size:11px;font-weight:700; }
+.layout-121 { padding:5px 14px;border-radius:100px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:11px; }
+.layout-122 { font-size:9px;color:var(--muted);margin-bottom:6px; }
+.layout-123 { display:flex;gap:6px;flex-wrap:wrap; }
+.layout-124 { font-size:9px;padding:3px 10px;border-radius:100px;background:rgba(91,173,122,0.15);color:#5BAD7A;border:1px solid rgba(91,173,122,0.25); }
+.layout-125 { font-size:9px;padding:3px 10px;border-radius:100px;background:rgba(232,168,56,0.15);color:var(--amber);border:1px solid rgba(232,168,56,0.25); }
+.layout-126 { font-size:9px;padding:3px 10px;border-radius:100px;background:rgba(123,111,160,0.15);color:var(--violet);border:1px solid rgba(123,111,160,0.25); }
+.layout-127 { font-size:9px;padding:3px 10px;border-radius:100px;background:rgba(91,173,122,0.15);color:#5BAD7A;border:1px solid rgba(91,173,122,0.25); }

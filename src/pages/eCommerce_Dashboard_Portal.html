@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eCommerce Dashboard — Case Study · Aditya Nair</title>
+<meta name="description" content="A complete UX case study by Aditya Nair on redesigning an eCommerce seller dashboard portal — improving inventory control, shipping, analytics, and payouts.">
+<meta name="keywords" content="UX Case Study, eCommerce Dashboard, Product Design, UI/UX, B2B Web App, Aditya Nair">
+<meta name="author" content="Aditya Nair">
+<meta property="og:title" content="eCommerce Dashboard Portal — Case Study | Aditya Nair">
+<meta property="og:description" content="A complete UX case study by Aditya Nair on redesigning an eCommerce seller dashboard portal.">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/png" href="assets/images/favicon-small.png">
+<link rel="apple-touch-icon" href="assets/images/favicon-small.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/cases/eCommerce_Dashboard_Portal.css">
+<link rel="stylesheet" href="assets/css/cases/eCommerce_Dashboard_Portal-layout.css">
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body class="case-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+{{nav}}
+<main id="main-content">
+
+<!-- LIGHTBOX -->
+
+
+<!-- ═══════ STICKY NAV ═══════ -->
+
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">UX Case Study · eCommerce · B2B</div>
+      <h1>eCommerce<br><em>Dashboard</em></h1>
+      <p class="hero-desc">A complete redesign of the seller management portal — bringing 12 screens, a unified design system, and zero friction to thousands of sellers tracking their earnings and sales.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">UX Research</span>
+        <span class="hero-pill">Information Architecture</span>
+        <span class="hero-pill">Visual Design</span>
+        <span class="hero-pill">Prototyping</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img loading="lazy" src="assets/images/ui/Dashboard_Portal_Project/Dashboard.png" alt="Dashboard Hero" data-zoom="Dashboard — Main Overview">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STATS BAR ═══════ -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <div class="stat-num"><span>12</span> Screens</div>
+    <div class="stat-lbl">Fully designed</div>
+    <div class="stat-sub">From dashboard to order detail</div>
+  </div>
+  <div class="stat-item reveal reveal-delay-1">
+    <div class="stat-num"><span>1</span> System</div>
+    <div class="stat-lbl">Unified component library</div>
+    <div class="stat-sub">Consistent tokens and patterns</div>
+  </div>
+  <div class="stat-item reveal reveal-delay-2">
+    <div class="stat-num"><span>0</span> Friction</div>
+    <div class="stat-lbl">Streamlined seller flows</div>
+    <div class="stat-sub">Faster task completion, fewer errors</div>
+  </div>
+</div>
+
+<!-- ═══════ OVERVIEW ═══════ -->
+<div class="section-wrap">
+  <div class="eyebrow reveal">Overview</div>
+  <h2 class="section-title reveal">What is <em>OtakuShop?</em></h2>
+  <p class="section-body reveal">OtakuShop is a niche marketplace dedicated to anime merchandise — from figures and apparel to collectibles. Sellers range from solo creators to small studios, all managing inventory, orders, and payouts through a single portal. This project focused on redesigning that seller portal end-to-end, giving sellers real visibility into their business for the first time.</p>
+  <div class="what-grid">
+    <div class="what-card reveal">
+      <div class="what-card-icon">📊</div>
+      <h4>Track Earnings</h4>
+      <p>Give sellers real-time visibility into revenue, payouts, and sales trends — without digging through spreadsheets.</p>
+    </div>
+    <div class="what-card reveal reveal-delay-1">
+      <div class="what-card-icon">📦</div>
+      <h4>Manage Orders</h4>
+      <p>A centralised order view that surfaces what needs action right now — pending shipments, returns, and disputes in one place.</p>
+    </div>
+    <div class="what-card reveal reveal-delay-2">
+      <div class="what-card-icon">🛒</div>
+      <h4>Grow the Store</h4>
+      <p>Analytics that are actually legible — product performance, buyer breakdowns, and inventory health in a single dashboard.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════ KEY SCREEN ═══════ -->
+<div class="section-wrap reveal">
+  <div class="eyebrow">Key Screen</div>
+  <h2 class="section-title">The <em>Dashboard</em></h2>
+  <p class="section-body">The centrepiece of the portal. Sellers land here after login and get an immediate pulse on their business — revenue this month, pending orders, top products, and store health at a glance.</p>
+  <div class="key-screen-frame">
+    <img loading="lazy" class="key-screen-img" src="assets/images/ui/Dashboard_Portal_Project/Dashboard.png" alt="Dashboard UI" data-zoom="Dashboard — Main Overview">
+  </div>
+</div>
+
+<!-- ═══════ PROBLEM SPACE ═══════ -->
+<div class="section-wrap bg-surface">
+  <div class="section-inner">
+    <div class="eyebrow reveal">Problem Space</div>
+    <h2 class="section-title reveal">What sellers were <em>dealing with</em></h2>
+    <p class="section-body reveal">Before this redesign, sellers described the old portal as "a mess of tabs." Research interviews and support tickets revealed two consistent pain clusters that drove churn.</p>
+    <div class="dealing-grid">
+      <div class="dealing-card highlight-red reveal">
+        <div class="dealing-tag problem">Problem</div>
+        <h4>No visibility into their own business</h4>
+        <p>The old portal had no analytics. Sellers couldn't see which products were selling, what their revenue trends looked like, or when they'd receive their next payout. Everything was a guessing game.</p>
+      </div>
+      <div class="dealing-card highlight-red reveal reveal-delay-1">
+        <div class="dealing-tag problem">Problem</div>
+        <h4>Inventory updates were a 48-hour process</h4>
+        <p>Updating stock levels required emailing a CSV file to the support team. This caused 48-hour delays, frequent overselling, and angry customers. Sellers had zero real-time control.</p>
+      </div>
+      <div class="dealing-card highlight-blue reveal reveal-delay-2">
+        <div class="dealing-tag insight">Insight</div>
+        <h4>Sellers check in, they don't camp</h4>
+        <p>Interviews revealed most sellers open the portal 2–3× daily for under 5 minutes each visit. The design needed to surface the most critical actions immediately — not an exhaustive overview to scroll through.</p>
+      </div>
+      <div class="dealing-card highlight-blue reveal reveal-delay-3">
+        <div class="dealing-tag insight">Insight</div>
+        <h4>Trust is built through transparency</h4>
+        <p>Sellers who'd left for competitor platforms cited "not knowing where my money was" as the top reason. Clear, real-time payout tracking was as important as revenue data for retaining sellers.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ DESIGN PROCESS ═══════ -->
+<div class="section-wrap reveal">
+  <div class="eyebrow">Design Process</div>
+  <h2 class="section-title">How the design <em>came to be</em></h2>
+  <p class="section-body">A five-stage process from discovery to handoff — each stage building directly on evidence from the last.</p>
+
+  <div class="process-steps">
+
+    <div class="process-step reveal">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Discovery &amp; <em>Research</em></h3>
+        <p>I started my research by talking to a few friends who run their own small online businesses, asking them how they manage their income, track orders, and handle daily operations. I paired this with some secondary desk research, reading through seller forums online. A clear pattern quickly emerged: trying to track revenue and manage inventory across scattered tools was a huge, universal headache.</p>
+        <div class="step-tags">
+          <span class="step-tag">Informal Interviews</span>
+          <span class="step-tag">Desk Research</span>
+          <span class="step-tag">Pattern Recognition</span>
+        </div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Customers.png" alt="Customer Research" data-zoom="Customer Research Screen"></div>
+      </div>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Information <em>Architecture</em></h3>
+        <p>Based on those early conversations, I realized sellers didn't think in terms of abstract "system features" — they thought in terms of daily tasks (like "what do I need to ship today?" or "how much did I make?"). I sketched out a rough sitemap that organized the dashboard around these core user goals rather than just listing out tools, making the navigation instantly more intuitive.</p>
+        <div class="step-tags">
+          <span class="step-tag">Sitemap Sketches</span>
+          <span class="step-tag">Goal-oriented Design</span>
+          <span class="step-tag">User Flows</span>
+        </div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Settings.png" alt="Navigation Architecture" data-zoom="Navigation &amp; Settings Architecture"></div>
+      </div>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Key <em>Flows</em></h3>
+        <p>Mapped five critical seller flows end-to-end: list a product, fulfil an order, check revenue, respond to a review, and initiate a payout. Each flow was tested as a low-fidelity clickthrough with 5 sellers before any visual design started.</p>
+        <div class="step-tags">
+          <span class="step-tag">Task flows</span>
+          <span class="step-tag">Low-fi prototypes</span>
+          <span class="step-tag">Usability testing</span>
+        </div>
+        <div class="step-img-pair">
+          <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Products.png" alt="Product Listing Flow" data-zoom="Products — Listing Flow"></div>
+          <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Orders.png" alt="Order Fulfilment Flow" data-zoom="Orders — Fulfilment Flow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Component <em>System</em></h3>
+        <p>Assembled a 40-component library covering buttons, inputs, data tables, badges, cards, and charts — all with multiple states. Built in Figma with auto-layout and shared variables so any screen could be composed quickly and stay visually consistent across the 12 screens.</p>
+        <div class="step-tags">
+          <span class="step-tag">Design tokens</span>
+          <span class="step-tag">Component library</span>
+          <span class="step-tag">Figma variants</span>
+        </div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Promotions.png" alt="Promotions — Component Use" data-zoom="Promotions — Component System in Use"></div>
+      </div>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>Reviews &amp; <em>Refinement</em></h3>
+        <p>Ran two rounds of moderated usability testing with high-fidelity prototypes — 6 sellers per round. Round 1 revealed friction in the product listing flow and payout initiation. Round 2 validated the redesigned versions with a 100% task completion rate across both flows.</p>
+        <div class="step-tags">
+          <span class="step-tag">Moderated testing</span>
+          <span class="step-tag">Task completion rate</span>
+          <span class="step-tag">SUS scoring</span>
+          <span class="step-tag">Developer handoff</span>
+        </div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Reviews.png" alt="Reviews &amp; Refinement" data-zoom="Reviews — Testing &amp; Refinement"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════ FINAL SCREEN HIGHLIGHTS ═══════ -->
+<div class="section-wrap bg-surface">
+  <div class="section-inner">
+    <div class="eyebrow reveal">Final Screens</div>
+    <h2 class="section-title reveal">Screens that <em>do the work</em></h2>
+    <p class="section-body reveal">Four screen highlights covering the most critical seller touchpoints — inventory control, shipping, analytics, and payouts.</p>
+
+    <div class="screens-grid">
+      <div class="screen-item reveal">
+        <div class="screen-frame">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Inventory.png" alt="Inventory Screen" data-zoom="Inventory Screen">
+        </div>
+        <div class="screen-meta">
+          <div class="screen-eyebrow">Screen 01</div>
+          <h3>Inventory — Real-time stock control</h3>
+          <p>The inventory screen gives sellers live stock visibility. Inline status flags surface low-stock items immediately, and bulk editing means no more emailing CSV files to support. Sellers can update prices and quantities directly from the table.</p>
+        </div>
+      </div>
+
+      <div class="screen-item reveal reveal-delay-1">
+        <div class="screen-frame">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Shipping.png" alt="Shipping Screen" data-zoom="Shipping Screen">
+        </div>
+        <div class="screen-meta">
+          <div class="screen-eyebrow">Screen 04</div>
+          <h3>Shipping — Fulfilment at speed</h3>
+          <p>Bulk shipping label generation and carrier tracking, all without leaving the portal. Reduces fulfilment time from 12 minutes to under 3.</p>
+        </div>
+      </div>
+
+      <div class="screen-item reveal reveal-delay-2">
+        <div class="screen-frame">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Analytics.png" alt="Analytics Screen" data-zoom="Analytics Screen">
+        </div>
+        <div class="screen-meta">
+          <div class="screen-eyebrow">Screen 07</div>
+          <h3>Analytics — Know your numbers</h3>
+          <p>Revenue trends, top-selling products, buyer segments, and conversion rates — clean charts that give context, not just numbers.</p>
+        </div>
+      </div>
+
+      <div class="screen-item reveal reveal-delay-3">
+        <div class="screen-frame">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Payouts.png" alt="Payouts Screen" data-zoom="Payouts Screen">
+        </div>
+        <div class="screen-meta">
+          <div class="screen-eyebrow">Screen 10</div>
+          <h3>Payouts — Complete financial transparency</h3>
+          <p>Sellers can track every payout — pending, processed, and upcoming. Detailed breakdowns of fees and net earnings removed the single biggest reason sellers were leaving for competitor platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ ALL SCREENS GALLERY ═══════ -->
+<div class="section-wrap bg-navy">
+  <div class="section-inner">
+    <div class="eyebrow light reveal">All Screens</div>
+    <h2 class="section-title light reveal">Every screen, <em>at a glance</em></h2>
+    <p class="section-body reveal layout-1">The complete set of 12 designed screens covering every seller touchpoint. Click any screen to view it in full.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><div class="gallery-label">Dashboard</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Dashboard.png" alt="Dashboard" data-zoom="Dashboard"></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Analytics</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Analytics.png" alt="Analytics" data-zoom="Analytics"></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Orders</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Orders.png" alt="Orders" data-zoom="Orders"></div>
+      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Inventory</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Inventory.png" alt="Inventory" data-zoom="Inventory"></div>
+      <div class="gallery-item reveal"><div class="gallery-label">Products</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Products.png" alt="Products" data-zoom="Products"></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Customers</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Customers.png" alt="Customers" data-zoom="Customers"></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Payouts</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Payouts.png" alt="Payouts" data-zoom="Payouts"></div>
+      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Shipping</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Shipping.png" alt="Shipping" data-zoom="Shipping"></div>
+      <div class="gallery-item reveal"><div class="gallery-label">Reviews</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Reviews.png" alt="Reviews" data-zoom="Reviews"></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Promotions</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Promotions.png" alt="Promotions" data-zoom="Promotions"></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Profile</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Profile.png" alt="Profile" data-zoom="Profile"></div>
+      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Settings</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Settings.png" alt="Settings" data-zoom="Settings"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ DESIGN LANGUAGE ═══════ -->
+<div class="section-wrap reveal">
+  <div class="eyebrow">Design Language</div>
+  <h2 class="section-title">Colour, type, <em>space</em></h2>
+  <p class="section-body">A restrained, purposeful system built on an indigo palette — credible and calm for a financial tool, without the grey sterility of enterprise SaaS. Semantic colour (green = healthy, amber = warning, rose = urgent) lets sellers read the page without reading it.</p>
+  <div class="style-grid">
+    <img loading="lazy" src="assets/images/ui/Dashboard_Portal_Project/Colour_Palette.png" alt="Colour Palette" data-zoom="Colour Palette">
+    <img loading="lazy" src="assets/images/ui/Dashboard_Portal_Project/Typography.png" alt="Typography System" data-zoom="Typography System">
+  </div>
+</div>
+
+<!-- ═══════ WHAT I LEARNED ═══════ -->
+<div class="section-wrap bg-surface">
+  <div class="section-inner">
+    <div class="eyebrow reveal">Reflection</div>
+    <h2 class="section-title reveal">What I <em>learned</em></h2>
+    <p class="section-body reveal">Six things this project changed about how I approach dashboard design for data-heavy products.</p>
+    <div class="learned-grid">
+      <div class="learned-card reveal">
+        <div class="learned-icon">🎯</div>
+        <h4>Design for the check-in, not the deep dive</h4>
+        <p>Most dashboard users are on their third visit of the day, not their first. Optimise for the 90-second check rather than the 20-minute audit — it forces a sharper information hierarchy.</p>
+      </div>
+      <div class="learned-card reveal reveal-delay-1">
+        <div class="learned-icon">🔗</div>
+        <h4>Link insights directly to actions</h4>
+        <p>Data without a clear next step is just anxiety. Every metric on the dashboard now has a direct action link — reorder stock, reply to review, initiate payout.</p>
+      </div>
+      <div class="learned-card reveal reveal-delay-2">
+        <div class="learned-icon">💬</div>
+        <h4>Card sorting will surprise you</h4>
+        <p>I assumed sellers think in terms of entities (products, orders). They think in terms of jobs (what do I need to ship today?). The nav restructure was the single highest-impact change.</p>
+      </div>
+      <div class="learned-card reveal">
+        <div class="learned-icon">🧩</div>
+        <h4>Build the system before the screens</h4>
+        <p>Spending two extra days on the component library saved a week of inconsistency fixes. Every screen composed faster and felt coherent without additional effort.</p>
+      </div>
+      <div class="learned-card reveal reveal-delay-1">
+        <div class="learned-icon">🚦</div>
+        <h4>Colour as information, not decoration</h4>
+        <p>Semantic colour (green = healthy, amber = attention, rose = urgent) reduced cognitive load on every screen. Sellers could read the page without reading it.</p>
+      </div>
+      <div class="learned-card reveal reveal-delay-2">
+        <div class="learned-icon">🔄</div>
+        <h4>Test early, then test again</h4>
+        <p>The first usability round broke assumptions I'd held since day one. The second round confirmed the fixes worked. Two rounds is the minimum for any consequential flow.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACK CTA -->
+
+
+<!-- FOOTER -->
+
+
+
+
+{{case-footer}}
+</main>
+{{footer}}
+</body>
+</html>

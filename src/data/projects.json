@@ -1,0 +1,122 @@
+[
+  {
+    "id": "novelnest",
+    "title": "NovelNest",
+    "discipline": "uiux",
+    "category": "Mobile UX",
+    "tags": [
+      "Interface design",
+      "Reader journeys"
+    ],
+    "description": "A reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens.",
+    "url": "NovelNest_Project.html",
+    "visual": "novelnest",
+    "year": "2026",
+    "label": "16 screens · Mobile experience"
+  },
+  {
+    "id": "osiris",
+    "title": "Curse of Osiris",
+    "discipline": "game",
+    "category": "Game & level design",
+    "tags": [
+      "Unity",
+      "Systems design"
+    ],
+    "description": "An Egyptian mythology roguelite prototype exploring combat, branching rooms, and a narrative-driven progression loop.",
+    "url": "curse-of-osiris.html",
+    "image": "assets/images/thumbnails/osiris.webp",
+    "year": "Personal project",
+    "label": "Unity · Action roguelite"
+  },
+  {
+    "id": "dashboard",
+    "title": "eCommerce Dashboard",
+    "discipline": "uiux",
+    "category": "Web & B2B",
+    "tags": [
+      "Product design",
+      "Design systems"
+    ],
+    "description": "A seller portal redesign that connects inventory, earnings, and shipping across 12 high-fidelity screens.",
+    "url": "eCommerce_Dashboard_Portal.html",
+    "image": "assets/images/thumbnails/dashboard.webp",
+    "year": "2026",
+    "label": "12 screens · Seller experience"
+  },
+  {
+    "id": "dreams",
+    "title": "Deep Into Dreams",
+    "discipline": "game",
+    "category": "Narrative & environment",
+    "tags": [
+      "Unreal Engine",
+      "Narrative design"
+    ],
+    "description": "A psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world.",
+    "url": "deep-into-dreams.html",
+    "image": "assets/images/thumbnails/dreams.webp",
+    "year": "Personal project",
+    "label": "Unreal Engine · Psychological horror"
+  },
+  {
+    "id": "standrews",
+    "title": "St. Andrew’s College",
+    "discipline": "uiux",
+    "category": "UX audit",
+    "tags": [
+      "Information architecture",
+      "Web design"
+    ],
+    "description": "An audit and proposed redesign that brings admissions, programmes, and student tasks into a clearer structure.",
+    "url": "StAndrews_casestudy_full.html",
+    "visual": "college",
+    "year": "2026",
+    "label": "UX audit · Proposed redesign"
+  },
+  {
+    "id": "blackwood",
+    "title": "742 Blackwood Lane",
+    "discipline": "game",
+    "category": "Level design",
+    "tags": [
+      "Player flow",
+      "Spatial design"
+    ],
+    "description": "A Phasmophobia-inspired map balancing escape routes, choke points, and escalating tension from home to workshop.",
+    "url": "blackwood-lane.html",
+    "image": "assets/images/thumbnails/blackwood.webp",
+    "year": "Personal project",
+    "label": "Level concept · Ghost investigation"
+  },
+  {
+    "id": "ets2",
+    "title": "Euro Truck Simulator 2",
+    "discipline": "uiux",
+    "category": "UX audit",
+    "tags": [
+      "Heuristic evaluation",
+      "Conversion flows"
+    ],
+    "description": "A heuristic review of the official website, identifying 13 usability pitfalls and opportunities to improve discovery.",
+    "url": "ETS2_case_study.html",
+    "image": "assets/images/thumbnails/ets2.webp",
+    "year": "2026",
+    "label": "13 findings · Website evaluation"
+  },
+  {
+    "id": "cafe",
+    "title": "Cozy Cafe Self-Order",
+    "discipline": "uiux",
+    "category": "Mobile UX",
+    "tags": [
+      "Interaction design",
+      "Ordering flow"
+    ],
+    "description": "A QR-first ordering experience, guiding guests from browsing the menu to reviewing their cart and tracking an order.",
+    "url": "CafeMenu.html",
+    "image": "assets/images/thumbnails/cafe.webp",
+    "year": "2026",
+    "label": "Mobile web · Self-service ordering"
+  }
+]

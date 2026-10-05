@@ -10,611 +10,40 @@
 <meta property="og:title" content="eCommerce Dashboard Portal — Case Study | Aditya Nair">
 <meta property="og:description" content="A complete UX case study by Aditya Nair on redesigning an eCommerce seller dashboard portal.">
 <meta property="og:type" content="article">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="icon" type="image/png" href="assets/images/favicon-small.png">
+<link rel="apple-touch-icon" href="assets/images/favicon-small.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
-<style>
-/* ══════════════════════════════════════════════
-   DESIGN TOKENS
-══════════════════════════════════════════════ */
-:root {
-  --navy:        #0f172a;
-  --navy-mid:    #1e293b;
-  --slate:       #334155;
-  --slate-light: #64748b;
-  --indigo:      #4f46e5;
-  --indigo-soft: #818cf8;
-  --indigo-bg:   #eef2ff;
-  --indigo-pale: #f5f3ff;
-  --emerald:     #059669;
-  --amber:       #d97706;
-  --rose:        #e11d48;
-  --surface:     #f8fafc;
-  --border:      #e2e8f0;
-  --border-mid:  #cbd5e1;
-  --white:       #ffffff;
-  --text-body:   #475569;
-  --text-muted:  #94a3b8;
-  --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
-}
 
-/* ══════════════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════════════ */
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; font-size:16px; }
-body {
-  font-family:'Inter',sans-serif;
-  background:var(--white);
-  color:var(--navy);
-  font-size:14px;
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ══════════════════════════════════════════════
-   STICKY NAV
-══════════════════════════════════════════════ */
-.case-nav {
-  position:fixed; top:16px; left:50%; transform:translateX(-50%);
-  z-index:1000; width:calc(100% - 48px); max-width:960px;
-  background:rgba(15,23,42,0.82);
-  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:100px;
-  padding:0 8px;
-  height:52px;
-  display:flex; align-items:center; justify-content:space-between;
-  box-shadow:0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
-  transition:var(--transition);
-}
-.case-nav-back {
-  display:flex; align-items:center; gap:8px;
-  text-decoration:none;
-  padding:6px 14px;
-  border-radius:100px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.1);
-  color:rgba(255,255,255,0.7);
-  font-size:13px; font-weight:500;
-  transition:var(--transition);
-}
-.case-nav-back:hover { background:rgba(255,255,255,0.14); color:#fff; }
-.case-nav-back svg { width:14px; height:14px; }
-.case-nav-brand {
-  font-family:'Playfair Display',serif;
-  font-style:italic;
-  font-size:15px; font-weight:600;
-  color:var(--indigo-soft);
-  letter-spacing:-0.3px;
-}
-.case-nav-tag {
-  font-size:11px; color:rgba(255,255,255,0.4);
-  padding:4px 12px; border-radius:100px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.08);
-  white-space:nowrap;
-}
-
-/* ══════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════ */
-.hero {
-  background:linear-gradient(135deg,#060A17 0%,#0f172a 30%,#1e1b4b 65%,#3730a3 100%);
-  padding:120px 64px 80px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before {
-  content:''; position:absolute; inset:0;
-  background:
-    radial-gradient(ellipse 60% 70% at 80% 50%, rgba(99,102,241,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(79,70,229,0.1) 0%, transparent 50%);
-  pointer-events:none;
-}
-.hero-inner {
-  max-width:960px; margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;
-  align-items:center;
-  position:relative; z-index:1;
-}
-.hero-tag {
-  font-size:10px; font-weight:600; letter-spacing:0.14em;
-  text-transform:uppercase; color:var(--indigo-soft);
-  margin-bottom:16px;
-  display:flex; align-items:center; gap:8px;
-}
-.hero-tag::before {
-  content:''; display:inline-block; width:20px; height:1px;
-  background:var(--indigo-soft);
-}
-.hero h1 {
-  font-size:clamp(36px,5vw,52px);
-  font-weight:800; color:#fff;
-  line-height:1.05; margin-bottom:20px;
-  letter-spacing:-0.03em;
-}
-.hero h1 em {
-  font-style:italic;
-  font-family:'Playfair Display',serif;
-  color:var(--indigo-soft);
-  font-weight:600;
-}
-.hero-desc {
-  font-size:14px; color:rgba(255,255,255,0.6);
-  line-height:1.8; max-width:380px;
-  margin-bottom:28px;
-}
-.hero-pills {
-  display:flex; gap:8px; flex-wrap:wrap;
-}
-.hero-pill {
-  font-size:11px; color:rgba(255,255,255,0.6);
-  background:rgba(255,255,255,0.07);
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:100px; padding:5px 14px;
-  transition:var(--transition);
-}
-.hero-pill:hover { background:rgba(255,255,255,0.12); color:#fff; }
-.hero-img-wrap {
-  display:flex; justify-content:flex-end; align-items:center;
-}
-.hero-img-wrap img {
-  width:100%; max-width:480px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 24px 64px rgba(0,0,0,0.5);
-  cursor:zoom-in;
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hero-img-wrap img:hover {
-  transform:scale(1.02) translateY(-4px);
-  box-shadow:0 32px 80px rgba(0,0,0,0.6);
-}
-
-/* ══════════════════════════════════════════════
-   STATS BAR
-══════════════════════════════════════════════ */
-.stats-bar {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
-}
-.stats-bar-inner { max-width:960px; margin:0 auto; width:100%; display:contents; }
-.stat-item {
-  padding:32px 40px;
-  border-right:1px solid var(--border);
-}
-.stat-item:last-child { border-right:none; }
-.stat-num {
-  font-size:28px; font-weight:800; color:var(--navy);
-  letter-spacing:-0.03em; margin-bottom:4px;
-}
-.stat-num span { color:var(--indigo); }
-.stat-lbl { font-size:13px; font-weight:600; color:var(--navy); margin-bottom:2px; }
-.stat-sub { font-size:11px; color:var(--text-muted); }
-
-/* ══════════════════════════════════════════════
-   GENERIC SECTION WRAPPER
-══════════════════════════════════════════════ */
-.section-wrap {
-  max-width:960px; margin:0 auto;
-  padding:72px 24px;
-}
-.section-wrap.bg-surface {
-  max-width:100%;
-  background:var(--surface);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.section-wrap.bg-surface .section-inner {
-  max-width:960px; margin:0 auto;
-  padding:72px 24px;
-}
-.section-wrap.bg-navy {
-  max-width:100%;
-  background:var(--navy);
-}
-.section-wrap.bg-navy .section-inner {
-  max-width:960px; margin:0 auto;
-  padding:72px 24px;
-}
-
-/* ══════════════════════════════════════════════
-   TYPOGRAPHY
-══════════════════════════════════════════════ */
-.eyebrow {
-  font-size:10px; font-weight:600; letter-spacing:0.14em;
-  text-transform:uppercase; color:var(--indigo);
-  margin-bottom:12px;
-  display:flex; align-items:center; gap:8px;
-}
-.eyebrow::before {
-  content:''; display:inline-block; width:16px; height:1px;
-  background:var(--indigo);
-}
-.eyebrow.light { color:var(--indigo-soft); }
-.eyebrow.light::before { background:var(--indigo-soft); }
-
-.section-title {
-  font-size:clamp(22px,3.5vw,30px);
-  font-weight:700; color:var(--navy);
-  margin-bottom:14px; line-height:1.2; letter-spacing:-0.02em;
-}
-.section-title em { font-style:italic; color:var(--indigo); }
-.section-title.light { color:#fff; }
-.section-title.light em { color:var(--indigo-soft); }
-
-.section-body {
-  font-size:13.5px; color:var(--text-body); line-height:1.8;
-  max-width:640px;
-}
-
-/* ══════════════════════════════════════════════
-   OVERVIEW GRID
-══════════════════════════════════════════════ */
-.what-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:16px; margin-top:40px;
-}
-.what-card {
-  padding:24px; background:var(--white);
-  border-radius:14px; border:1px solid var(--border);
-  transition:box-shadow var(--transition), transform var(--transition);
-}
-.what-card:hover { box-shadow:0 8px 24px rgba(79,70,229,0.1); transform:translateY(-2px); }
-.what-card-icon {
-  width:38px; height:38px; border-radius:10px;
-  background:var(--indigo-bg);
-  display:flex; align-items:center; justify-content:center;
-  margin-bottom:14px; font-size:17px;
-}
-.what-card h4 { font-size:13px; font-weight:600; margin-bottom:8px; }
-.what-card p { font-size:12px; color:var(--text-body); line-height:1.65; }
-
-/* ══════════════════════════════════════════════
-   KEY SCREEN
-══════════════════════════════════════════════ */
-.key-screen-frame {
-  margin-top:28px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:14px; padding:12px;
-}
-.key-screen-img {
-  width:100%; border-radius:8px;
-  box-shadow:0 4px 32px rgba(15,23,42,0.12);
-  border:1px solid var(--border);
-  cursor:zoom-in;
-  transition:transform var(--transition), box-shadow var(--transition);
-  display:block;
-}
-.key-screen-img:hover { transform:scale(1.005); box-shadow:0 8px 40px rgba(15,23,42,0.15); }
-
-/* ══════════════════════════════════════════════
-   PROBLEM / INSIGHT CARDS
-══════════════════════════════════════════════ */
-.dealing-grid {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:16px; margin-top:36px;
-}
-.dealing-card {
-  background:var(--white); border-radius:14px;
-  padding:24px; border:1px solid var(--border);
-  transition:box-shadow var(--transition);
-}
-.dealing-card:hover { box-shadow:0 4px 20px rgba(15,23,42,0.07); }
-.dealing-card.highlight-red { border-left:3px solid var(--rose); }
-.dealing-card.highlight-blue { border-left:3px solid var(--indigo); }
-.dealing-card h4 { font-size:13px; font-weight:600; margin-bottom:8px; }
-.dealing-card p { font-size:12px; color:var(--text-body); line-height:1.7; }
-.dealing-tag {
-  display:inline-block; font-size:9px; font-weight:700;
-  text-transform:uppercase; letter-spacing:0.1em;
-  padding:3px 10px; border-radius:4px; margin-bottom:12px;
-}
-.dealing-tag.problem { background:#fff1f2; color:var(--rose); }
-.dealing-tag.insight { background:var(--indigo-bg); color:var(--indigo); }
-
-/* ══════════════════════════════════════════════
-   DESIGN PROCESS STEPS
-══════════════════════════════════════════════ */
-.process-steps { margin-top:40px; }
-.process-step {
-  display:grid; grid-template-columns:52px 1fr;
-  gap:24px; padding:32px 0;
-  border-bottom:1px solid var(--border);
-}
-.process-step:last-child { border-bottom:none; }
-.step-number {
-  width:38px; height:38px; border-radius:50%;
-  background:var(--indigo-bg); color:var(--indigo);
-  display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:700; flex-shrink:0;
-  margin-top:2px; border:2px solid rgba(79,70,229,0.2);
-}
-.step-content h3 { font-size:15px; font-weight:700; margin-bottom:8px; }
-.step-content h3 em { font-style:italic; color:var(--indigo); }
-.step-content p { font-size:12.5px; color:var(--text-body); line-height:1.75; margin-bottom:14px; }
-.step-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
-.step-tag {
-  font-size:10px; padding:3px 12px; border-radius:100px;
-  background:var(--indigo-bg); color:var(--indigo); font-weight:500;
-}
-.step-img-wrap {
-  margin-top:16px; background:var(--surface);
-  border:1px solid var(--border); border-radius:10px;
-  padding:12px; display:flex;
-  align-items:center; justify-content:center;
-}
-.step-img {
-  max-width:100%; max-height:280px;
-  width:auto; height:auto;
-  border-radius:6px; border:1px solid var(--border-mid);
-  cursor:zoom-in; transition:opacity var(--transition);
-  object-fit:contain; display:block;
-}
-.step-img:hover { opacity:0.85; }
-.step-img-pair {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:12px; margin-top:16px;
-}
-.step-img-pair .step-img-wrap { margin-top:0; }
-
-/* ══════════════════════════════════════════════
-   FINAL SCREEN HIGHLIGHTS
-══════════════════════════════════════════════ */
-.screens-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px; margin-top:40px;
-}
-.screen-item {
-  background:var(--white); border-radius:14px;
-  border:1px solid var(--border);
-  overflow:hidden;
-  display:flex; flex-direction:column;
-  transition:box-shadow var(--transition), transform var(--transition);
-}
-.screen-item:hover { box-shadow:0 8px 32px rgba(79,70,229,0.1); transform:translateY(-2px); }
-.screen-frame {
-  background:#f1f5f9; border-bottom:1px solid var(--border);
-  padding:12px;
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden;
-  aspect-ratio:16/10;
-}
-.screen-thumb {
-  width:100%; height:100%;
-  object-fit:cover; border-radius:6px;
-  cursor:zoom-in; transition:opacity var(--transition), transform var(--transition);
-  display:block;
-}
-.screen-thumb:hover { opacity:0.88; transform:scale(1.01); }
-.screen-meta { padding:20px 24px; flex:1; }
-.screen-eyebrow {
-  font-size:9px; font-weight:600; text-transform:uppercase;
-  letter-spacing:0.1em; color:var(--indigo); margin-bottom:6px;
-}
-.screen-item h3 { font-size:14px; font-weight:700; margin-bottom:8px; line-height:1.3; }
-.screen-item p { font-size:12px; color:var(--text-body); line-height:1.7; }
-
-/* ══════════════════════════════════════════════
-   GALLERY
-══════════════════════════════════════════════ */
-.gallery-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px; margin-top:40px;
-}
-.gallery-item { display:flex; flex-direction:column; gap:8px; }
-.gallery-label {
-  font-size:10px; font-weight:600; letter-spacing:0.1em;
-  text-transform:uppercase; color:rgba(255,255,255,0.4);
-}
-.gallery-thumb {
-  width:100%; border-radius:8px;
-  border:1px solid rgba(255,255,255,0.08);
-  cursor:zoom-in; aspect-ratio:16/10; object-fit:cover;
-  transition:border-color var(--transition), opacity var(--transition), transform var(--transition);
-  display:block;
-}
-.gallery-thumb:hover { border-color:var(--indigo-soft); opacity:0.85; transform:translateY(-2px); }
-
-/* ══════════════════════════════════════════════
-   DESIGN LANGUAGE
-══════════════════════════════════════════════ */
-.style-grid {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:24px; margin-top:40px;
-}
-.style-grid img {
-  width:100%; border-radius:10px;
-  border:1px solid var(--border);
-  cursor:zoom-in; transition:opacity var(--transition), transform var(--transition);
-  display:block;
-}
-.style-grid img:hover { opacity:0.88; transform:translateY(-2px); }
-
-/* ══════════════════════════════════════════════
-   WHAT I LEARNED
-══════════════════════════════════════════════ */
-.learned-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:16px; margin-top:40px;
-}
-.learned-card {
-  background:var(--white); border-radius:14px;
-  padding:24px; border:1px solid var(--border);
-  transition:box-shadow var(--transition), transform var(--transition);
-}
-.learned-card:hover { box-shadow:0 4px 20px rgba(79,70,229,0.08); transform:translateY(-2px); }
-.learned-icon { font-size:24px; margin-bottom:12px; }
-.learned-card h4 { font-size:13px; font-weight:600; margin-bottom:8px; }
-.learned-card p { font-size:12px; color:var(--text-body); line-height:1.7; }
-
-/* ══════════════════════════════════════════════
-   BACK BUTTON CTA
-══════════════════════════════════════════════ */
-.back-cta {
-  text-align:center; padding:56px 24px;
-}
-.back-cta-btn {
-  display:inline-flex; align-items:center; gap:8px;
-  padding:14px 28px;
-  background:var(--indigo); color:#fff;
-  text-decoration:none; border-radius:10px;
-  font-weight:600; font-size:14px;
-  transition:background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow:0 4px 16px rgba(79,70,229,0.3);
-}
-.back-cta-btn:hover {
-  background:#3730a3; transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(79,70,229,0.4);
-}
-.back-cta-btn svg { width:16px; height:16px; }
-
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
-footer {
-  background:var(--navy);
-  padding:36px 24px;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,0.06);
-}
-footer p { font-size:12px; color:rgba(255,255,255,0.35); }
-footer strong { color:rgba(255,255,255,0.7); }
-
-/* ══════════════════════════════════════════════
-   DIVIDER
-══════════════════════════════════════════════ */
-.divider { border:none; border-top:1px solid var(--border); }
-
-/* ══════════════════════════════════════════════
-   LIGHTBOX
-══════════════════════════════════════════════ */
-.lightbox {
-  display:none; position:fixed; inset:0;
-  background:rgba(0,0,0,0.9); z-index:2000;
-  align-items:center; justify-content:center; padding:32px;
-  backdrop-filter:blur(8px);
-}
-.lightbox.open { display:flex; }
-.lightbox img {
-  max-width:90vw; max-height:90vh;
-  border-radius:10px; box-shadow:0 24px 80px rgba(0,0,0,0.5);
-  object-fit:contain;
-}
-.lightbox-close {
-  position:fixed; top:20px; right:28px;
-  color:rgba(255,255,255,0.6); font-size:32px;
-  cursor:pointer; line-height:1; transition:color 0.15s;
-}
-.lightbox-close:hover { color:#fff; }
-.lightbox-caption {
-  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
-  font-size:11px; color:rgba(255,255,255,0.4);
-  text-transform:uppercase; letter-spacing:0.1em;
-  white-space:nowrap;
-}
-
-/* ══════════════════════════════════════════════
-   BADGES
-══════════════════════════════════════════════ */
-.badge {
-  display:inline-block; padding:2px 8px; border-radius:100px;
-  font-size:9px; font-weight:600;
-}
-.badge.green { background:#d1fae5; color:#065f46; }
-.badge.yellow { background:#fef3c7; color:#92400e; }
-.badge.red { background:#fee2e2; color:#991b1b; }
-
-/* ══════════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════════ */
-.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity:1; transform:translateY(0); }
-.reveal-delay-1 { transition-delay:0.1s; }
-.reveal-delay-2 { transition-delay:0.2s; }
-.reveal-delay-3 { transition-delay:0.3s; }
-.reveal-delay-4 { transition-delay:0.4s; }
-
-/* ══════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════ */
-@media (max-width:900px) {
-  .hero { padding:100px 24px 64px; }
-  .hero-inner { grid-template-columns:1fr; gap:40px; }
-  .hero-img-wrap { justify-content:center; }
-  .hero-img-wrap img { max-width:100%; }
-
-  .stats-bar { grid-template-columns:1fr; }
-  .stat-item { border-right:none; border-bottom:1px solid var(--border); padding:24px 24px; }
-  .stat-item:last-child { border-bottom:none; }
-
-  .what-grid { grid-template-columns:1fr; }
-  .dealing-grid { grid-template-columns:1fr; }
-  .screens-grid { grid-template-columns:1fr; }
-  .style-grid { grid-template-columns:1fr; }
-  .learned-grid { grid-template-columns:1fr; }
-  .gallery-grid { grid-template-columns:repeat(2,1fr); }
-
-  .process-step { grid-template-columns:1fr; gap:16px; }
-  .step-number { margin-top:0; }
-
-  .case-nav { width:calc(100% - 32px); top:12px; height:48px; }
-  .case-nav-tag { display:none; }
-
-  .section-wrap { padding:56px 20px; }
-  .section-wrap.bg-surface .section-inner,
-  .section-wrap.bg-navy .section-inner { padding:56px 20px; }
-}
-
-@media (max-width:600px) {
-  .hero h1 { font-size:32px; }
-  .what-grid { gap:12px; }
-  .gallery-grid { grid-template-columns:1fr 1fr; gap:12px; }
-  .screens-grid { gap:14px; }
-  .learned-grid { gap:12px; }
-  .dealing-grid { gap:12px; }
-  .step-img-pair { grid-template-columns:1fr; }
-}
-
-@media (min-width:901px) and (max-width:1100px) {
-  .hero { padding:110px 40px 80px; }
-  .stats-bar .stat-item { padding:28px 32px; }
-  .gallery-grid { grid-template-columns:repeat(3,1fr); }
-  .what-grid { grid-template-columns:1fr 1fr 1fr; }
-  .learned-grid { grid-template-columns:1fr 1fr 1fr; }
-}
-</style>
+<link rel="stylesheet" href="assets/css/cases/eCommerce_Dashboard_Portal.css">
+<link rel="stylesheet" href="assets/css/cases/eCommerce_Dashboard_Portal-layout.css">
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<script src="assets/js/main.js" defer></script>
+<link rel="stylesheet" href="assets/css/site-shell.css">
 </head>
-<body>
+<body class="case-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" id="mainNav">
+  <nav class="site-navbar" aria-label="Main navigation">
+    <a href="index.html" class="site-logo" aria-label="Aditya Nair, home">AN<span aria-hidden="true">.</span></a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-links" hidden>Menu <span aria-hidden="true">☰</span></button>
+    <ul class="site-links" id="site-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="experience.html">Experience</a></li>
+    </ul>
+    <a href="mailto:aditya.gamedesigner0402@gmail.com" class="site-contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main-content"><div class="page-tools"><nav class="site-breadcrumb" aria-label="Breadcrumb"><a href="projects.html">← All projects</a><span aria-hidden="true">/</span><span aria-current="page">eCommerce Dashboard</span></nav><details class="section-menu"><summary><span class="section-menu-label">On this page</span><span data-current-section>Overview</span><span aria-hidden="true">⌄</span></summary><nav aria-label="Page sections"><a href="#section-1" data-section-link>What is OtakuShop?</a><a href="#section-2" data-section-link>The Dashboard</a><a href="#section-3" data-section-link>What sellers were dealing with</a><a href="#section-4" data-section-link>How the design came to be</a><a href="#section-5" data-section-link>Screens that do the work</a><a href="#section-6" data-section-link>Every screen, at a glance</a><a href="#section-7" data-section-link>Colour, type, space</a><a href="#section-8" data-section-link>What I learned</a></nav></details></div>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close" onclick="closeLightbox()">×</span>
-  <img loading="lazy" id="lightbox-img" src="" alt="">
-  <div class="lightbox-caption" id="lightbox-caption"></div>
-</div>
+
 
 <!-- ═══════ STICKY NAV ═══════ -->
-<nav class="case-nav">
-  <a href="index.html#projects" class="case-nav-back" id="back-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-    Back
-  </a>
-  <div class="case-nav-brand">eCommerce Dashboard</div>
-  <div class="case-nav-tag">Case Study</div>
-</nav>
+
 
 <!-- ═══════ HERO ═══════ -->
 <section class="hero">
@@ -631,7 +60,7 @@ footer strong { color:rgba(255,255,255,0.7); }
       </div>
     </div>
     <div class="hero-img-wrap">
-      <img loading="lazy" src="Dashboard_Portal_Project/Dashboard.png" alt="Dashboard Hero" onclick="openLightbox(this,'Dashboard — Main Overview')">
+      <img loading="lazy" src="assets/images/ui/Dashboard_Portal_Project/Dashboard.png" alt="Dashboard Hero" data-zoom="Dashboard — Main Overview" width="1920" height="1080">
     </div>
   </div>
 </section>
@@ -658,7 +87,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 <!-- ═══════ OVERVIEW ═══════ -->
 <div class="section-wrap">
   <div class="eyebrow reveal">Overview</div>
-  <h2 class="section-title reveal">What is <em>OtakuShop?</em></h2>
+  <h2 class="section-title reveal" id="section-1" tabindex="-1" data-reading-section>What is <em>OtakuShop?</em></h2>
   <p class="section-body reveal">OtakuShop is a niche marketplace dedicated to anime merchandise — from figures and apparel to collectibles. Sellers range from solo creators to small studios, all managing inventory, orders, and payouts through a single portal. This project focused on redesigning that seller portal end-to-end, giving sellers real visibility into their business for the first time.</p>
   <div class="what-grid">
     <div class="what-card reveal">
@@ -684,10 +113,10 @@ footer strong { color:rgba(255,255,255,0.7); }
 <!-- ═══════ KEY SCREEN ═══════ -->
 <div class="section-wrap reveal">
   <div class="eyebrow">Key Screen</div>
-  <h2 class="section-title">The <em>Dashboard</em></h2>
+  <h2 class="section-title" id="section-2" tabindex="-1" data-reading-section>The <em>Dashboard</em></h2>
   <p class="section-body">The centrepiece of the portal. Sellers land here after login and get an immediate pulse on their business — revenue this month, pending orders, top products, and store health at a glance.</p>
   <div class="key-screen-frame">
-    <img loading="lazy" class="key-screen-img" src="Dashboard_Portal_Project/Dashboard.png" alt="Dashboard UI" onclick="openLightbox(this,'Dashboard — Main Overview')">
+    <img loading="lazy" class="key-screen-img" src="assets/images/ui/Dashboard_Portal_Project/Dashboard.png" alt="Dashboard UI" data-zoom="Dashboard — Main Overview" width="1920" height="1080">
   </div>
 </div>
 
@@ -695,7 +124,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 <div class="section-wrap bg-surface">
   <div class="section-inner">
     <div class="eyebrow reveal">Problem Space</div>
-    <h2 class="section-title reveal">What sellers were <em>dealing with</em></h2>
+    <h2 class="section-title reveal" id="section-3" tabindex="-1" data-reading-section>What sellers were <em>dealing with</em></h2>
     <p class="section-body reveal">Before this redesign, sellers described the old portal as "a mess of tabs." Research interviews and support tickets revealed two consistent pain clusters that drove churn.</p>
     <div class="dealing-grid">
       <div class="dealing-card highlight-red reveal">
@@ -725,7 +154,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 <!-- ═══════ DESIGN PROCESS ═══════ -->
 <div class="section-wrap reveal">
   <div class="eyebrow">Design Process</div>
-  <h2 class="section-title">How the design <em>came to be</em></h2>
+  <h2 class="section-title" id="section-4" tabindex="-1" data-reading-section>How the design <em>came to be</em></h2>
   <p class="section-body">A five-stage process from discovery to handoff — each stage building directly on evidence from the last.</p>
 
   <div class="process-steps">
@@ -740,7 +169,7 @@ footer strong { color:rgba(255,255,255,0.7); }
           <span class="step-tag">Desk Research</span>
           <span class="step-tag">Pattern Recognition</span>
         </div>
-        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="Dashboard_Portal_Project/Customers.png" alt="Customer Research" onclick="openLightbox(this,'Customer Research Screen')"></div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Customers.png" alt="Customer Research" data-zoom="Customer Research Screen" width="1920" height="1080"></div>
       </div>
     </div>
 
@@ -754,7 +183,7 @@ footer strong { color:rgba(255,255,255,0.7); }
           <span class="step-tag">Goal-oriented Design</span>
           <span class="step-tag">User Flows</span>
         </div>
-        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="Dashboard_Portal_Project/Settings.png" alt="Navigation Architecture" onclick="openLightbox(this,'Navigation &amp; Settings Architecture')"></div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Settings.png" alt="Navigation Architecture" data-zoom="Navigation &amp; Settings Architecture" width="1920" height="1080"></div>
       </div>
     </div>
 
@@ -769,8 +198,8 @@ footer strong { color:rgba(255,255,255,0.7); }
           <span class="step-tag">Usability testing</span>
         </div>
         <div class="step-img-pair">
-          <div class="step-img-wrap"><img loading="lazy" class="step-img" src="Dashboard_Portal_Project/Products.png" alt="Product Listing Flow" onclick="openLightbox(this,'Products — Listing Flow')"></div>
-          <div class="step-img-wrap"><img loading="lazy" class="step-img" src="Dashboard_Portal_Project/Orders.png" alt="Order Fulfilment Flow" onclick="openLightbox(this,'Orders — Fulfilment Flow')"></div>
+          <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Products.png" alt="Product Listing Flow" data-zoom="Products — Listing Flow" width="1920" height="1080"></div>
+          <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Orders.png" alt="Order Fulfilment Flow" data-zoom="Orders — Fulfilment Flow" width="1920" height="1080"></div>
         </div>
       </div>
     </div>
@@ -785,7 +214,7 @@ footer strong { color:rgba(255,255,255,0.7); }
           <span class="step-tag">Component library</span>
           <span class="step-tag">Figma variants</span>
         </div>
-        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="Dashboard_Portal_Project/Promotions.png" alt="Promotions — Component Use" onclick="openLightbox(this,'Promotions — Component System in Use')"></div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Promotions.png" alt="Promotions — Component Use" data-zoom="Promotions — Component System in Use" width="1920" height="1080"></div>
       </div>
     </div>
 
@@ -800,7 +229,7 @@ footer strong { color:rgba(255,255,255,0.7); }
           <span class="step-tag">SUS scoring</span>
           <span class="step-tag">Developer handoff</span>
         </div>
-        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="Dashboard_Portal_Project/Reviews.png" alt="Reviews &amp; Refinement" onclick="openLightbox(this,'Reviews — Testing &amp; Refinement')"></div>
+        <div class="step-img-wrap"><img loading="lazy" class="step-img" src="assets/images/ui/Dashboard_Portal_Project/Reviews.png" alt="Reviews &amp; Refinement" data-zoom="Reviews — Testing &amp; Refinement" width="1920" height="1080"></div>
       </div>
     </div>
 
@@ -811,13 +240,13 @@ footer strong { color:rgba(255,255,255,0.7); }
 <div class="section-wrap bg-surface">
   <div class="section-inner">
     <div class="eyebrow reveal">Final Screens</div>
-    <h2 class="section-title reveal">Screens that <em>do the work</em></h2>
+    <h2 class="section-title reveal" id="section-5" tabindex="-1" data-reading-section>Screens that <em>do the work</em></h2>
     <p class="section-body reveal">Four screen highlights covering the most critical seller touchpoints — inventory control, shipping, analytics, and payouts.</p>
 
     <div class="screens-grid">
       <div class="screen-item reveal">
         <div class="screen-frame">
-          <img loading="lazy" class="screen-thumb" src="Dashboard_Portal_Project/Inventory.png" alt="Inventory Screen" onclick="openLightbox(this,'Inventory Screen')">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Inventory.png" alt="Inventory Screen" data-zoom="Inventory Screen" width="1920" height="1080">
         </div>
         <div class="screen-meta">
           <div class="screen-eyebrow">Screen 01</div>
@@ -828,7 +257,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 
       <div class="screen-item reveal reveal-delay-1">
         <div class="screen-frame">
-          <img loading="lazy" class="screen-thumb" src="Dashboard_Portal_Project/Shipping.png" alt="Shipping Screen" onclick="openLightbox(this,'Shipping Screen')">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Shipping.png" alt="Shipping Screen" data-zoom="Shipping Screen" width="1920" height="1080">
         </div>
         <div class="screen-meta">
           <div class="screen-eyebrow">Screen 04</div>
@@ -839,7 +268,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 
       <div class="screen-item reveal reveal-delay-2">
         <div class="screen-frame">
-          <img loading="lazy" class="screen-thumb" src="Dashboard_Portal_Project/Analytics.png" alt="Analytics Screen" onclick="openLightbox(this,'Analytics Screen')">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Analytics.png" alt="Analytics Screen" data-zoom="Analytics Screen" width="1920" height="1080">
         </div>
         <div class="screen-meta">
           <div class="screen-eyebrow">Screen 07</div>
@@ -850,7 +279,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 
       <div class="screen-item reveal reveal-delay-3">
         <div class="screen-frame">
-          <img loading="lazy" class="screen-thumb" src="Dashboard_Portal_Project/Payouts.png" alt="Payouts Screen" onclick="openLightbox(this,'Payouts Screen')">
+          <img loading="lazy" class="screen-thumb" src="assets/images/ui/Dashboard_Portal_Project/Payouts.png" alt="Payouts Screen" data-zoom="Payouts Screen" width="1920" height="1080">
         </div>
         <div class="screen-meta">
           <div class="screen-eyebrow">Screen 10</div>
@@ -866,22 +295,22 @@ footer strong { color:rgba(255,255,255,0.7); }
 <div class="section-wrap bg-navy">
   <div class="section-inner">
     <div class="eyebrow light reveal">All Screens</div>
-    <h2 class="section-title light reveal">Every screen, <em>at a glance</em></h2>
-    <p class="section-body reveal" style="color:rgba(255,255,255,0.5);">The complete set of 12 designed screens covering every seller touchpoint. Click any screen to view it in full.</p>
+    <h2 class="section-title light reveal" id="section-6" tabindex="-1" data-reading-section>Every screen, <em>at a glance</em></h2>
+    <p class="section-body reveal layout-1">The complete set of 12 designed screens covering every seller touchpoint. Click any screen to view it in full.</p>
 
     <div class="gallery-grid">
-      <div class="gallery-item reveal"><div class="gallery-label">Dashboard</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Dashboard.png" alt="Dashboard" onclick="openLightbox(this,'Dashboard')"></div>
-      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Analytics</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Analytics.png" alt="Analytics" onclick="openLightbox(this,'Analytics')"></div>
-      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Orders</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Orders.png" alt="Orders" onclick="openLightbox(this,'Orders')"></div>
-      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Inventory</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Inventory.png" alt="Inventory" onclick="openLightbox(this,'Inventory')"></div>
-      <div class="gallery-item reveal"><div class="gallery-label">Products</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Products.png" alt="Products" onclick="openLightbox(this,'Products')"></div>
-      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Customers</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Customers.png" alt="Customers" onclick="openLightbox(this,'Customers')"></div>
-      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Payouts</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Payouts.png" alt="Payouts" onclick="openLightbox(this,'Payouts')"></div>
-      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Shipping</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Shipping.png" alt="Shipping" onclick="openLightbox(this,'Shipping')"></div>
-      <div class="gallery-item reveal"><div class="gallery-label">Reviews</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Reviews.png" alt="Reviews" onclick="openLightbox(this,'Reviews')"></div>
-      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Promotions</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Promotions.png" alt="Promotions" onclick="openLightbox(this,'Promotions')"></div>
-      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Profile</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Profile.png" alt="Profile" onclick="openLightbox(this,'Profile')"></div>
-      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Settings</div><img loading="lazy" class="gallery-thumb" src="Dashboard_Portal_Project/Settings.png" alt="Settings" onclick="openLightbox(this,'Settings')"></div>
+      <div class="gallery-item reveal"><div class="gallery-label">Dashboard</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Dashboard.png" alt="Dashboard" data-zoom="Dashboard" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Analytics</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Analytics.png" alt="Analytics" data-zoom="Analytics" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Orders</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Orders.png" alt="Orders" data-zoom="Orders" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Inventory</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Inventory.png" alt="Inventory" data-zoom="Inventory" width="1920" height="1080"></div>
+      <div class="gallery-item reveal"><div class="gallery-label">Products</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Products.png" alt="Products" data-zoom="Products" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Customers</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Customers.png" alt="Customers" data-zoom="Customers" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Payouts</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Payouts.png" alt="Payouts" data-zoom="Payouts" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Shipping</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Shipping.png" alt="Shipping" data-zoom="Shipping" width="1920" height="1080"></div>
+      <div class="gallery-item reveal"><div class="gallery-label">Reviews</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Reviews.png" alt="Reviews" data-zoom="Reviews" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-1"><div class="gallery-label">Promotions</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Promotions.png" alt="Promotions" data-zoom="Promotions" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-2"><div class="gallery-label">Profile</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Profile.png" alt="Profile" data-zoom="Profile" width="1920" height="1080"></div>
+      <div class="gallery-item reveal reveal-delay-3"><div class="gallery-label">Settings</div><img loading="lazy" class="gallery-thumb" src="assets/images/ui/Dashboard_Portal_Project/Settings.png" alt="Settings" data-zoom="Settings" width="1920" height="1080"></div>
     </div>
   </div>
 </div>
@@ -889,11 +318,11 @@ footer strong { color:rgba(255,255,255,0.7); }
 <!-- ═══════ DESIGN LANGUAGE ═══════ -->
 <div class="section-wrap reveal">
   <div class="eyebrow">Design Language</div>
-  <h2 class="section-title">Colour, type, <em>space</em></h2>
+  <h2 class="section-title" id="section-7" tabindex="-1" data-reading-section>Colour, type, <em>space</em></h2>
   <p class="section-body">A restrained, purposeful system built on an indigo palette — credible and calm for a financial tool, without the grey sterility of enterprise SaaS. Semantic colour (green = healthy, amber = warning, rose = urgent) lets sellers read the page without reading it.</p>
   <div class="style-grid">
-    <img loading="lazy" src="Dashboard_Portal_Project/Colour_Palette.png" alt="Colour Palette" onclick="openLightbox(this,'Colour Palette')">
-    <img loading="lazy" src="Dashboard_Portal_Project/Typography.png" alt="Typography System" onclick="openLightbox(this,'Typography System')">
+    <img loading="lazy" src="assets/images/ui/Dashboard_Portal_Project/Colour_Palette.png" alt="Colour Palette" data-zoom="Colour Palette" width="600" height="318">
+    <img loading="lazy" src="assets/images/ui/Dashboard_Portal_Project/Typography.png" alt="Typography System" data-zoom="Typography System" width="600" height="318">
   </div>
 </div>
 
@@ -901,7 +330,7 @@ footer strong { color:rgba(255,255,255,0.7); }
 <div class="section-wrap bg-surface">
   <div class="section-inner">
     <div class="eyebrow reveal">Reflection</div>
-    <h2 class="section-title reveal">What I <em>learned</em></h2>
+    <h2 class="section-title reveal" id="section-8" tabindex="-1" data-reading-section>What I <em>learned</em></h2>
     <p class="section-body reveal">Six things this project changed about how I approach dashboard design for data-heavy products.</p>
     <div class="learned-grid">
       <div class="learned-card reveal">
@@ -939,63 +368,22 @@ footer strong { color:rgba(255,255,255,0.7); }
 </div>
 
 <!-- BACK CTA -->
-<div class="back-cta">
-  <a href="index.html#projects" class="back-cta-btn" id="back-cta-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-    Back to Portfolio
-  </a>
-</div>
+
 
 <!-- FOOTER -->
-<footer>
-  <p><strong>eCommerce Dashboard</strong> — Aditya Nair · UX Case Study · 2026</p>
-  <p style="margin-top:6px;">© 2026 Aditya Nair</p>
+
+
+
+
+<nav class="case-next" aria-label="More projects"><a href="projects.html"><small>Keep exploring</small><strong>All projects <span aria-hidden="true">↗</span></strong></a><a href="deep-into-dreams.html"><small>Next project</small><strong>Deep Into Dreams <span aria-hidden="true">→</span></strong></a></nav>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><p class="site-footer-title">Interfaces to explore.<br>Worlds to <em>get lost in.</em></p><p class="site-footer-sub">UI/UX &amp; game design · Mumbai, India</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="projects.html">Explore the work</a><a href="experience.html">Experience</a><a href="mailto:aditya.gamedesigner0402@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/adityanair0402/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
+  </div>
+  <div class="site-footer-bottom"><span>© 2026 Aditya Nair</span><span>Designed around people. Built with intention.</span></div>
 </footer>
-
-<script>
-// ── Lightbox
-function openLightbox(imgEl, caption) {
-  document.getElementById('lightbox-img').src = imgEl.src;
-  document.getElementById('lightbox-caption').textContent = caption || '';
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
-});
-
-// ── Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// ── Smart back button
-document.getElementById('back-btn').addEventListener('click', function(e) {
-  if (document.referrer && (document.referrer.includes('index.html') || document.referrer.includes(window.location.hostname))) {
-    e.preventDefault();
-    history.back();
-  }
-});
-document.getElementById('back-cta-btn').addEventListener('click', function(e) {
-  if (document.referrer && (document.referrer.includes('index.html') || document.referrer.includes(window.location.hostname))) {
-    e.preventDefault();
-    history.back();
-  }
-});
-</script>
 
 </body>
 </html>

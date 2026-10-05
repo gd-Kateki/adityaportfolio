@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Nair &mdash; UI/UX &amp; Game Designer</title>
+  <meta name="description" content="Portfolio of Aditya Nair, UI/UX and game designer based in Mumbai. Explore interfaces, game systems, and playable worlds.">
+  <meta name="author" content="Aditya Nair">
+  <meta property="og:title" content="Aditya Nair &mdash; UI/UX &amp; Game Designer">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon-small.png">
+<link rel="stylesheet" href="assets/css/cases/index-layout.css">
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+
+  <!-- Background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast-notification" aria-live="polite">Email copied to clipboard!</div>
+
+  <!-- ════════════════ DYNAMIC NAV (IPHONE ISLAND STYLE) ════════════════ -->
+  {{nav}}
+<main id="main-content">
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero" id="home">
+
+    <!-- Fade-out wrapper (gets opacity-0 on scroll) -->
+    <div class="hero-content" id="heroContent">
+
+      <!-- Status tag -->
+      <div class="hero-status-tag">
+        <span class="hero-tag-dot"></span>
+        Mumbai, India &middot; Available
+      </div>
+
+      <!-- Avatar + name ring -->
+      <div class="avatar-scene">
+
+        <!-- Rotating ring text -->
+        <div class="avatar-ring-text" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="ring-svg">
+            <defs>
+              <path id="circlePath"
+                d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"/>
+            </defs>
+            <text class="ring-label">
+              <textPath href="#circlePath" startOffset="0%">
+                UI/UX DESIGNER &nbsp;&bull;&nbsp; GAME DESIGNER &nbsp;&bull;&nbsp; ADITYA NAIR &nbsp;&bull;&nbsp;
+              </textPath>
+            </text>
+          </svg>
+        </div>
+
+        <!-- Avatar circle -->
+        <div class="avatar-circle">
+          <span class="avatar-initials">AN</span>
+          <div class="avatar-pulse"></div>
+        </div>
+
+      </div>
+
+      <!-- Name block -->
+      <h1 class="hero-name-block">
+        <span class="hero-firstname">Aditya</span>
+        <span class="hero-lastname">Nair.</span>
+      </h1>
+
+      <!-- Role + location -->
+      <p class="hero-role">UI/UX Designer &amp; Game Designer</p>
+
+      <p class="hero-intro">Thoughtful interfaces. Memorable worlds.<br>One human-centered approach to both.</p>
+      <!-- CTAs -->
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View Work</a>
+        <a href="projects.html?discipline=game" class="btn-outline">Explore Game Design <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <div class="scroll-cue-line"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ════════════════ REVAMPED ABOUT ME ════════════════ -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      
+      <div class="about-section-header reveal">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">About Me</span>
+        </div>
+        <h2 class="section-title">Designing experiences with <span class="serif">logical clarity.</span></h2>
+      </div>
+
+      <div class="about-layout-grid">
+        
+        <!-- Large Bio Card -->
+        <div class="about-card-large reveal">
+          <div class="about-avatar-row">
+            <div class="about-avatar">AN</div>
+            <div class="about-identity">
+              <h3>Aditya Nair</h3>
+              <p>UI/UX &amp; Game Designer</p>
+            </div>
+          </div>
+          
+          <p class="about-bio-text">
+            I'm Aditya Nair, a UI/UX and game designer based in Mumbai. I design clear interfaces, engaging game systems, and worlds that invite exploration. My work connects user flows with player journeys: understanding people, shaping decisions, and making every interaction feel intentional.
+          </p>
+          <p class="about-bio-text">
+            My approach prioritizes clarity above decoration. I believe digital products perform best when they respect the user's focus and reduce unnecessary friction.
+          </p>
+
+          <div class="about-cta-row">
+            <a href="https://www.linkedin.com/in/adityanair0402/" rel="noopener noreferrer" target="_blank" class="about-link">LinkedIn &nearr;</a>
+            <a href="mailto:aditya.gamedesigner0402@gmail.com" class="about-link ">Email</a>
+            <a href="experience.html" class="about-link">Experience Details &rarr;</a>
+            <a href="projects.html?discipline=game" class="about-link">Game Design &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Capability and Mindset Cards -->
+        <div class="about-cards-subgrid">
+          
+          <!-- Capabilities Glass Card -->
+          <div class="about-card-small reveal">
+            <h4 class="about-card-label">Core Competencies</h4>
+            <div class="capability-list"><span>Interface &amp; interaction design</span><span>Game systems &amp; level design</span><span>Narrative &amp; player experience</span><span>Prototyping &amp; playtesting</span></div>
+          </div>
+
+          <!-- Tools Glass Card -->
+          <div class="about-card-small reveal">
+            <h4 class="about-card-label">Toolsets</h4>
+            <div class="tools-chip-list">
+              <span class="tool-chip">Figma</span>
+              <span class="tool-chip">FigJam</span>
+              <span class="tool-chip">Framer</span>
+              <span class="tool-chip">HTML/CSS</span>
+              <span class="tool-chip">UX Research</span>
+              <span class="tool-chip">Design Tokens</span><span class="tool-chip">Unity</span><span class="tool-chip">Unreal Engine</span><span class="tool-chip">Blender</span>
+            </div>
+          </div>
+
+          <!-- Mindset card 1 -->
+          <div class="about-card-small mindset-card-flat reveal">
+            <span class="mindset-icon">&#9889;</span>
+            <div class="mindset-title">Structured Thinking</div>
+            <p class="mindset-desc">Designing interfaces as cohesive systems where every button and link follows logical hierarchy.</p>
+          </div>
+
+          <!-- Mindset card 2 -->
+          <div class="about-card-small mindset-card-flat reveal">
+            <span class="mindset-icon">&#10022;</span>
+            <div class="mindset-title">Creative Precision</div>
+            <p class="mindset-desc">Clean, simple aesthetics backed by sound usability principles that support cognitive tasks.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════ MARQUEE ════════════════ -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        Figma <span class="marquee-dot"></span>
+        UX Research <span class="marquee-dot"></span>
+        Information Architecture <span class="marquee-dot"></span>
+        Interaction Design <span class="marquee-dot"></span>
+        Design Systems <span class="marquee-dot"></span>
+        Prototyping <span class="marquee-dot"></span>
+        Heuristic Evaluation <span class="marquee-dot"></span>
+        Motion Design <span class="marquee-dot"></span>
+        Accessibility <span class="marquee-dot"></span>
+      </div>
+      <div class="marquee-item">
+        Figma <span class="marquee-dot"></span>
+        UX Research <span class="marquee-dot"></span>
+        Information Architecture <span class="marquee-dot"></span>
+        Interaction Design <span class="marquee-dot"></span>
+        Design Systems <span class="marquee-dot"></span>
+        Prototyping <span class="marquee-dot"></span>
+        Heuristic Evaluation <span class="marquee-dot"></span>
+        Motion Design <span class="marquee-dot"></span>
+        Accessibility <span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ WORK ════════════════ -->
+  <section class="work-section" id="work">
+    <div class="work-section-inner">
+      <div class="section-header-row reveal">
+        <div>
+          <div class="section-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text">Selected Work</span>
+          </div>
+          <h2 class="section-title">Projects that <span class="serif">matter.</span></h2>
+        </div>
+        <a href="projects.html" class="see-all-link">All projects &rarr;</a>
+      </div>
+
+      {{featured-projects}}
+    </div>
+  </section>
+
+  <!-- ════════════════ PROCESS ════════════════ -->
+  <div class="process-strip reveal">
+    <div class="process-strip-inner">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div class="process-title">Discover</div>
+        <div class="process-desc">User research, heuristic audits, stakeholder interviews before drawing a single frame.</div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div class="process-title">Define</div>
+        <div class="process-desc">Synthesise insights into problem statements. Map flows, find friction, prioritise impact.</div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div class="process-title">Design</div>
+        <div class="process-desc">Lo-fi to hi-fi &mdash; wireframes, systems, component libraries, interactive prototypes.</div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div class="process-title">Deliver</div>
+        <div class="process-desc">Polished specs, documentation, and iterative refinement based on feedback loops.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="section-eyebrow reveal layout-9">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Get in touch</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h2 class="contact-headline reveal">Let&apos;s build something<br><span class="serif">worth using.</span></h2>
+      <p class="contact-sub reveal">Open to freelance, full-time roles, and collaborations. I respond within 24 hours.</p>
+      <div class="contact-actions"><a class="btn-primary" href="mailto:aditya.gamedesigner0402@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a><button class="btn-outline" type="button" data-copy-email>Copy email address</button></div><p class="contact-email">aditya.gamedesigner0402@gmail.com</p>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  </main>
+{{footer}}
+
+  <!-- ════════════════ SCRIPTS ════════════════ -->
+  
+
+
+</body>
+</html>

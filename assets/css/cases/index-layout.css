@@ -1,0 +1,9 @@
+.layout-1 { background:linear-gradient(135deg,#F5EFE6,#EDE0CF); }
+.layout-2 { width:56px;height:56px;background:#E8A838;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 18px rgba(232,168,56,0.22); }
+.layout-3 { font-size:17px;font-weight:800;color:#1C1C1E;letter-spacing:-0.4px; }
+.layout-4 { background:linear-gradient(135deg,#E8EDF5,#D8E2F0); }
+.layout-5 { font-size:28px;font-weight:800;color:#1e3a5f;letter-spacing:-0.8px;font-style:italic;font-family:Georgia,serif;text-align:center; }
+.layout-6 { font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#9CA3AF; }
+.layout-7 { background:#1c3328; }
+.layout-8 { height:90%;width:auto;object-fit:contain;border-radius:8px; }
+.layout-9 { justify-content:center;margin-bottom:24px; }

@@ -9,478 +9,37 @@
 <meta property="og:title" content="St. Andrew's College Redesign — UX Case Study | Aditya Nair"/>
 <meta property="og:description" content="A comprehensive UX audit, information architecture overhaul, and homepage redesign for St. Andrew's College Mumbai."/>
 <meta property="og:type" content="article"/>
-<link rel="icon" type="image/png" href="favicon.png"/>
-<link rel="apple-touch-icon" href="favicon.png"/>
+<link rel="icon" type="image/png" href="assets/images/favicon-small.png"/>
+<link rel="apple-touch-icon" href="assets/images/favicon-small.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-/* ══════════════════════════════════════════════
-   DESIGN TOKENS
-══════════════════════════════════════════════ */
-:root {
-  --ink:          #0f0f0f;
-  --ink2:         #2a2a2a;
-  --ink3:         #5a5a5a;
-  --ink4:         #8a8a8a;
-  --surface:      #fafaf7;
-  --surface2:     #f4f2eb;
-  --surface3:     #e9e6de;
-  --accent:       #1a3a5c;
-  --accent2:      #2d6a9f;
-  --accent3:      #e8f0f8;
-  --gold:         #b8922a;
-  --gold2:        #f5e6c4;
-  --green:        #1a5c3a;
-  --green2:       #e4f0eb;
-  --red:          #8b1a1a;
-  --red2:         #f5e4e4;
-  --amber:        #7a4a0a;
-  --amber2:       #f5edd4;
-  --border:       #dcd7cc;
-  --border2:      #e9e6de;
-  --serif:        'DM Serif Display', Georgia, serif;
-  --sans:         'Inter', -apple-system, sans-serif;
-  --r-sm:         6px;
-  --r-md:         12px;
-  --r-lg:         18px;
-  --transition:   0.3s cubic-bezier(0.4,0,0.2,1);
-}
 
-/* ══════════════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════════════ */
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { font-family:var(--sans); background:var(--surface); color:var(--ink); font-size:16px; line-height:1.6; scroll-behavior:smooth; }
-body {
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ══════════════════════════════════════════════
-   STICKY NAV
-══════════════════════════════════════════════ */
-.case-nav {
-  position:fixed; top:16px; left:50%; transform:translateX(-50%);
-  z-index:1000; width:calc(100% - 48px); max-width:960px;
-  background:rgba(250,250,247,0.85);
-  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--border);
-  border-radius:100px; padding:0 8px; height:52px;
-  display:flex; align-items:center; justify-content:space-between;
-  box-shadow:0 8px 32px rgba(26,58,92,0.15), inset 0 1px 0 rgba(255,255,255,0.6);
-}
-.case-nav-back {
-  display:flex; align-items:center; gap:8px;
-  text-decoration:none; padding:6px 14px; border-radius:100px;
-  background:rgba(26,58,92,0.06); border:1px solid rgba(26,58,92,0.1);
-  color:var(--accent); font-size:13px; font-weight:500;
-  transition:var(--transition);
-}
-.case-nav-back:hover { background:var(--accent); color:#fff; }
-.case-nav-back svg { width:14px; height:14px; }
-.case-nav-brand {
-  font-family:var(--serif); font-size:15px; font-weight:500;
-  color:var(--accent); letter-spacing:-0.2px;
-}
-.case-nav-tag {
-  font-size:11px; color:var(--ink3);
-  padding:4px 12px; border-radius:100px;
-  background:var(--surface2); border:1px solid var(--border);
-  white-space:nowrap;
-}
-
-/* ══════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════ */
-.hero {
-  background:var(--accent); color:#fff;
-  padding:120px 24px 64px; position:relative; overflow:hidden;
-  border-bottom:1px solid var(--border);
-}
-.hero::before {
-  content:''; position:absolute; inset:0;
-  background:repeating-linear-gradient(45deg,rgba(255,255,255,0.01) 0,rgba(255,255,255,0.01) 1px,transparent 1px,transparent 40px);
-  pointer-events:none;
-}
-.hero-inner {
-  max-width:960px; margin:0 auto; position:relative; z-index:1;
-}
-.hero-eyebrow {
-  font-size:10px; font-weight:600; letter-spacing:0.18em;
-  text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:16px;
-}
-.hero-title {
-  font-family:var(--serif); font-size:clamp(36px,5.5vw,56px);
-  line-height:1.1; font-weight:400; margin-bottom:20px; max-width:760px;
-  letter-spacing:-0.01em;
-}
-.hero-title em { font-style:italic; color:rgba(255,255,255,0.6); }
-.hero-sub {
-  font-size:14.5px; color:rgba(255,255,255,0.65);
-  max-width:540px; line-height:1.75; margin-bottom:32px;
-}
-.hero-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px; }
-.hero-pill {
-  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
-  border-radius:100px; padding:5px 14px; font-size:11px;
-  font-weight:500; color:rgba(255,255,255,0.7);
-  transition:var(--transition);
-}
-.hero-pill:hover { background:rgba(255,255,255,0.18); color:#fff; }
-.hero-stats {
-  display:grid; grid-template-columns:repeat(4,1fr);
-  gap:1px; background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:var(--r-md); overflow:hidden;
-  max-width:680px; margin-top:32px;
-}
-.hero-stat { background:rgba(255,255,255,0.04); padding:20px 16px; text-align:center; }
-.hero-stat-n { font-family:var(--serif); font-size:26px; color:#fff; line-height:1; }
-.hero-stat-l { font-size:11px; color:rgba(255,255,255,0.45); margin-top:4px; letter-spacing:0.02em; }
-
-/* ══════════════════════════════════════════════
-   LAYOUT STRINGS
-══════════════════════════════════════════════ */
-.cs-wrap { max-width:960px; margin:0 auto; padding:0 24px; }
-.section { padding:72px 0; }
-.section-border { border-bottom:1px solid var(--border); }
-.section-label { font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink4); margin-bottom:12px; }
-.section-title { font-family:var(--serif); font-size:clamp(24px,4vw,34px); color:var(--accent); line-height:1.15; margin-bottom:14px; }
-.section-sub { font-size:13.5px; color:var(--ink3); line-height:1.75; max-width:620px; margin-bottom:36px; }
-
-/* ══════════════════════════════════════════════
-   PROBLEM CARDS
-══════════════════════════════════════════════ */
-.problem-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-.problem-card {
-  background:var(--surface2); border:1px solid var(--border);
-  border-radius:var(--r-md); padding:24px 28px; position:relative;
-  transition:box-shadow var(--transition);
-}
-.problem-card:hover { box-shadow:0 4px 16px rgba(26,58,92,0.06); }
-.problem-card.big { grid-column:1/-1; background:var(--accent); color:#fff; border-color:transparent; }
-.problem-card.big .pc-label { color:rgba(255,255,255,0.45); }
-.problem-card.big .pc-title { color:#fff; font-size:20px; }
-.problem-card.big .pc-body { color:rgba(255,255,255,0.65); }
-.pc-label { font-size:9px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink4); margin-bottom:8px; }
-.pc-title { font-family:var(--serif); font-size:16px; color:var(--accent); margin-bottom:8px; line-height:1.3; }
-.pc-body { font-size:12.5px; color:var(--ink3); line-height:1.7; }
-.pc-num { position:absolute; top:20px; right:20px; font-family:var(--serif); font-size:36px; color:rgba(0,0,0,0.04); line-height:1; }
-.big .pc-num { color:rgba(255,255,255,0.04); }
-
-/* ══════════════════════════════════════════════
-   UX AUDIT ACCORDION
-══════════════════════════════════════════════ */
-.audit-grid { display:flex; flex-direction:column; gap:10px; }
-.audit-item {
-  border:1px solid var(--border); border-radius:var(--r-md);
-  overflow:hidden; background:#fff; cursor:pointer;
-  transition:box-shadow var(--transition), border-color var(--transition);
-}
-.audit-item:hover { box-shadow:0 6px 20px rgba(26,58,92,0.08); border-color:var(--accent2); }
-.audit-head { display:flex; align-items:center; gap:16px; padding:18px 20px; }
-.audit-sev { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-.audit-sev.critical { background:#c0392b; }
-.audit-sev.high { background:#e67e22; }
-.audit-sev.medium { background:#2980b9; }
-.audit-sev.low { background:#27ae60; }
-.audit-cat { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink4); min-width:90px; flex-shrink:0; }
-.audit-title { font-size:13.5px; font-weight:600; color:var(--ink); flex:1; }
-.audit-badge { font-size:9px; font-weight:700; padding:3px 10px; border-radius:100px; letter-spacing:0.05em; flex-shrink:0; text-transform:uppercase; }
-.audit-badge.critical { background:#fde8e8; color:#8b1a1a; }
-.audit-badge.high { background:#fef3e2; color:#7a4a0a; }
-.audit-badge.medium { background:var(--accent3); color:var(--accent); }
-.audit-badge.low { background:#e4f0eb; color:#1a5c3a; }
-.audit-body { display:none; padding:0 20px 20px 38px; font-size:12.5px; color:var(--ink3); line-height:1.75; border-top:1px solid var(--border2); }
-.audit-body.open { display:block; }
-.audit-impact { margin-top:12px; padding:12px 16px; background:var(--surface2); border-radius:var(--r-sm); border-left:3px solid var(--accent); }
-.audit-impact strong { font-size:10px; font-weight:700; color:var(--ink2); text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:4px; }
-
-/* ══════════════════════════════════════════════
-   BEFORE / AFTER COMPARISON
-══════════════════════════════════════════════ */
-.ba-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-.ba-card { border-radius:var(--r-md); overflow:hidden; border:1px solid var(--border); }
-.ba-head { padding:14px 20px; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; display:flex; align-items:center; gap:8px; }
-.ba-head.before { background:#fde8e8; color:#8b1a1a; }
-.ba-head.after { background:#e4f0eb; color:#1a5c3a; }
-.ba-body { padding:24px; background:#fff; font-size:13px; color:var(--ink3); line-height:1.7; }
-.ba-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
-.ba-list li { display:flex; gap:10px; align-items:flex-start; }
-.ba-list li::before { content:''; width:16px; height:16px; border-radius:50%; flex-shrink:0; margin-top:2px; }
-.ba-list.before li::before { background:#fde8e8; content:'✕'; display:flex; align-items:center; justify-content:center; font-size:8px; color:#8b1a1a; font-weight:700; }
-.ba-list.after li::before { background:#e4f0eb; content:'✓'; display:flex; align-items:center; justify-content:center; font-size:8px; color:#1a5c3a; font-weight:700; }
-
-/* ══════════════════════════════════════════════
-   RECOMMENDATIONS LIST
-══════════════════════════════════════════════ */
-.rec-list { display:flex; flex-direction:column; border:1px solid var(--border); border-radius:var(--r-md); overflow:hidden; }
-.rec-item { padding:24px 28px; background:#fff; border-bottom:1px solid var(--border2); display:grid; grid-template-columns:40px 1fr; gap:20px; align-items:start; transition:background var(--transition); }
-.rec-item:last-child { border-bottom:none; }
-.rec-item:hover { background:var(--surface2); }
-.rec-num { width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff; font-family:var(--serif); font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.rec-title { font-size:14.5px; font-weight:600; color:var(--ink); margin-bottom:6px; }
-.rec-body { font-size:12.5px; color:var(--ink3); line-height:1.7; margin-bottom:12px; }
-.rec-tags { display:flex; gap:6px; flex-wrap:wrap; }
-.rec-tag { font-size:9px; font-weight:600; padding:3px 9px; border-radius:100px; background:var(--surface2); color:var(--ink3); letter-spacing:0.05em; text-transform:uppercase; }
-.rec-priority { font-size:9px; font-weight:700; padding:3px 10px; border-radius:100px; letter-spacing:0.05em; text-transform:uppercase; border:1px solid; }
-.rec-priority.p1 { background:#fde8e8; color:#8b1a1a; border-color:#f5c6c6; }
-.rec-priority.p2 { background:#fef3e2; color:#7a4a0a; border-color:#f0d8a8; }
-.rec-priority.p3 { background:var(--accent3); color:var(--accent); border-color:#b8d0e8; }
-
-/* ══════════════════════════════════════════════
-   INFORMATION ARCHITECTURE OVERVIEW
-══════════════════════════════════════════════ */
-.ia-wrap { background:#fff; border:1px solid var(--border); border-radius:var(--r-md); padding:28px 24px; overflow-x:auto; }
-.ia-title { font-size:11px; font-weight:600; color:var(--ink4); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:24px; }
-.ia-tree { display:flex; gap:0; align-items:flex-start; min-width:760px; }
-.ia-col { flex:1; }
-.ia-root { background:var(--accent); color:#fff; padding:10px 12px; border-radius:var(--r-sm); text-align:center; font-size:12px; font-weight:600; margin-bottom:16px; letter-spacing:0.03em; }
-.ia-sub { display:flex; flex-direction:column; gap:6px; }
-.ia-node { background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:7px 10px; font-size:11px; color:var(--ink2); font-weight:500; text-align:center; position:relative; }
-.ia-divider { width:30px; flex-shrink:0; display:flex; align-items:flex-start; justify-content:center; padding-top:10px; color:var(--border); font-size:20px; font-weight:300; }
-
-/* ══════════════════════════════════════════════
-   HI-FI BROWSER FRAME
-══════════════════════════════════════════════ */
-.wf-section { background:var(--surface2); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; }
-.wf-toolbar { background:var(--ink); padding:10px 16px; display:flex; align-items:center; gap:8px; }
-.wf-dot { width:10px; height:10px; border-radius:50%; }
-.wf-url { flex:1; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); border-radius:4px; padding:4px 10px; color:rgba(255,255,255,0.4); font-size:10px; }
-.wf-page { background:#fff; }
-.wf-nav { background:#1a3a5c; height:52px; display:flex; align-items:center; padding:0 24px; gap:16px; }
-.wf-nav-logo { background:rgba(255,255,255,0.12); border-radius:4px; padding:6px 12px; color:rgba(255,255,255,0.7); font-size:11px; font-weight:600; }
-.wf-nav-links { display:flex; gap:2px; margin:0 auto; }
-.wf-nav-links span { padding:6px 12px; font-size:10px; color:rgba(255,255,255,0.5); border-radius:3px; cursor:default; letter-spacing:0.03em; }
-.wf-nav-links span:hover { background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.8); }
-.wf-nav-actions { display:flex; gap:6px; align-items:center; }
-.wf-search-btn { width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-size:11px; }
-.wf-login-btn { background:#2d6a9f; border-radius:4px; padding:5px 10px; color:rgba(255,255,255,0.8); font-size:10px; font-weight:600; }
-.wf-hero { background:linear-gradient(135deg,#1a3a5c 0%,#0d2540 100%); padding:40px 24px 32px; position:relative; overflow:hidden; }
-.wf-hero::after { content:''; position:absolute; right:0; top:0; width:40%; height:100%; background:rgba(255,255,255,0.02); clip-path:polygon(20% 0,100% 0,100% 100%,0 100%); }
-.wf-journey { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
-.wf-journey span { padding:4px 10px; border-radius:100px; font-size:9px; font-weight:600; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.15); cursor:default; transition:all 0.15s; letter-spacing:0.04em; }
-.wf-journey span.wj-active { background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.25); }
-.wf-hero-label { font-size:9px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:8px; }
-.wf-hero-h1 { font-family:var(--serif); font-size:28px; color:#fff; line-height:1.1; margin-bottom:6px; }
-.wf-hero-h1 em { font-style:italic; color:rgba(255,255,255,0.5); }
-.wf-hero-sub { font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:16px; line-height:1.6; max-width:400px; }
-.wf-accred { display:inline-flex; align-items:center; gap:6px; background:rgba(26,92,58,0.6); border:1px solid rgba(26,92,58,0.8); border-radius:4px; padding:4px 10px; font-size:9px; font-weight:600; color:#6fcf97; margin-bottom:16px; }
-.wf-ctas { display:flex; gap:8px; margin-bottom:24px; }
-.wf-cta-primary { background:#2d6a9f; color:#fff; padding:9px 18px; border-radius:5px; font-size:11px; font-weight:600; border:none; cursor:pointer; }
-.wf-cta-secondary { background:transparent; color:rgba(255,255,255,0.65); padding:9px 16px; border-radius:5px; font-size:11px; font-weight:500; border:1px solid rgba(255,255,255,0.2); cursor:pointer; }
-.wf-stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.07); border-radius:6px; overflow:hidden; }
-.wf-stat { background:rgba(255,255,255,0.03); padding:12px 8px; text-align:center; }
-.wf-stat-n { font-family:var(--serif); font-size:18px; color:#fff; line-height:1; }
-.wf-stat-l { font-size:8px; color:rgba(255,255,255,0.35); margin-top:3px; }
-.wf-qa { padding:20px 24px; background:var(--surface2); border-bottom:1px solid var(--border); }
-.wf-qa-label { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink4); margin-bottom:10px; }
-.wf-qa-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; }
-.wf-qa-item { background:#fff; border:1px solid var(--border); border-radius:8px; padding:12px 6px; text-align:center; cursor:default; transition:all 0.12s; }
-.wf-qa-item:hover { border-color:var(--accent2); background:var(--accent3); }
-.wf-qa-icon { font-size:16px; margin-bottom:4px; display:block; }
-.wf-qa-text { font-size:8px; color:var(--ink3); line-height:1.3; font-weight:500; }
-.wf-updates { padding:20px 24px; background:#fff; border-bottom:1px solid var(--border); }
-.wf-section-hd { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
-.wf-section-hd h3 { font-size:13px; font-weight:600; color:var(--ink); }
-.wf-section-hd a { font-size:10px; color:var(--accent2); text-decoration:none; font-weight:500; }
-.wf-tabs { display:flex; gap:2px; background:var(--surface2); border-radius:5px; padding:2px; margin-bottom:12px; width:fit-content; }
-.wf-tab { padding:4px 10px; font-size:9px; font-weight:600; color:var(--ink3); border-radius:4px; cursor:default; letter-spacing:0.04em; text-transform:uppercase; }
-.wf-tab.wt-active { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,0.08); }
-.wf-notice-item { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--border2); }
-.wf-notice-item:last-child { border-bottom:none; }
-.wf-notice-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
-.wf-notice-text { font-size:11px; color:var(--ink); flex:1; line-height:1.4; }
-.wf-notice-date { font-size:9px; color:var(--ink4); white-space:nowrap; }
-.wf-notice-tag { font-size:8px; font-weight:600; padding:2px 6px; border-radius:10px; white-space:nowrap; letter-spacing:0.04em; }
-.wf-courses { padding:20px 24px; background:var(--surface2); border-bottom:1px solid var(--border); }
-.wf-course-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.wf-course-card { border-radius:8px; padding:14px; border:1px solid; }
-.wf-course-deg { font-family:var(--serif); font-size:18px; font-weight:400; line-height:1; }
-.wf-course-name { font-size:9px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-top:4px; opacity:0.6; }
-.wf-course-arrow { font-size:10px; opacity:0.4; float:right; margin-top:-22px; }
-.wf-about { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--border); }
-.wf-about-left { padding:24px; background:#fff; }
-.wf-about-right { background:var(--ink); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; min-height:160px; }
-.wf-tour-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(26,58,92,0.8),rgba(13,37,64,0.9)); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; }
-.wf-tour-icon { width:36px; height:36px; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#fff; }
-.wf-tour-label { font-size:9px; font-weight:600; color:rgba(255,255,255,0.7); letter-spacing:0.08em; text-transform:uppercase; }
-.wf-about-label { font-size:9px; font-weight:600; letter-spacing:0.12em; color:var(--ink4); text-transform:uppercase; margin-bottom:8px; }
-.wf-about-title { font-family:var(--serif); font-size:18px; color:var(--ink); margin-bottom:10px; line-height:1.3; }
-.wf-body-line { height:6px; border-radius:3px; background:var(--surface3); margin-bottom:6px; }
-.wf-text-btn { display:inline-flex; align-items:center; gap:4px; font-size:10px; font-weight:600; color:var(--accent2); margin-top:10px; text-decoration:none; }
-.wf-events { padding:20px 24px; background:#fff; border-bottom:1px solid var(--border); }
-.wf-event-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.wf-event-card { border:1px solid var(--border); border-radius:8px; padding:12px; display:flex; gap:10px; align-items:flex-start; background:var(--surface2); }
-.wf-event-date { background:var(--accent); border-radius:6px; padding:6px 8px; text-align:center; flex-shrink:0; min-width:38px; }
-.wf-event-day { font-family:var(--serif); font-size:18px; color:#fff; line-height:1; }
-.wf-event-mon { font-size:8px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.05em; }
-.wf-event-info-tag { font-size:8px; font-weight:600; padding:2px 6px; border-radius:10px; margin-bottom:4px; display:inline-block; }
-.wf-event-info-title { font-size:11px; color:var(--ink); font-weight:500; line-height:1.4; }
-.wf-trust { background:var(--ink); padding:24px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border-bottom:1px solid rgba(255,255,255,0.05); }
-.wf-trust-item { padding:20px; text-align:center; border-right:1px solid rgba(255,255,255,0.06); }
-.wf-trust-item:last-child { border-right:none; }
-.wf-trust-val { font-family:var(--serif); font-size:22px; margin-bottom:4px; line-height:1; }
-.wf-trust-label { font-size:9px; letter-spacing:0.08em; text-transform:uppercase; }
-.wf-footer { background:#0d1a26; padding:32px 24px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:24px; }
-.wf-footer-brand { font-family:var(--serif); font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:8px; }
-.wf-footer-tagline { font-size:9px; color:rgba(255,255,255,0.2); line-height:1.6; max-width:140px; margin-bottom:12px; }
-.wf-footer-col-title { font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:8px; }
-.wf-footer-link { font-size:9px; color:rgba(255,255,255,0.2); display:block; margin-bottom:5px; line-height:1.4; }
-.wf-footer-bottom { background:#080f17; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; }
-.wf-footer-copy { font-size:8px; color:rgba(255,255,255,0.15); }
-
-/* ══════════════════════════════════════════════
-   DESIGN PANEL
-══════════════════════════════════════════════ */
-.design-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px; }
-.swatch-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
-.swatch { width:44px; height:44px; border-radius:6px; border:1px solid rgba(0,0,0,0.05); }
-.swatch-label { font-size:9px; color:var(--ink4); margin-top:4px; text-align:center; font-family:var(--sans); }
-.color-item { display:flex; flex-direction:column; align-items:center; }
-.type-row { background:#fff; border:1px solid var(--border); border-radius:var(--r-md); padding:24px; }
-.type-sample { margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid var(--border2); }
-.type-sample:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
-.type-meta { font-size:10px; color:var(--ink4); margin-bottom:4px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; }
-
-/* ══════════════════════════════════════════════
-   LO-FI ANNOTATIONS
-══════════════════════════════════════════════ */
-.lofi-wrap { max-width:760px; margin:0 auto; }
-.lofi-card { background:#fff; border:1px solid var(--border); border-radius:var(--r-md); overflow:hidden; margin-bottom:16px; }
-.lofi-head { display:flex; align-items:center; justify-content:space-between; padding:12px 18px; background:var(--surface2); border-bottom:1px solid var(--border2); }
-.lofi-head-title { font-size:12px; font-weight:600; color:var(--ink2); }
-.lofi-badge { font-size:9px; font-weight:600; padding:2px 8px; border-radius:20px; background:var(--accent3); color:var(--accent); letter-spacing:0.05em; }
-.lofi-badge.new { background:#fef3e2; color:#7a4a0a; }
-.lofi-body { padding:18px; }
-.lofi-note { margin:0 18px 18px; padding:10px 14px; background:var(--accent3); border-left:3px solid var(--accent2); border-radius:0 var(--r-sm) var(--r-sm) 0; font-size:12px; color:var(--ink2); line-height:1.65; }
-.lofi-note strong { font-weight:600; color:var(--accent); font-size:11px; display:block; margin-bottom:3px; text-transform:uppercase; letter-spacing:0.06em; }
-.lf-block { background:var(--surface2); border:1px dashed var(--border); border-radius:6px; }
-.lf-dark { background:var(--surface3); border:1px dashed var(--border); }
-.lf-text { height:7px; border-radius:3px; background:var(--border2); margin-bottom:6px; }
-.lf-label { font-size:10px; color:var(--ink4); font-weight:400; }
-.lf-label-bold { font-size:10px; color:var(--ink3); font-weight:600; }
-.lf-row { display:flex; gap:8px; align-items:stretch; }
-.lf-pill { display:inline-block; padding:3px 9px; border-radius:20px; font-size:9px; border:1px dashed var(--border); color:var(--ink4); margin-right:3px; margin-bottom:4px; }
-.lf-pill-on { background:var(--surface3); color:var(--ink2); border-color:var(--border); }
-.lf-tab { display:inline-block; padding:3px 9px; border-radius:4px; font-size:9px; color:var(--ink4); margin-right:2px; }
-.lf-tab-on { background:#fff; color:var(--ink2); border:1px solid var(--border2); box-shadow:0 1px 3px rgba(0,0,0,0.06); }
-.lf-stat { flex:1; background:var(--surface2); border:1px dashed var(--border); border-radius:6px; padding:8px 6px; text-align:center; }
-.lf-qa { flex:1; background:var(--surface2); border:1px dashed var(--border); border-radius:6px; padding:8px 4px; text-align:center; min-height:50px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
-.lf-icon-ph { width:18px; height:18px; background:var(--border); border-radius:50%; }
-.lf-course { flex:1; min-width:0; background:var(--surface2); border:1px dashed var(--border); border-radius:6px; padding:10px 8px; }
-.lf-notice { display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px solid var(--border2); }
-.lf-notice:last-child { border-bottom:none; }
-.lf-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
-.lf-event { flex:1; background:var(--surface2); border:1px dashed var(--border); border-radius:6px; padding:8px; display:flex; gap:8px; }
-.lf-date { width:30px; flex-shrink:0; background:var(--surface3); border:1px dashed var(--border); border-radius:5px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:5px 0; gap:2px; }
-.lf-trust { flex:1; background:var(--surface3); border:1px dashed var(--border); border-radius:6px; padding:14px; text-align:center; }
-.lf-sep { height:1px; background:var(--border2); margin:10px 0; }
-.lf-scroll-seq { background:var(--surface2); border:1px solid var(--border); border-radius:var(--r-md); padding:16px; margin-top:20px; }
-.lf-seq-item { display:flex; gap:10px; align-items:center; padding:6px 0; border-bottom:1px solid var(--border2); }
-.lf-seq-item:last-child { border-bottom:none; }
-.lf-seq-num { width:22px; height:22px; border-radius:50%; background:var(--accent); color:#fff; font-family:var(--serif); font-size:11px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.lf-legend { display:flex; flex-wrap:wrap; gap:14px; padding:12px 16px; background:var(--surface2); border:1px solid var(--border); border-radius:var(--r-md); margin-bottom:20px; font-size:11px; color:var(--ink3); }
-.lf-legend-item { display:flex; align-items:center; gap:6px; }
-.lf-legend-dash { width:20px; height:0; border-top:1px dashed var(--border); }
-
-/* ══════════════════════════════════════════════
-   EXPECTED IMPACT
-══════════════════════════════════════════════ */
-.impact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:32px; }
-.impact-card { border:1px solid var(--border); border-radius:var(--r-md); padding:20px; background:#fff; text-align:center; transition:var(--transition); }
-.impact-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(26,58,92,0.08); }
-.impact-num { font-family:var(--serif); font-size:32px; line-height:1; margin-bottom:4px; }
-.impact-label { font-size:12px; color:var(--ink3); line-height:1.5; }
-.impact-card.green .impact-num { color:var(--green); }
-.impact-card.blue .impact-num { color:var(--accent2); }
-.impact-card.gold .impact-num { color:var(--gold); }
-
-/* ══════════════════════════════════════════════
-   SCROLL REVEAL & UTILITIES
-══════════════════════════════════════════════ */
-.divider { height:1px; background:var(--border); margin:40px 0; }
-.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity:1; transform:translateY(0); }
-.reveal-delay-1 { transition-delay:0.1s; }
-.reveal-delay-2 { transition-delay:0.2s; }
-.reveal-delay-3 { transition-delay:0.3s; }
-
-/* ══════════════════════════════════════════════
-   BACK CTA
-══════════════════════════════════════════════ */
-.back-cta { text-align:center; padding:56px 24px 72px; }
-.back-cta-btn {
-  display:inline-flex; align-items:center; gap:8px;
-  padding:14px 28px; background:var(--accent); color:#fff;
-  text-decoration:none; border-radius:10px;
-  font-size:14px; font-weight:600;
-  transition:background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow:0 4px 16px rgba(26,58,92,0.25);
-}
-.back-cta-btn:hover { background:var(--accent2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,58,92,0.35); }
-.back-cta-btn svg { width:16px; height:16px; }
-
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
-footer {
-  background:var(--ink); padding:36px 24px; text-align:center;
-  border-top:1px solid rgba(255,255,255,0.06);
-}
-footer p { font-family:var(--serif); font-size:14px; color:rgba(255,255,255,0.3); margin-bottom:6px; }
-footer span { font-size:11px; color:rgba(255,255,255,0.15); }
-
-/* ══════════════════════════════════════════════
-   RESPONSIVE LAYOUTS
-══════════════════════════════════════════════ */
-@media (max-width:900px) {
-  .case-nav { width:calc(100% - 32px); top:12px; height:48px; }
-  .case-nav-tag { display:none; }
-
-  .hero { padding:96px 20px 56px; }
-  .hero-inner { display:flex; flex-direction:column; gap:28px; }
-  .hero-stats { grid-template-columns:repeat(2,1fr); width:100%; max-width:none; }
-  .score-badge { align-self:stretch; }
-
-  .problem-grid { grid-template-columns:1fr; }
-  .problem-card.big { grid-column:1; }
-  .ba-grid { grid-template-columns:1fr; }
-  .rec-item { grid-template-columns:1fr; gap:12px; }
-  .rec-num { margin-bottom:4px; }
-  .design-grid { grid-template-columns:1fr; }
-  .impact-grid { grid-template-columns:1fr; }
-
-  .wf-qa-grid { grid-template-columns:repeat(3,1fr); }
-  .wf-course-grid { grid-template-columns:1fr; }
-  .wf-event-grid { grid-template-columns:1fr; }
-  .wf-about { grid-template-columns:1fr; }
-  .wf-footer { grid-template-columns:1fr; }
-  .wf-trust { grid-template-columns:1fr; }
-}
-
-@media (max-width:480px) {
-  .swatch-row { justify-content:center; }
-  .swatch { width:38px; height:38px; }
-  .palette-row { grid-template-columns:repeat(2,1fr); }
-  .hero-stats { grid-template-columns:1fr; }
-}
-</style>
+<link rel="stylesheet" href="assets/css/cases/StAndrews_casestudy_full.css">
+<link rel="stylesheet" href="assets/css/cases/StAndrews_casestudy_full-layout.css">
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<script src="assets/js/main.js" defer></script>
+<link rel="stylesheet" href="assets/css/site-shell.css">
 </head>
-<body>
+<body class="case-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" id="mainNav">
+  <nav class="site-navbar" aria-label="Main navigation">
+    <a href="index.html" class="site-logo" aria-label="Aditya Nair, home">AN<span aria-hidden="true">.</span></a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-links" hidden>Menu <span aria-hidden="true">☰</span></button>
+    <ul class="site-links" id="site-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="experience.html">Experience</a></li>
+    </ul>
+    <a href="mailto:aditya.gamedesigner0402@gmail.com" class="site-contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main-content"><div class="page-tools"><nav class="site-breadcrumb" aria-label="Breadcrumb"><a href="projects.html">← All projects</a><span aria-hidden="true">/</span><span aria-current="page">St. Andrew’s College</span></nav><details class="section-menu"><summary><span class="section-menu-label">On this page</span><span data-current-section>Overview</span><span aria-hidden="true">⌄</span></summary><nav aria-label="Page sections"><a href="#section-1" data-section-link>A prestigious college with a digital identity crisis</a><a href="#section-2" data-section-link>What's broken, and why it matters</a><a href="#section-3" data-section-link>Current state vs proposed direction</a><a href="#section-4" data-section-link>Simplified navigation structure</a><a href="#section-5" data-section-link>Five strategic changes, in priority order</a><a href="#section-6" data-section-link>Layout logic before visual design</a><a href="#section-7" data-section-link>The proposed homepage, designed</a><a href="#section-8" data-section-link>Proposed colour &amp; typography</a><a href="#section-9" data-section-link>Measurable outcomes from the redesign</a></nav></details></div>
 
 <!-- ═══════ STICKY NAV ═══════ -->
-<nav class="case-nav">
-  <a href="index.html#projects" class="case-nav-back" id="back-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-    Back
-  </a>
-  <div class="case-nav-brand">St. Andrew's College</div>
-  <div class="case-nav-tag">UX Case Study</div>
-</nav>
+
 
 <!-- ═══════ HERO ═══════ -->
 <header class="hero">
@@ -518,7 +77,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="overview">
     <div class="cs-wrap">
       <p class="section-label">01 — Project Overview</p>
-      <h2 class="section-title">A prestigious college with a digital identity crisis</h2>
+      <h2 class="section-title" id="section-1" tabindex="-1" data-reading-section>A prestigious college with a digital identity crisis</h2>
       <p class="section-sub">St. Andrew's College has held a NAAC A+ accreditation since 2023 and a legacy spanning nearly a century. Yet its website — the first point of contact for thousands of prospective students every year — fails to communicate that prestige, or serve its users effectively.</p>
 
       <div class="problem-grid">
@@ -526,7 +85,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <p class="pc-num">01</p>
           <p class="pc-label">Core Problem</p>
           <h3 class="pc-title">The website tries to be an archive, a noticeboard, and a brochure simultaneously — and succeeds at none of them.</h3>
-          <p class="pc-body" style="margin-top:12px">With 60+ navigation links, 150+ notice entries on a single homepage, and critical information buried in un-searchable PDFs, users cannot complete basic tasks like finding fee structures, checking exam dates, or understanding how to apply. The design has no clear hierarchy, no defined user journeys, and no visual identity that reflects the college's standing.</p>
+          <p class="pc-body layout-1">With 60+ navigation links, 150+ notice entries on a single homepage, and critical information buried in un-searchable PDFs, users cannot complete basic tasks like finding fee structures, checking exam dates, or understanding how to apply. The design has no clear hierarchy, no defined user journeys, and no visual identity that reflects the college's standing.</p>
         </div>
         <div class="problem-card reveal reveal-delay-1">
           <p class="pc-num">02</p>
@@ -548,94 +107,82 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="audit">
     <div class="cs-wrap">
       <p class="section-label">02 — UX Audit</p>
-      <h2 class="section-title">What's broken, and why it matters</h2>
+      <h2 class="section-title" id="section-2" tabindex="-1" data-reading-section>What's broken, and why it matters</h2>
       <p class="section-sub">A systematic heuristic evaluation of the current homepage and navigation, rated by severity. Click each item to see the full detail and recommended fix.</p>
 
       <div class="audit-grid">
 
-        <div class="audit-item reveal" onclick="toggleAudit(this)">
-          <div class="audit-head">
+        <details class="audit-item reveal">
+          <summary class="audit-head">
             <div class="audit-sev critical"></div>
             <span class="audit-cat">Navigation</span>
             <span class="audit-title">Dual navigation bar with 60+ items</span>
             <span class="audit-badge critical">Critical</span>
-          </div>
-          <div class="audit-body">
+          </summary><div class="audit-body">
             <p>The site features two separate navigation bars stacked atop each other — a utility bar with links to Administration, UNESCO, SOP, and Knimbus, and a main menu with 10 top-level dropdowns each containing 5–20 sub-items. This violates the principle of progressive disclosure and creates immediate cognitive overload for any first-time visitor.</p>
             <div class="audit-impact"><strong>User Impact</strong>Prospective students cannot find "how to apply" without exploring multiple dropdown paths. The information exists, but navigation friction makes it effectively invisible.</div>
             <div class="audit-impact"><strong>Recommended Fix</strong>Consolidate to a single navbar with 5 primary items (About, Admissions, Academics, Student Life, Contact) and a global search. Move utility links to the footer.</div>
-          </div>
-        </div>
+</div></details>
 
-        <div class="audit-item reveal" onclick="toggleAudit(this)">
-          <div class="audit-head">
+        <details class="audit-item reveal">
+          <summary class="audit-head">
             <div class="audit-sev critical"></div>
             <span class="audit-cat">Homepage</span>
             <span class="audit-title">150+ unfiltered notices as the primary homepage content</span>
             <span class="audit-badge critical">Critical</span>
-          </div>
-          <div class="audit-body">
+          </summary><div class="audit-body">
             <p>Scrolling the homepage reveals an enormous wall of PDF notices dating from 2021 to present, with no categorisation, search, or filtering. Critical 2026 admission notices are interspersed with 2022 exam timetables and 2021 grade card announcements. The list has no visual hierarchy — everything is bold text, creating sensory noise.</p>
             <div class="audit-impact"><strong>User Impact</strong>Students with urgent time-sensitive questions (exam dates, admission deadlines) cannot quickly find relevant information. The cognitive cost of scanning 150+ items causes abandonment.</div>
             <div class="audit-impact"><strong>Recommended Fix</strong>Replace with a tabbed "Latest Updates" widget showing the 5 most recent items per category (Junior College / Degree College / General). Archive older items in a searchable notices database.</div>
-          </div>
-        </div>
+</div></details>
 
-        <div class="audit-item reveal" onclick="toggleAudit(this)">
-          <div class="audit-head">
+        <details class="audit-item reveal">
+          <summary class="audit-head">
             <div class="audit-sev critical"></div>
             <span class="audit-cat">Visual Hierarchy</span>
             <span class="audit-title">No hero, no CTA, no value proposition above the fold</span>
             <span class="audit-badge critical">Critical</span>
-          </div>
-          <div class="audit-body">
+          </summary><div class="audit-body">
             <p>The homepage opens with a plain text heading "Welcome to St. Andrew's College of Arts, Science & Commerce" on a white background, followed immediately by the notice wall. There is no imagery, no accreditation badge, no statistics, and no directional call-to-action. A prospective student arriving for the first time has no clear next step.</p>
             <div class="audit-impact"><strong>User Impact</strong>Bounce rate is likely high from prospective students. The A+ NAAC grade — the single most important trust signal for Indian college admissions — is invisible unless you know to look for it in a small table mid-page.</div>
             <div class="audit-impact"><strong>Recommended Fix</strong>Create a full-bleed hero with campus photography, the NAAC A+ badge prominently displayed, key stats, and two primary CTAs: "Apply Now" and "Explore Courses".</div>
-          </div>
-        </div>
+</div></details>
 
-        <div class="audit-item reveal" onclick="toggleAudit(this)">
-          <div class="audit-head">
+        <details class="audit-item reveal">
+          <summary class="audit-head">
             <div class="audit-sev high"></div>
             <span class="audit-cat">Accessibility</span>
             <span class="audit-title">user-scalable=0 disables pinch-to-zoom on mobile</span>
             <span class="audit-badge high">High</span>
-          </div>
-          <div class="audit-body">
+          </summary><div class="audit-body">
             <p>The viewport meta tag contains <code>user-scalable=0</code>, which prevents users from zooming on mobile devices. This is a direct violation of WCAG 2.1 Success Criterion 1.4.4 (Resize Text) and is especially harmful for users with low vision. It also signals a poor approach to responsive design.</p>
             <div class="audit-impact"><strong>User Impact</strong>Users with visual impairments cannot increase text size. The small font sizes used throughout the site (particularly in notices and dropdowns) become effectively unreadable on mobile.</div>
             <div class="audit-impact"><strong>Recommended Fix</strong>Remove user-scalable=0 immediately. Implement proper responsive design so zoom doesn't break layouts rather than disabling zoom.</div>
-          </div>
-        </div>
+</div></details>
 
-        <div class="audit-item reveal" onclick="toggleAudit(this)">
-          <div class="audit-head">
+        <details class="audit-item reveal">
+          <summary class="audit-head">
             <div class="audit-sev high"></div>
             <span class="audit-cat">Information Access</span>
             <span class="audit-title">Critical information locked in unindexed PDFs</span>
             <span class="audit-badge high">High</span>
-          </div>
-          <div class="audit-body">
+          </summary><div class="audit-body">
             <p>Fee structures, academic calendars, syllabi, exam timetables, merit lists, and attendance notices are all delivered as downloadable PDFs. This means: (1) the content cannot be indexed by Google, so students searching for "St Andrews College fee structure" cannot find it via search; (2) PDFs are inaccessible to screen readers; (3) PDFs require download before reading, creating significant friction on mobile.</p>
             <div class="audit-impact"><strong>User Impact</strong>The college is invisible to search engines for its most queried content. Students from remote areas on slow connections cannot easily download large PDFs.</div>
             <div class="audit-impact"><strong>Recommended Fix</strong>Publish key content as structured HTML pages. Academic calendars as iCal-compatible web pages. Merit lists as filterable HTML tables. Fee structures as formatted web content.</div>
-          </div>
-        </div>
+</div></details>
 
-        <div class="audit-item reveal" onclick="toggleAudit(this)">
-          <div class="audit-head">
+        <details class="audit-item reveal">
+          <summary class="audit-head">
             <div class="audit-sev high"></div>
             <span class="audit-cat">Mobile UX</span>
             <span class="audit-title">Desktop mega-menu fails entirely on mobile</span>
             <span class="audit-badge high">High</span>
-          </div>
-          <div class="audit-body">
+          </summary><div class="audit-body">
             <p>The multi-level dropdown navigation is designed for desktop hover interactions. On mobile touch interfaces, accessing nested dropdown items requires multiple taps with no visual affordance, and the menus frequently close before users can reach sub-items. There is no mobile-specific navigation pattern (e.g. hamburger drawer with accordion sections).</p>
             <div class="audit-impact"><strong>User Impact</strong>Given that India has >80% mobile internet usage, the majority of the college's audience is using a navigation system that functionally does not work for them.</div>
             <div class="audit-impact"><strong>Recommended Fix</strong>Implement a full-screen mobile drawer with accordion navigation. Each primary item expands to reveal sub-items on tap, with clear back/close controls.</div>
-          </div>
-        </div>
+</div></details>
 
       </div>
     </div>
@@ -645,7 +192,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border">
     <div class="cs-wrap">
       <p class="section-label">02b — Before &amp; After</p>
-      <h2 class="section-title">Current state vs proposed direction</h2>
+      <h2 class="section-title" id="section-3" tabindex="-1" data-reading-section>Current state vs proposed direction</h2>
       <div class="ba-grid">
         <div class="ba-card reveal">
           <div class="ba-head before">✕ &nbsp;Current Homepage</div>
@@ -689,7 +236,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="ia">
     <div class="cs-wrap">
       <p class="section-label">03 — Information Architecture</p>
-      <h2 class="section-title">Simplified navigation structure</h2>
+      <h2 class="section-title" id="section-4" tabindex="-1" data-reading-section>Simplified navigation structure</h2>
       <p class="section-sub">Collapsing 10 top-level navigation items and 60+ links into a focused 5-item primary navigation with logical grouping.</p>
       <div class="ia-wrap reveal">
         <div class="ia-title">Proposed primary navigation — 5 top-level items</div>
@@ -754,7 +301,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
             </div>
           </div>
         </div>
-        <p style="font-size:11px;color:var(--ink4);margin-top:20px;padding-top:16px;border-top:1px solid var(--border2)">Utility links (Login, NIRF, UNESCO, Knimbus) moved to footer or a compact utility row. Research, Mandatory Disclosure, IQAC grouped under relevant primary items or a secondary tab.</p>
+        <p class="layout-2">Utility links (Login, NIRF, UNESCO, Knimbus) moved to footer or a compact utility row. Research, Mandatory Disclosure, IQAC grouped under relevant primary items or a secondary tab.</p>
       </div>
     </div>
   </section>
@@ -763,14 +310,14 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="recommendations">
     <div class="cs-wrap">
       <p class="section-label">04 — Recommendations</p>
-      <h2 class="section-title">Five strategic changes, in priority order</h2>
+      <h2 class="section-title" id="section-5" tabindex="-1" data-reading-section>Five strategic changes, in priority order</h2>
       <p class="section-sub">Each recommendation addresses a specific failure mode identified in the audit, with clear rationale and expected outcome.</p>
 
       <div class="rec-list">
         <div class="rec-item reveal">
           <div class="rec-num">1</div>
           <div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+            <div class="layout-3">
               <div class="rec-title">Fix accessibility violations immediately</div>
               <span class="rec-priority p1">P0 · Urgent</span>
             </div>
@@ -781,7 +328,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
         <div class="rec-item reveal">
           <div class="rec-num">2</div>
           <div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+            <div class="layout-4">
               <div class="rec-title">Consolidate navigation to 5 primary items with search</div>
               <span class="rec-priority p1">P1 · High</span>
             </div>
@@ -792,7 +339,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
         <div class="rec-item reveal">
           <div class="rec-num">3</div>
           <div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+            <div class="layout-5">
               <div class="rec-title">Redesign homepage around clear user journeys</div>
               <span class="rec-priority p1">P1 · High</span>
             </div>
@@ -803,7 +350,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
         <div class="rec-item reveal">
           <div class="rec-num">4</div>
           <div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+            <div class="layout-6">
               <div class="rec-title">Convert critical PDFs to web-native content</div>
               <span class="rec-priority p2">P2 · Medium</span>
             </div>
@@ -814,7 +361,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
         <div class="rec-item reveal">
           <div class="rec-num">5</div>
           <div>
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+            <div class="layout-7">
               <div class="rec-title">Establish and roll out a visual design system</div>
               <span class="rec-priority p2">P2 · Medium</span>
             </div>
@@ -830,7 +377,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="lofi">
     <div class="cs-wrap">
       <p class="section-label">05 — Lo-fi Wireframe</p>
-      <h2 class="section-title">Layout logic before visual design</h2>
+      <h2 class="section-title" id="section-6" tabindex="-1" data-reading-section>Layout logic before visual design</h2>
       <p class="section-sub">A low-fidelity wireframe strips colour, photography, and typography decisions away — leaving only the structural questions: what goes where, in what order, and why. Every zone is annotated with the reasoning behind its placement and interaction pattern.</p>
     </div>
 
@@ -839,9 +386,9 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
       <!-- Legend -->
       <div class="lf-legend reveal">
         <div class="lf-legend-item"><div class="lf-legend-dash"></div><span>Content zone boundary</span></div>
-        <div class="lf-legend-item"><div style="width:20px;height:8px;background:var(--surface3);border-radius:2px"></div><span>Placeholder / grey block</span></div>
-        <div class="lf-legend-item"><span style="font-size:9px;font-weight:600;background:var(--accent3);color:var(--accent);padding:2px 7px;border-radius:20px">note</span><span>Design annotation</span></div>
-        <div class="lf-legend-item"><span style="font-size:9px;font-weight:600;background:#fef3e2;color:#7a4a0a;padding:2px 7px;border-radius:20px">new</span><span>New pattern not in current site</span></div>
+        <div class="lf-legend-item"><div class="layout-8"></div><span>Placeholder / grey block</span></div>
+        <div class="lf-legend-item"><span class="layout-9">note</span><span>Design annotation</span></div>
+        <div class="lf-legend-item"><span class="layout-10">new</span><span>New pattern not in current site</span></div>
       </div>
 
       <!-- 1. NAV -->
@@ -851,20 +398,20 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <span class="lofi-badge">Persistent on scroll</span>
         </div>
         <div class="lofi-body">
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-            <div class="lf-block" style="padding:6px 12px;width:130px;flex-shrink:0;text-align:center">
+          <div class="layout-11">
+            <div class="lf-block layout-12">
               <span class="lf-label-bold">Logo + wordmark</span>
             </div>
-            <div style="display:flex;gap:4px;flex:1;justify-content:center;flex-wrap:wrap;">
-              <div class="lf-block" style="padding:5px 10px"><span class="lf-label">About</span></div>
-              <div class="lf-block" style="padding:5px 10px"><span class="lf-label">Admissions</span></div>
-              <div class="lf-block" style="padding:5px 10px"><span class="lf-label">Academics</span></div>
-              <div class="lf-block" style="padding:5px 10px"><span class="lf-label">Student Life</span></div>
-              <div class="lf-block" style="padding:5px 10px"><span class="lf-label">Contact</span></div>
+            <div class="layout-13">
+              <div class="lf-block layout-14"><span class="lf-label">About</span></div>
+              <div class="lf-block layout-15"><span class="lf-label">Admissions</span></div>
+              <div class="lf-block layout-16"><span class="lf-label">Academics</span></div>
+              <div class="lf-block layout-17"><span class="lf-label">Student Life</span></div>
+              <div class="lf-block layout-18"><span class="lf-label">Contact</span></div>
             </div>
-            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0">
-              <div class="lf-block" style="width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center"><span class="lf-label" style="font-size:13px">⌕</span></div>
-              <div class="lf-block" style="padding:5px 10px;background:var(--surface3)"><span class="lf-label-bold">Login</span></div>
+            <div class="layout-19">
+              <div class="lf-block layout-20"><span class="lf-label layout-21">⌕</span></div>
+              <div class="lf-block layout-22"><span class="lf-label-bold">Login</span></div>
             </div>
           </div>
         </div>
@@ -877,10 +424,10 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <span class="lofi-head-title">② Hero — above the fold, ~340px</span>
           <span class="lofi-badge new">new — persona journey selector</span>
         </div>
-        <div class="lofi-body" style="background:var(--surface2)">
-          <div style="margin-bottom:10px">
-            <div class="lf-label" style="font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px">I am a —</div>
-            <div style="display:flex;flex-wrap:wrap;gap:4px;">
+        <div class="lofi-body layout-23">
+          <div class="layout-24">
+            <div class="lf-label layout-25">I am a —</div>
+            <div class="layout-26">
               <span class="lf-pill lf-pill-on">Prospective Student</span>
               <span class="lf-pill">Current Student</span>
               <span class="lf-pill">Parent</span>
@@ -888,26 +435,26 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
               <span class="lf-pill">Faculty</span>
             </div>
           </div>
-          <div style="margin-bottom:12px">
-            <div class="lf-label" style="font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Est. 1927 · Bandra, Mumbai</div>
-            <div class="lf-text" style="width:68%"></div>
-            <div class="lf-text" style="width:48%;opacity:.6"></div>
-            <div class="lf-text" style="width:55%;margin-top:8px;opacity:.4"></div>
-            <div class="lf-text" style="width:42%;opacity:.4"></div>
+          <div class="layout-27">
+            <div class="lf-label layout-28">Est. 1927 · Bandra, Mumbai</div>
+            <div class="lf-text layout-29"></div>
+            <div class="lf-text layout-30"></div>
+            <div class="lf-text layout-31"></div>
+            <div class="lf-text layout-32"></div>
           </div>
-          <div style="margin-bottom:12px">
-            <div class="lf-block" style="display:inline-block;padding:3px 10px;border-radius:4px;margin-bottom:9px"><span class="lf-label" style="font-size:9px">● NAAC A+ Accredited · CGPA 3.35</span></div>
-            <div class="lf-row" style="flex-wrap:wrap;gap:6px;">
-              <div class="lf-block" style="padding:8px 14px;background:var(--surface3);max-width:110px"><span class="lf-label-bold" style="font-size:10px">Apply Now →</span></div>
-              <div class="lf-block" style="padding:8px 14px;max-width:110px"><span class="lf-label" style="font-size:10px">Explore Courses</span></div>
-              <div class="lf-block" style="padding:8px 14px;max-width:110px"><span class="lf-label" style="font-size:10px">360° Tour</span></div>
+          <div class="layout-33">
+            <div class="lf-block layout-34"><span class="lf-label layout-35">● NAAC A+ Accredited · CGPA 3.35</span></div>
+            <div class="lf-row layout-36">
+              <div class="lf-block layout-37"><span class="lf-label-bold layout-38">Apply Now →</span></div>
+              <div class="lf-block layout-39"><span class="lf-label layout-40">Explore Courses</span></div>
+              <div class="lf-block layout-41"><span class="lf-label layout-42">360° Tour</span></div>
             </div>
           </div>
-          <div class="lf-row" style="gap:4px;flex-wrap:wrap;">
-            <div class="lf-stat"><div class="lf-label-bold" style="font-size:14px">50+</div><div class="lf-label" style="font-size:8px;margin-top:2px">Years of excellence</div></div>
-            <div class="lf-stat"><div class="lf-label-bold" style="font-size:14px">3,000+</div><div class="lf-label" style="font-size:8px;margin-top:2px">Students enrolled</div></div>
-            <div class="lf-stat"><div class="lf-label-bold" style="font-size:14px">15+</div><div class="lf-label" style="font-size:8px;margin-top:2px">Programmes</div></div>
-            <div class="lf-stat"><div class="lf-label-bold" style="font-size:14px">A+</div><div class="lf-label" style="font-size:8px;margin-top:2px">NAAC grade</div></div>
+          <div class="lf-row layout-43">
+            <div class="lf-stat"><div class="lf-label-bold layout-44">50+</div><div class="lf-label layout-45">Years of excellence</div></div>
+            <div class="lf-stat"><div class="lf-label-bold layout-46">3,000+</div><div class="lf-label layout-47">Students enrolled</div></div>
+            <div class="lf-stat"><div class="lf-label-bold layout-48">15+</div><div class="lf-label layout-49">Programmes</div></div>
+            <div class="lf-stat"><div class="lf-label-bold layout-50">A+</div><div class="lf-label layout-51">NAAC grade</div></div>
           </div>
         </div>
         <div class="lofi-note"><strong>Structural decision</strong>Persona selector sits above the headline — it's an interactive component that triggers content adaptation, not decorative text. "Prospective" shows Apply CTA; "Current Student" surfaces timetable + portal. 3 CTAs establish the primary user actions. Trust stats anchor the bottom of the hero before the page body begins.</div>
@@ -920,14 +467,14 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <span class="lofi-badge new">new — replaces deep navigation</span>
         </div>
         <div class="lofi-body">
-          <div class="lf-label" style="font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Quick access</div>
-          <div class="lf-row" style="gap:6px;flex-wrap:wrap;">
-            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label" style="font-size:8px">Academic Calendar</div></div>
-            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label" style="font-size:8px">Fee Structure</div></div>
-            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label" style="font-size:8px">Exam Timetable</div></div>
-            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label" style="font-size:8px">Apply Online</div></div>
-            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label" style="font-size:8px">Library &amp; Moodle</div></div>
-            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label" style="font-size:8px">Results</div></div>
+          <div class="lf-label layout-52">Quick access</div>
+          <div class="lf-row layout-53">
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-54">Academic Calendar</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-55">Fee Structure</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-56">Exam Timetable</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-57">Apply Online</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-58">Library &amp; Moodle</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-59">Results</div></div>
           </div>
         </div>
         <div class="lofi-note"><strong>Structural decision</strong>6 direct-link tiles — no sub-menus. Each resolves the top 6 user tasks found in the audit in a single click. Icon circles are placeholders; the lo-fi deliberately withholds specific icon choices so that decision happens separately. Background shift from hero signals a new content zone.</div>
@@ -940,20 +487,20 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <span class="lofi-badge new">new — replaces 150+ unfiltered list</span>
         </div>
         <div class="lofi-body">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;">
+          <div class="layout-60">
             <div class="lf-label-bold">Latest updates</div>
-            <div class="lf-label" style="font-size:9px;color:var(--accent2)">View all notices →</div>
+            <div class="lf-label layout-61">View all notices →</div>
           </div>
-          <div style="background:var(--surface2);border-radius:5px;padding:2px;display:inline-flex;gap:2px;margin-bottom:10px;border:1px solid var(--border2)">
+          <div class="layout-62">
             <div class="lf-tab lf-tab-on">All</div>
             <div class="lf-tab">Junior College</div>
             <div class="lf-tab">Degree College</div>
             <div class="lf-tab">General</div>
           </div>
           <div>
-            <div class="lf-notice"><div class="lf-dot" style="background:#2d6a9f"></div><div style="flex:1"><span class="lf-label-bold">SY Field Project Brochure 2026–27 now available</span></div><div class="lf-block" style="padding:2px 6px;border-radius:10px"><span class="lf-label" style="font-size:8px">Degree</span></div><div class="lf-label" style="font-size:9px;margin-left:8px;white-space:nowrap">Jun 23</div></div>
-            <div class="lf-notice"><div class="lf-dot" style="background:#e67e22"></div><div style="flex:1"><span class="lf-label-bold">ATKT Aided &amp; SFC Notice No.1 — June 2026 Examinations</span></div><div class="lf-block" style="padding:2px 6px;border-radius:10px"><span class="lf-label" style="font-size:8px">Exam</span></div><div class="lf-label" style="font-size:9px;margin-left:8px;white-space:nowrap">Jun 20</div></div>
-            <div class="lf-notice"><div class="lf-dot" style="background:#27ae60"></div><div style="flex:1"><span class="lf-label-bold">Allotment Report Round 3 — Arts, Commerce, Science 2026–27</span></div><div class="lf-block" style="padding:2px 6px;border-radius:10px"><span class="lf-label" style="font-size:8px">JC Admissions</span></div><div class="lf-label" style="font-size:9px;margin-left:8px;white-space:nowrap">Jun 19</div></div>
+            <div class="lf-notice"><div class="lf-dot layout-63"></div><div class="layout-64"><span class="lf-label-bold">SY Field Project Brochure 2026–27 now available</span></div><div class="lf-block layout-65"><span class="lf-label layout-66">Degree</span></div><div class="lf-label layout-67">Jun 23</div></div>
+            <div class="lf-notice"><div class="lf-dot layout-68"></div><div class="layout-69"><span class="lf-label-bold">ATKT Aided &amp; SFC Notice No.1 — June 2026 Examinations</span></div><div class="lf-block layout-70"><span class="lf-label layout-71">Exam</span></div><div class="lf-label layout-72">Jun 20</div></div>
+            <div class="lf-notice"><div class="lf-dot layout-73"></div><div class="layout-74"><span class="lf-label-bold">Allotment Report Round 3 — Arts, Commerce, Science 2026–27</span></div><div class="lf-block layout-75"><span class="lf-label layout-76">JC Admissions</span></div><div class="lf-label layout-77">Jun 19</div></div>
           </div>
         </div>
         <div class="lofi-note"><strong>Structural decision</strong>Coloured severity dot (blue = info, orange = exam/deadline, green = admissions) communicates urgency before reading. "View all notices →" is a persistent escape hatch to a dedicated searchable archive — the architecture that addresses the current site's hard limit of 5 visible notices. Tabs let users filter by their role without changing pages.</div>
@@ -965,20 +512,20 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <span class="lofi-head-title">⑤ Explore programmes — 3×2 card grid</span>
           <span class="lofi-badge">6 degree cards</span>
         </div>
-        <div class="lofi-body" style="background:var(--surface2)">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;">
+        <div class="lofi-body layout-78">
+          <div class="layout-79">
             <div class="lf-label-bold">Explore programmes</div>
-            <div class="lf-label" style="font-size:9px;color:var(--accent2)">View all courses →</div>
+            <div class="lf-label layout-80">View all courses →</div>
           </div>
-          <div class="lf-row" style="gap:6px;margin-bottom:6px;flex-wrap:wrap;">
-            <div class="lf-course"><div class="lf-label-bold" style="font-size:15px">B.A.</div><div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Arts &amp; Humanities</div></div>
-            <div class="lf-course"><div class="lf-label-bold" style="font-size:15px">B.Com.</div><div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Commerce</div></div>
-            <div class="lf-course"><div class="lf-label-bold" style="font-size:15px">B.Sc. IT</div><div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Information Technology</div></div>
+          <div class="lf-row layout-81">
+            <div class="lf-course"><div class="lf-label-bold layout-82">B.A.</div><div class="lf-label layout-83">Arts &amp; Humanities</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-84">B.Com.</div><div class="lf-label layout-85">Commerce</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-86">B.Sc. IT</div><div class="lf-label layout-87">Information Technology</div></div>
           </div>
-          <div class="lf-row" style="gap:6px;flex-wrap:wrap;">
-            <div class="lf-course"><div class="lf-label-bold" style="font-size:15px">B.M.S.</div><div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Management Studies</div></div>
-            <div class="lf-course"><div class="lf-label-bold" style="font-size:15px">B.A.M.M.C.</div><div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Mass Media</div></div>
-            <div class="lf-course"><div class="lf-label-bold" style="font-size:15px">B.Sc. HS</div><div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Hospitality Studies</div></div>
+          <div class="lf-row layout-88">
+            <div class="lf-course"><div class="lf-label-bold layout-89">B.M.S.</div><div class="lf-label layout-90">Management Studies</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-91">B.A.M.M.C.</div><div class="lf-label layout-92">Mass Media</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-93">B.Sc. HS</div><div class="lf-label layout-94">Hospitality Studies</div></div>
           </div>
         </div>
         <div class="lofi-note"><strong>Structural decision</strong>Degree abbreviation (large) acts as the visual anchor — it's what students already call the course. Stream name (small, uppercase) provides context. Arrow glyph signals clickability without a full button component, keeping cards lightweight. Colour tinting per stream is a hi-fi decision deferred from this lo-fi.</div>
@@ -990,23 +537,23 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <span class="lofi-head-title">⑥ About the college + virtual tour — 50/50 split</span>
           <span class="lofi-badge new">new — surfaces buried tour</span>
         </div>
-        <div class="lofi-body" style="padding:0">
-          <div class="lf-row" style="gap:0;flex-wrap:wrap;">
-            <div style="flex:1;padding:14px;border-right:1px dashed var(--border);min-width:280px;">
-              <div class="lf-label" style="font-size:8px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px">About the college</div>
-              <div class="lf-label-bold" style="margin-bottom:9px;font-size:12px">A Mumbai institution since 1927</div>
-              <div class="lf-text" style="width:100%"></div>
-              <div class="lf-text" style="width:88%"></div>
-              <div class="lf-text" style="width:94%"></div>
-              <div class="lf-text" style="width:72%"></div>
-              <div class="lf-text" style="width:82%;margin-top:4px"></div>
-              <div class="lf-text" style="width:70%"></div>
-              <div style="margin-top:9px;font-size:10px;color:var(--accent2)">Our story &amp; history →</div>
+        <div class="lofi-body layout-95">
+          <div class="lf-row layout-96">
+            <div class="layout-97">
+              <div class="lf-label layout-98">About the college</div>
+              <div class="lf-label-bold layout-99">A Mumbai institution since 1927</div>
+              <div class="lf-text layout-100"></div>
+              <div class="lf-text layout-101"></div>
+              <div class="lf-text layout-102"></div>
+              <div class="lf-text layout-103"></div>
+              <div class="lf-text layout-104"></div>
+              <div class="lf-text layout-105"></div>
+              <div class="layout-106">Our story &amp; history →</div>
             </div>
-            <div style="flex:1;background:var(--surface3);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;gap:7px;padding:14px;min-width:280px;">
-              <div style="width:34px;height:34px;background:var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px">▶</div>
-              <div class="lf-label-bold" style="font-size:10px;text-align:center">360° Virtual Campus Tour</div>
-              <div class="lf-label" style="font-size:8px;text-align:center">Explore campus before you apply</div>
+            <div class="layout-107">
+              <div class="layout-108">▶</div>
+              <div class="lf-label-bold layout-109">360° Virtual Campus Tour</div>
+              <div class="lf-label layout-110">Explore campus before you apply</div>
             </div>
           </div>
         </div>
@@ -1020,17 +567,17 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="wireframe">
     <div class="cs-wrap">
       <p class="section-label">06 — Hi-fi Wireframe</p>
-      <h2 class="section-title">The proposed homepage, designed</h2>
+      <h2 class="section-title" id="section-7" tabindex="-1" data-reading-section>The proposed homepage, designed</h2>
       <p class="section-sub">With the layout logic established in the lo-fi above, the high-fidelity wireframe applies the design system — colour, typography, real copy, and component styling — to validate that the structure also works visually.</p>
     </div>
 
-    <div class="cs-wrap reveal" style="max-width:960px">
+    <div class="cs-wrap reveal layout-111">
       <div class="wf-section">
         <!-- Browser chrome -->
         <div class="wf-toolbar">
-          <div class="wf-dot" style="background:#ff5f56"></div>
-          <div class="wf-dot" style="background:#ffbd2e"></div>
-          <div class="wf-dot" style="background:#27c93f"></div>
+          <div class="wf-dot layout-112"></div>
+          <div class="wf-dot layout-113"></div>
+          <div class="wf-dot layout-114"></div>
           <div class="wf-url">standrewscollege.ac.in</div>
         </div>
 
@@ -1055,8 +602,8 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <!-- 2. HERO -->
           <div class="wf-hero">
             <!-- Journey selector -->
-            <div style="margin-bottom:6px">
-              <span style="font-size:9px;color:rgba(255,255,255,.35);font-weight:500;letter-spacing:.06em;display:block;margin-bottom:6px">I AM A —</span>
+            <div class="layout-115">
+              <span class="layout-116">I AM A —</span>
               <div class="wf-journey">
                 <span class="wj-active">Prospective Student</span>
                 <span>Current Student</span>
@@ -1071,7 +618,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
             <p class="wf-hero-sub">St. Andrew's College of Arts, Science & Commerce — shaping students through academics, ethics, and community.</p>
 
             <div class="wf-accred">
-              <span style="background:#27ae60;width:7px;height:7px;border-radius:50%;display:inline-block"></span>
+              <span class="layout-117"></span>
               NAAC A+ Accredited · CGPA 3.35 · 2023
             </div>
 
@@ -1116,33 +663,33 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
             </div>
             <div>
               <div class="wf-notice-item">
-                <div class="wf-notice-dot" style="background:#2d6a9f"></div>
+                <div class="wf-notice-dot layout-118"></div>
                 <div class="wf-notice-text">SY Field Project Brochure 2026–2027 now available</div>
-                <span class="wf-notice-tag" style="background:#e8f0f8;color:#1a3a5c">Degree</span>
+                <span class="wf-notice-tag layout-119">Degree</span>
                 <div class="wf-notice-date">Jun 23, 2026</div>
               </div>
               <div class="wf-notice-item">
-                <div class="wf-notice-dot" style="background:#2d6a9f"></div>
+                <div class="wf-notice-dot layout-120"></div>
                 <div class="wf-notice-text">TY Community Engagement Project Brochure 2026–2027</div>
-                <span class="wf-notice-tag" style="background:#e8f0f8;color:#1a3a5c">Degree</span>
+                <span class="wf-notice-tag layout-121">Degree</span>
                 <div class="wf-notice-date">Jun 22, 2026</div>
               </div>
               <div class="wf-notice-item">
-                <div class="wf-notice-dot" style="background:#e67e22"></div>
+                <div class="wf-notice-dot layout-122"></div>
                 <div class="wf-notice-text">ATKT Aided & SFC Notice No.1 — June 2026 Examinations</div>
-                <span class="wf-notice-tag" style="background:#fef3e2;color:#7a4a0a">Exam</span>
+                <span class="wf-notice-tag layout-123">Exam</span>
                 <div class="wf-notice-date">Jun 20, 2026</div>
               </div>
               <div class="wf-notice-item">
-                <div class="wf-notice-dot" style="background:#27ae60"></div>
+                <div class="wf-notice-dot layout-124"></div>
                 <div class="wf-notice-text">Allotment Report Round 3 — Arts, Commerce, Science 2026–27</div>
-                <span class="wf-notice-tag" style="background:#e4f0eb;color:#1a5c3a">JC Admissions</span>
+                <span class="wf-notice-tag layout-125">JC Admissions</span>
                 <div class="wf-notice-date">Jun 19, 2026</div>
               </div>
               <div class="wf-notice-item">
-                <div class="wf-notice-dot" style="background:#9b9b9b"></div>
+                <div class="wf-notice-dot layout-126"></div>
                 <div class="wf-notice-text">Commencement of Lectures for First Year Degree Students</div>
-                <span class="wf-notice-tag" style="background:#f2f0eb;color:#6b6b6b">General</span>
+                <span class="wf-notice-tag layout-127">General</span>
                 <div class="wf-notice-date">Jun 18, 2026</div>
               </div>
             </div>
@@ -1155,35 +702,35 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
               <a href="#">View all courses →</a>
             </div>
             <div class="wf-course-grid">
-              <div class="wf-course-card" style="background:#eeedfe;border-color:#ccc9f0">
-                <div class="wf-course-deg" style="color:#3c3489">B.A.</div>
-                <div class="wf-course-name" style="color:#534ab7">Arts & Humanities</div>
-                <div class="wf-course-arrow" style="color:#534ab7">→</div>
+              <div class="wf-course-card layout-128">
+                <div class="wf-course-deg layout-129">B.A.</div>
+                <div class="wf-course-name layout-130">Arts & Humanities</div>
+                <div class="wf-course-arrow layout-131">→</div>
               </div>
-              <div class="wf-course-card" style="background:#e1f5ee;border-color:#9fe1cb">
-                <div class="wf-course-deg" style="color:#085041">B.Com.</div>
-                <div class="wf-course-name" style="color:#0f6e56">Commerce</div>
-                <div class="wf-course-arrow" style="color:#0f6e56">→</div>
+              <div class="wf-course-card layout-132">
+                <div class="wf-course-deg layout-133">B.Com.</div>
+                <div class="wf-course-name layout-134">Commerce</div>
+                <div class="wf-course-arrow layout-135">→</div>
               </div>
-              <div class="wf-course-card" style="background:#e6f1fb;border-color:#b5d4f4">
-                <div class="wf-course-deg" style="color:#0c447c">B.Sc. IT</div>
-                <div class="wf-course-name" style="color:#185fa5">Information Technology</div>
-                <div class="wf-course-arrow" style="color:#185fa5">→</div>
+              <div class="wf-course-card layout-136">
+                <div class="wf-course-deg layout-137">B.Sc. IT</div>
+                <div class="wf-course-name layout-138">Information Technology</div>
+                <div class="wf-course-arrow layout-139">→</div>
               </div>
-              <div class="wf-course-card" style="background:#faece7;border-color:#f0997b">
-                <div class="wf-course-deg" style="color:#712b13">B.M.S.</div>
-                <div class="wf-course-name" style="color:#993c1d">Management Studies</div>
-                <div class="wf-course-arrow" style="color:#993c1d">→</div>
+              <div class="wf-course-card layout-140">
+                <div class="wf-course-deg layout-141">B.M.S.</div>
+                <div class="wf-course-name layout-142">Management Studies</div>
+                <div class="wf-course-arrow layout-143">→</div>
               </div>
-              <div class="wf-course-card" style="background:#faeeda;border-color:#fac775">
-                <div class="wf-course-deg" style="color:#633806">B.A.M.M.C.</div>
-                <div class="wf-course-name" style="color:#854f0b">Mass Media</div>
-                <div class="wf-course-arrow" style="color:#854f0b">→</div>
+              <div class="wf-course-card layout-144">
+                <div class="wf-course-deg layout-145">B.A.M.M.C.</div>
+                <div class="wf-course-name layout-146">Mass Media</div>
+                <div class="wf-course-arrow layout-147">→</div>
               </div>
-              <div class="wf-course-card" style="background:#fbeaf0;border-color:#ed93b1">
-                <div class="wf-course-deg" style="color:#4b1528">B.Sc. HS</div>
-                <div class="wf-course-name" style="color:#993556">Hospitality Studies</div>
-                <div class="wf-course-arrow" style="color:#993556">→</div>
+              <div class="wf-course-card layout-148">
+                <div class="wf-course-deg layout-149">B.Sc. HS</div>
+                <div class="wf-course-name layout-150">Hospitality Studies</div>
+                <div class="wf-course-arrow layout-151">→</div>
               </div>
             </div>
           </div>
@@ -1193,19 +740,19 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
             <div class="wf-about-left">
               <div class="wf-about-label">About the college</div>
               <div class="wf-about-title">A Mumbai institution since 1927</div>
-              <div class="wf-body-line" style="width:100%"></div>
-              <div class="wf-body-line" style="width:90%"></div>
-              <div class="wf-body-line" style="width:95%"></div>
-              <div class="wf-body-line" style="width:75%"></div>
-              <div class="wf-body-line" style="width:85%;margin-top:8px"></div>
-              <div class="wf-body-line" style="width:70%"></div>
+              <div class="wf-body-line layout-152"></div>
+              <div class="wf-body-line layout-153"></div>
+              <div class="wf-body-line layout-154"></div>
+              <div class="wf-body-line layout-155"></div>
+              <div class="wf-body-line layout-156"></div>
+              <div class="wf-body-line layout-157"></div>
               <a class="wf-text-btn" href="#">Our story & history →</a>
             </div>
             <div class="wf-about-right">
               <div class="wf-tour-overlay">
                 <div class="wf-tour-icon">▶</div>
                 <div class="wf-tour-label">360° Virtual Campus Tour</div>
-                <div style="font-size:8px;color:rgba(255,255,255,.3);margin-top:2px">Explore the campus before you apply</div>
+                <div class="layout-158">Explore the campus before you apply</div>
               </div>
             </div>
           </div>
@@ -1220,28 +767,28 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
               <div class="wf-event-card">
                 <div class="wf-event-date"><div class="wf-event-day">30</div><div class="wf-event-mon">Jun</div></div>
                 <div>
-                  <div class="wf-event-info-tag" style="background:#e8f0f8;color:#1a3a5c">Academics</div>
+                  <div class="wf-event-info-tag layout-159">Academics</div>
                   <div class="wf-event-info-title">Commencement of Lectures — First Year Degree 2026–27</div>
                 </div>
               </div>
               <div class="wf-event-card">
                 <div class="wf-event-date"><div class="wf-event-day">05</div><div class="wf-event-mon">Jul</div></div>
                 <div>
-                  <div class="wf-event-info-tag" style="background:#e4f0eb;color:#1a5c3a">Admissions</div>
+                  <div class="wf-event-info-tag layout-160">Admissions</div>
                   <div class="wf-event-info-title">FYJC Admission — Special CAP Round 3</div>
                 </div>
               </div>
               <div class="wf-event-card">
                 <div class="wf-event-date"><div class="wf-event-day">10</div><div class="wf-event-mon">Jul</div></div>
                 <div>
-                  <div class="wf-event-info-tag" style="background:#fef3e2;color:#7a4a0a">Student Life</div>
+                  <div class="wf-event-info-tag layout-161">Student Life</div>
                   <div class="wf-event-info-title">Orientation Day for New Students 2026–27</div>
                 </div>
               </div>
               <div class="wf-event-card">
                 <div class="wf-event-date"><div class="wf-event-day">15</div><div class="wf-event-mon">Jul</div></div>
                 <div>
-                  <div class="wf-event-info-tag" style="background:#eeedfe;color:#3c3489">IQAC</div>
+                  <div class="wf-event-info-tag layout-162">IQAC</div>
                   <div class="wf-event-info-title">IQAC Planning Meeting — Academic Year 2026–27</div>
                 </div>
               </div>
@@ -1251,16 +798,16 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
           <!-- 8. TRUST BAR -->
           <div class="wf-trust">
             <div class="wf-trust-item">
-              <div class="wf-trust-val" style="color:#f5e6c4">A+</div>
-              <div class="wf-trust-label" style="color:rgba(255,255,255,.3)">NAAC Accreditation · 2023</div>
+              <div class="wf-trust-val layout-163">A+</div>
+              <div class="wf-trust-label layout-164">NAAC Accreditation · 2023</div>
             </div>
             <div class="wf-trust-item">
-              <div class="wf-trust-val" style="color:#6fcf97">Best College</div>
-              <div class="wf-trust-label" style="color:rgba(255,255,255,.3)">University Award · 2015–16</div>
+              <div class="wf-trust-val layout-165">Best College</div>
+              <div class="wf-trust-label layout-166">University Award · 2015–16</div>
             </div>
             <div class="wf-trust-item">
-              <div class="wf-trust-val" style="color:#a8c5e8">3,000+</div>
-              <div class="wf-trust-label" style="color:rgba(255,255,255,.3)">Students Graduated Annually</div>
+              <div class="wf-trust-val layout-167">3,000+</div>
+              <div class="wf-trust-label layout-168">Students Graduated Annually</div>
             </div>
           </div>
 
@@ -1306,30 +853,30 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
       </div>
 
       <!-- Wireframe annotations -->
-      <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px">
-        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px">
-          <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">① Navigation</div>
-          <p style="font-size:12px;color:var(--ink3);line-height:1.6">Single dark bar. 5 primary items. Global search button + Login. No utility cluttering the primary path.</p>
+      <div class="layout-169">
+        <div class="layout-170">
+          <div class="layout-171">① Navigation</div>
+          <p class="layout-172">Single dark bar. 5 primary items. Global search button + Login. No utility cluttering the primary path.</p>
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px">
-          <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">② Journey selector</div>
-          <p style="font-size:12px;color:var(--ink3);line-height:1.6">Pill selector above hero lets visitors self-identify. Content adapts — prospective students see Apply CTA; current students see timetables.</p>
+        <div class="layout-173">
+          <div class="layout-174">② Journey selector</div>
+          <p class="layout-175">Pill selector above hero lets visitors self-identify. Content adapts — prospective students see Apply CTA; current students see timetables.</p>
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px">
-          <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">③ Hero</div>
-          <p style="font-size:12px;color:var(--ink3);line-height:1.6">Campus photography behind dark overlay. NAAC A+ badge visible immediately. Two primary CTAs. Stats row anchors authority.</p>
+        <div class="layout-176">
+          <div class="layout-177">③ Hero</div>
+          <p class="layout-178">Campus photography behind dark overlay. NAAC A+ badge visible immediately. Two primary CTAs. Stats row anchors authority.</p>
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px">
-          <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">④ Quick actions</div>
-          <p style="font-size:12px;color:var(--ink3);line-height:1.6">6-icon bar for the most-visited tasks. Replaces the need to navigate deep into the menu for routine lookups.</p>
+        <div class="layout-179">
+          <div class="layout-180">④ Quick actions</div>
+          <p class="layout-181">6-icon bar for the most-visited tasks. Replaces the need to navigate deep into the menu for routine lookups.</p>
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px">
-          <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">⑤ Notices widget</div>
-          <p style="font-size:12px;color:var(--ink3);line-height:1.6">Tabbed, recent-first. Colour-coded dots show category. 5 items visible. Replaces the 150+ unfiltered list.</p>
+        <div class="layout-182">
+          <div class="layout-183">⑤ Notices widget</div>
+          <p class="layout-184">Tabbed, recent-first. Colour-coded dots show category. 5 items visible. Replaces the 150+ unfiltered list.</p>
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px">
-          <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">⑥ Courses</div>
-          <p style="font-size:12px;color:var(--ink3);line-height:1.6">Six colour-coded programme cards, each linking to the full course page. Colour communicates stream at a glance.</p>
+        <div class="layout-185">
+          <div class="layout-186">⑥ Courses</div>
+          <p class="layout-187">Six colour-coded programme cards, each linking to the full course page. Colour communicates stream at a glance.</p>
         </div>
       </div>
     </div>
@@ -1339,65 +886,65 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section section-border" id="design">
     <div class="cs-wrap">
       <p class="section-label">07 — Design System</p>
-      <h2 class="section-title">Proposed colour &amp; typography</h2>
+      <h2 class="section-title" id="section-8" tabindex="-1" data-reading-section>Proposed colour &amp; typography</h2>
       <p class="section-sub">A token-based system that creates consistency without genericness. The palette draws from the college's formal institutional character — deep navy primary, warm gold for prestige, clean sans for clarity.</p>
 
       <div class="design-grid">
         <div class="reveal">
-          <p style="font-size:11px;font-weight:600;color:var(--ink4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Colour Palette</p>
+          <p class="layout-188">Colour Palette</p>
           <div class="swatch-row">
-            <div class="color-item"><div class="swatch" style="background:#1a3a5c"></div><div class="swatch-label">Navy<br>#1a3a5c</div></div>
-            <div class="color-item"><div class="swatch" style="background:#2d6a9f"></div><div class="swatch-label">Blue<br>#2d6a9f</div></div>
-            <div class="color-item"><div class="swatch" style="background:#b8922a"></div><div class="swatch-label">Gold<br>#b8922a</div></div>
-            <div class="color-item"><div class="swatch" style="background:#fafaf8"></div><div class="swatch-label">Cream<br>#fafaf8</div></div>
-            <div class="color-item"><div class="swatch" style="background:#0f0f0f"></div><div class="swatch-label">Ink<br>#0f0f0f</div></div>
+            <div class="color-item"><div class="swatch layout-189"></div><div class="swatch-label">Navy<br>#1a3a5c</div></div>
+            <div class="color-item"><div class="swatch layout-190"></div><div class="swatch-label">Blue<br>#2d6a9f</div></div>
+            <div class="color-item"><div class="swatch layout-191"></div><div class="swatch-label">Gold<br>#b8922a</div></div>
+            <div class="color-item"><div class="swatch layout-192"></div><div class="swatch-label">Cream<br>#fafaf8</div></div>
+            <div class="color-item"><div class="swatch layout-193"></div><div class="swatch-label">Ink<br>#0f0f0f</div></div>
           </div>
-          <div class="swatch-row" style="margin-top:8px;">
-            <div class="color-item"><div class="swatch" style="background:#1a5c3a"></div><div class="swatch-label">Success</div></div>
-            <div class="color-item"><div class="swatch" style="background:#e67e22"></div><div class="swatch-label">Warning</div></div>
-            <div class="color-item"><div class="swatch" style="background:#c0392b"></div><div class="swatch-label">Critical</div></div>
-            <div class="color-item"><div class="swatch" style="background:#e9e6de"></div><div class="swatch-label">Border</div></div>
+          <div class="swatch-row layout-194">
+            <div class="color-item"><div class="swatch layout-195"></div><div class="swatch-label">Success</div></div>
+            <div class="color-item"><div class="swatch layout-196"></div><div class="swatch-label">Warning</div></div>
+            <div class="color-item"><div class="swatch layout-197"></div><div class="swatch-label">Critical</div></div>
+            <div class="color-item"><div class="swatch layout-198"></div><div class="swatch-label">Border</div></div>
           </div>
         </div>
 
         <div class="type-row reveal reveal-delay-1">
-          <p style="font-size:11px;font-weight:600;color:var(--ink4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px">Typography</p>
+          <p class="layout-199">Typography</p>
           <div class="type-sample">
             <div class="type-meta">DM Serif Display · Headings</div>
-            <div style="font-family:var(--serif);font-size:26px;color:var(--ink);line-height:1.1">Excellence in Education</div>
+            <div class="layout-200">Excellence in Education</div>
           </div>
           <div class="type-sample">
             <div class="type-meta">Inter 400 · Body text</div>
-            <div style="font-size:14px;color:var(--ink2);line-height:1.7">Admissions for the academic year 2026–27 are now open for all undergraduate programmes.</div>
+            <div class="layout-201">Admissions for the academic year 2026–27 are now open for all undergraduate programmes.</div>
           </div>
           <div class="type-sample">
             <div class="type-meta">Inter 600 · Labels &amp; UI</div>
-            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--ink3)">Quick access · Latest updates · NAAC Reports</div>
+            <div class="layout-202">Quick access · Latest updates · NAAC Reports</div>
           </div>
           <div class="type-sample">
             <div class="type-meta">Inter 500 · Nav &amp; Buttons</div>
-            <div style="font-size:14px;font-weight:500;color:var(--accent)">Apply Now → &nbsp; Explore Courses &nbsp; View All</div>
+            <div class="layout-203">Apply Now → &nbsp; Explore Courses &nbsp; View All</div>
           </div>
         </div>
       </div>
 
       <!-- Component examples -->
-      <p style="font-size:11px;font-weight:600;color:var(--ink4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px" class="reveal">Notice component — severity system</p>
-      <div style="display:flex;flex-direction:column;gap:8px" class="reveal">
-        <div style="padding:12px 16px;background:#fde8e8;border:1px solid #f5c6c6;border-radius:8px;border-left:4px solid #c0392b;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:10px;font-weight:700;color:#8b1a1a;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Urgent</span>
-          <span style="font-size:13px;color:#5a0000;flex:1;min-width:240px;">Last date for ATKT examination form submission: 28 June 2026</span>
-          <span style="font-size:11px;color:#8b1a1a;margin-left:auto;white-space:nowrap">Jun 20</span>
+      <p class="reveal layout-204">Notice component — severity system</p>
+      <div class="reveal layout-205">
+        <div class="layout-206">
+          <span class="layout-207">Urgent</span>
+          <span class="layout-208">Last date for ATKT examination form submission: 28 June 2026</span>
+          <span class="layout-209">Jun 20</span>
         </div>
-        <div style="padding:12px 16px;background:#fef3e2;border:1px solid #f0d8a8;border-radius:8px;border-left:4px solid #e67e22;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:10px;font-weight:700;color:#7a4a0a;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Important</span>
-          <span style="font-size:13px;color:#4a2800;flex:1;min-width:240px;">SY Field Project Brochure 2026–2027 is now available for download</span>
-          <span style="font-size:11px;color:#7a4a0a;margin-left:auto;white-space:nowrap">Jun 23</span>
+        <div class="layout-210">
+          <span class="layout-211">Important</span>
+          <span class="layout-212">SY Field Project Brochure 2026–2027 is now available for download</span>
+          <span class="layout-213">Jun 23</span>
         </div>
-        <div style="padding:12px 16px;background:#e8f0f8;border:1px solid #b8d0e8;border-radius:8px;border-left:4px solid #2d6a9f;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:10px;font-weight:700;color:#1a3a5c;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Info</span>
-          <span style="font-size:13px;color:#0a1e30;flex:1;min-width:240px;">Commencement of lectures for FY Degree students — Monday, June 30, 2026</span>
-          <span style="font-size:11px;color:#1a3a5c;margin-left:auto;white-space:nowrap">Jun 18</span>
+        <div class="layout-214">
+          <span class="layout-215">Info</span>
+          <span class="layout-216">Commencement of lectures for FY Degree students — Monday, June 30, 2026</span>
+          <span class="layout-217">Jun 18</span>
         </div>
       </div>
     </div>
@@ -1407,7 +954,7 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   <section class="section" id="impact">
     <div class="cs-wrap">
       <p class="section-label">08 — Expected Impact</p>
-      <h2 class="section-title">Measurable outcomes from the redesign</h2>
+      <h2 class="section-title" id="section-9" tabindex="-1" data-reading-section>Measurable outcomes from the redesign</h2>
       <p class="section-sub">Conservative estimates based on industry benchmarks for institutional website redesigns with improved IA, mobile experience, and SEO.</p>
 
       <div class="impact-grid">
@@ -1437,28 +984,28 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
         </div>
       </div>
 
-      <div style="background:var(--accent);border-radius:var(--r-md);padding:28px 32px;color:#fff" class="reveal">
-        <p style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.45);margin-bottom:12px">Recommended Implementation Order</p>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <span style="background:rgba(255,255,255,0.15);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px">1</span>
-            <div><span style="font-size:13px;font-weight:600;color:#fff">Week 1</span><span style="font-size:13px;color:rgba(255,255,255,0.55);margin-left:8px">Fix viewport meta, add skip navigation, announce PDF links — zero cost, immediate compliance</span></div>
+      <div class="reveal layout-218">
+        <p class="layout-219">Recommended Implementation Order</p>
+        <div class="layout-220">
+          <div class="layout-221">
+            <span class="layout-222">1</span>
+            <div><span class="layout-223">Week 1</span><span class="layout-224">Fix viewport meta, add skip navigation, announce PDF links — zero cost, immediate compliance</span></div>
           </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <span style="background:rgba(255,255,255,0.15);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px">2</span>
-            <div><span style="font-size:13px;font-weight:600;color:#fff">Month 1</span><span style="font-size:13px;color:rgba(255,255,255,0.55);margin-left:8px">Consolidate navigation to 5 items, implement mobile drawer, add global search</span></div>
+          <div class="layout-225">
+            <span class="layout-226">2</span>
+            <div><span class="layout-227">Month 1</span><span class="layout-228">Consolidate navigation to 5 items, implement mobile drawer, add global search</span></div>
           </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <span style="background:rgba(255,255,255,0.15);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px">3</span>
-            <div><span style="font-size:13px;font-weight:600;color:#fff">Month 2</span><span style="font-size:13px;color:rgba(255,255,255,0.55);margin-left:8px">Redesign homepage — hero, notices widget, quick actions, programme cards</span></div>
+          <div class="layout-229">
+            <span class="layout-230">3</span>
+            <div><span class="layout-231">Month 2</span><span class="layout-232">Redesign homepage — hero, notices widget, quick actions, programme cards</span></div>
           </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <span style="background:rgba(255,255,255,0.15);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px">4</span>
-            <div><span style="font-size:13px;font-weight:600;color:#fff">Month 3–4</span><span style="font-size:13px;color:rgba(255,255,255,0.55);margin-left:8px">Convert PDFs to web content; build searchable notices database; department pages</span></div>
+          <div class="layout-233">
+            <span class="layout-234">4</span>
+            <div><span class="layout-235">Month 3–4</span><span class="layout-236">Convert PDFs to web content; build searchable notices database; department pages</span></div>
           </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <span style="background:rgba(255,255,255,0.15);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px">5</span>
-            <div><span style="font-size:13px;font-weight:600;color:#fff">Month 5–6</span><span style="font-size:13px;color:rgba(255,255,255,0.55);margin-left:8px">Roll out design system across all pages; establish component library for future maintenance</span></div>
+          <div class="layout-237">
+            <span class="layout-238">5</span>
+            <div><span class="layout-239">Month 5–6</span><span class="layout-240">Roll out design system across all pages; establish component library for future maintenance</span></div>
           </div>
         </div>
       </div>
@@ -1466,15 +1013,15 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
   </section>
 
   <!-- AUTHOR CREDIT -->
-  <div style="background:var(--surface2);border-top:1px solid var(--border);padding:56px 0" class="reveal">
-    <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:0 24px;">
+  <div class="reveal layout-241">
+    <div class="layout-242">
       <div>
-        <p style="font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink4);margin-bottom:10px">Case Study Author</p>
-        <p style="font-family:var(--serif);font-size:28px;color:var(--accent);line-height:1.1;margin-bottom:6px">Aditya Nair</p>
-        <p style="font-size:13px;color:var(--ink3)">UI/UX Designer &nbsp;·&nbsp; April 2026</p>
+        <p class="layout-243">Case Study Author</p>
+        <p class="layout-244">Aditya Nair</p>
+        <p class="layout-245">UI/UX Designer &nbsp;·&nbsp; April 2026</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <p style="font-size:11px;color:var(--ink4)">This is a design portfolio case study.<br>Not affiliated with St. Andrew's College.</p>
+      <div class="layout-246">
+        <p class="layout-247">This is a design portfolio case study.<br>Not affiliated with St. Andrew's College.</p>
       </div>
     </div>
   </div>
@@ -1482,50 +1029,22 @@ footer span { font-size:11px; color:rgba(255,255,255,0.15); }
 </div><!-- /page-wrap -->
 
 <!-- BACK CTA -->
-<div class="back-cta">
-  <a href="index.html#projects" class="back-cta-btn" id="back-cta-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-    Back to Portfolio
-  </a>
-</div>
+
 
 <!-- FOOTER -->
-<footer>
-  <p>St. Andrew's College Redesign &nbsp;·&nbsp; Aditya Nair &nbsp;·&nbsp; April 2026</p>
-  <span>UI/UX Case Study — Portfolio Project</span>
+
+
+
+
+<nav class="case-next" aria-label="More projects"><a href="projects.html"><small>Keep exploring</small><strong>All projects <span aria-hidden="true">↗</span></strong></a><a href="blackwood-lane.html"><small>Next project</small><strong>742 Blackwood Lane <span aria-hidden="true">→</span></strong></a></nav>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><p class="site-footer-title">Interfaces to explore.<br>Worlds to <em>get lost in.</em></p><p class="site-footer-sub">UI/UX &amp; game design · Mumbai, India</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="projects.html">Explore the work</a><a href="experience.html">Experience</a><a href="mailto:aditya.gamedesigner0402@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/adityanair0402/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
+  </div>
+  <div class="site-footer-bottom"><span>© 2026 Aditya Nair</span><span>Designed around people. Built with intention.</span></div>
 </footer>
-
-<script>
-// Accordion Toggle for UX Audit
-function toggleAudit(el) {
-  const body = el.querySelector('.audit-body');
-  body.classList.toggle('open');
-}
-
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// Smart Back Buttons
-function smartBack(e) {
-  if (document.referrer && (document.referrer.includes('index.html') || document.referrer.includes(window.location.hostname))) {
-    e.preventDefault();
-    history.back();
-  }
-}
-document.getElementById('back-btn').addEventListener('click', smartBack);
-document.getElementById('back-cta-btn').addEventListener('click', smartBack);
-</script>
 
 </body>
 </html>

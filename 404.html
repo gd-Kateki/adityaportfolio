@@ -1,80 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 - Page Not Found | Aditya Nair</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  .error-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 48px;
-  }
-  .error-code {
-    font-family: 'Playfair Display', serif;
-    font-size: 120px;
-    font-weight: 700;
-    color: var(--charcoal);
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-  .error-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: var(--charcoal);
-    margin-bottom: 16px;
-  }
-  .error-sub {
-    font-size: 14px;
-    color: var(--warm-mid);
-    max-width: 400px;
-    margin-bottom: 40px;
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="logo">Aditya Nair<i>.</i></a>
-  <div class="nav-right">
-    <ul>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — Aditya Nair</title>
+<script>
+// Support both a custom domain and a GitHub Pages project subdirectory.
+const base=document.createElement('base');
+base.href=location.hostname.endsWith('.github.io')?'/'+location.pathname.split('/').filter(Boolean)[0]+'/':'/';
+document.head.append(base);
+</script>
+<link rel="icon" href="assets/images/favicon-small.png"><link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/enhancements.css"><script src="assets/js/main.js" defer></script><link rel="stylesheet" href="assets/css/site-shell.css">
+</head><body class="portfolio-page"><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" id="mainNav">
+  <nav class="site-navbar" aria-label="Main navigation">
+    <a href="index.html" class="site-logo" aria-label="Aditya Nair, home">AN<span aria-hidden="true">.</span></a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-links" hidden>Menu <span aria-hidden="true">☰</span></button>
+    <ul class="site-links" id="site-links">
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#work">Work</a></li>
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="experience.html">Experience</a></li>
     </ul>
-    <a href="mailto:hello@adityanair.com" class="nav-hire">Available for work →</a>
+    <a href="mailto:aditya.gamedesigner0402@gmail.com" class="site-contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="main-content" class="error-page"><h1>404<span aria-hidden="true">.</span></h1><h2>A small detour.</h2><p>This page has moved or doesn’t exist. There’s plenty more to explore.</p><a class="btn-primary" href="projects.html">Back to the work →</a></main><footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><p class="site-footer-title">Interfaces to explore.<br>Worlds to <em>get lost in.</em></p><p class="site-footer-sub">UI/UX &amp; game design · Mumbai, India</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="projects.html">Explore the work</a><a href="experience.html">Experience</a><a href="mailto:aditya.gamedesigner0402@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/adityanair0402/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
   </div>
-</nav>
-
-<section class="error-section">
-  <div class="error-code">404</div>
-  <div class="error-text">Page Not Found</div>
-  <p class="error-sub">It looks like the link you followed might be broken, or the page has been removed.</p>
-  <a href="index.html" class="cta-primary">Back to Home</a>
-</section>
-
-<footer>
-  <div>
-    <p class="footer-tagline">Let's make something<br><em>worth using.</em></p>
-    <p class="footer-sub">Currently open to new projects. <a href="mailto:hello@adityanair.com">Say hello →</a></p>
-  </div>
-  <div class="footer-copy">
-    <span>© 2026 Aditya Nair</span>
-    <span>Designed with intention</span>
-  </div>
+  <div class="site-footer-bottom"><span>© 2026 Aditya Nair</span><span>Designed around people. Built with intention.</span></div>
 </footer>
-
-</body>
-</html>
+</body></html>

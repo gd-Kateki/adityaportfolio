@@ -6,13 +6,19 @@
   <title>All Projects &mdash; Aditya Nair</title>
   <meta name="description" content="A list of selected products, UX case studies, and UI designs by Aditya Nair.">
   <meta name="author" content="Aditya Nair">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon-small.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/cases/projects-layout.css">
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<script src="assets/js/main.js" defer></script>
+<link rel="stylesheet" href="assets/css/site-shell.css">
 </head>
-<body>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 
   <!-- Background -->
   <div class="bg-canvas" aria-hidden="true">
@@ -24,236 +30,60 @@
   <div id="toastNotification" class="toast-notification" aria-live="polite">Email copied to clipboard!</div>
 
   <!-- ════════════════ DYNAMIC NAV (IPHONE ISLAND STYLE) ════════════════ -->
-  <div class="nav-wrapper">
-    <nav class="nav" id="mainNav">
-      <a href="index.html" class="nav-logo" id="navLogo">AN<span class="nav-logo-dot"></span></a>
-      <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#work">Work</a></li>
-        <li><a href="experience.html">Experience</a></li>
-      </ul>
-      <div class="nav-cta" id="navCta">
-        <span class="nav-available"><span class="nav-available-dot"></span>Open to work</span>
-        <a href="mailto:aditya.gamedesigner0402@gmail.com" class="btn-primary copy-email-btn">Contact</a>
-      </div>
-    </nav>
-  </div>
+  <header class="site-header" id="mainNav">
+  <nav class="site-navbar" aria-label="Main navigation">
+    <a href="index.html" class="site-logo" aria-label="Aditya Nair, home">AN<span aria-hidden="true">.</span></a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-links" hidden>Menu <span aria-hidden="true">☰</span></button>
+    <ul class="site-links" id="site-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="experience.html">Experience</a></li>
+    </ul>
+    <a href="mailto:aditya.gamedesigner0402@gmail.com" class="site-contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main-content">
 
   <!-- ════════════════ HERO HEADER ════════════════ -->
-  <div class="exp-hero" style="padding-top: 140px; padding-bottom: 32px; text-align: center;">
-    <div class="section-eyebrow" style="justify-content:center; margin-bottom:12px;">
+  <div class="exp-hero layout-1">
+    <div class="section-eyebrow layout-2">
       <span class="eyebrow-line"></span>
       <span class="eyebrow-text">Portfolio Index</span>
       <span class="eyebrow-line"></span>
     </div>
-    <h1 class="exp-hero-title" style="font-size: clamp(38px, 6vw, 64px); font-weight:900; letter-spacing:-1.5px;">
+    <h1 class="exp-hero-title layout-3">
       Selected <span class="serif">Works.</span>
     </h1>
-    <p class="exp-hero-sub" style="font-size:15px; color:var(--text-muted); max-width:540px; margin: 12px auto 0;">
-      A catalog of design studies, high-fidelity prototypes, and interactive experiences.
+    <p class="exp-hero-sub layout-4">
+      Interfaces, systems, and worlds. Explore the thinking behind the work.
     </p>
   </div>
 
   <!-- ════════════════ PROJECTS INDEX ════════════════ -->
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 100px;">
-    
-    <!-- Filter Controls -->
-    <div class="filter-container reveal" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 48px;">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-      <button class="filter-btn" data-filter="web">Web &amp; B2B</button>
-      <button class="filter-btn" data-filter="audit">UX Audits</button>
-    </div>
-
-    <!-- Project Cards Grid -->
-    <div class="all-projects-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px;">
-      
-      <!-- NovelNest App -->
-      <div class="proj-card" data-category="mobile" onclick="window.location.href='NovelNest_Project.html'">
-        <div class="proj-visual" style="background:linear-gradient(135deg,#F5EFE6,#EDE0CF);">
-          <div class="proj-visual-placeholder">
-            <div style="width:56px;height:56px;background:#E8A838;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 18px rgba(232,168,56,0.22);">&#128216;</div>
-            <div style="font-size:17px;font-weight:800;color:#1C1C1E;letter-spacing:-0.4px; margin-top: 12px;">NovelNest</div>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-tags"><span class="proj-tag accent">Hi-Fi Wireframes</span><span class="proj-tag">Mobile UX</span></div>
-          <h3 class="proj-title">NovelNest</h3>
-          <p class="proj-desc">A beautiful reading and authoring mobile ecosystem. Features 16 interactive UI wireframe screens simulating reader paths.</p>
-          <div class="proj-impact"><span class="proj-impact-badge">16 screens</span><span class="proj-impact-badge">Mobile App</span></div>
-          <div class="proj-footer"><span class="proj-year">May 2026</span><a href="NovelNest_Project.html" class="proj-link">View case study &rarr;</a></div>
-        </div>
-      </div>
-
-      <!-- eCommerce Dashboard -->
-      <div class="proj-card" data-category="web" onclick="window.location.href='eCommerce_Dashboard_Portal.html'">
-        <div class="proj-visual"><img src="Dashboard_Portal_Project/Dashboard.png" loading="lazy" alt="eCommerce Dashboard UI"></div>
-        <div class="proj-body">
-          <div class="proj-tags"><span class="proj-tag accent">Redesign Case</span><span class="proj-tag">B2B Dashboard</span></div>
-          <h3 class="proj-title">eCommerce Dashboard</h3>
-          <p class="proj-desc">Seller portal redesign resolving anime collectibles inventory delays, earnings tracking, and bulk shipping friction.</p>
-          <div class="proj-impact"><span class="proj-impact-badge">12 screens</span><span class="proj-impact-badge">Web Portal</span></div>
-          <div class="proj-footer"><span class="proj-year">April 2026</span><a href="eCommerce_Dashboard_Portal.html" class="proj-link">View case study &rarr;</a></div>
-        </div>
-      </div>
-
-      <!-- St. Andrew's College Redesign -->
-      <div class="proj-card" data-category="audit" onclick="window.location.href='StAndrews_casestudy_full.html'">
-        <div class="proj-visual" style="background:linear-gradient(135deg,#E8EDF5,#D8E2F0);">
-          <div class="proj-visual-placeholder">
-            <div style="font-size:28px;font-weight:800;color:#1e3a5f;letter-spacing:-0.8px;font-style:italic;font-family:Georgia,serif;text-align:center;">St. Andrew's</div>
-            <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#9CA3AF; margin-top: 4px;">Mumbai &middot; Redesign</div>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-tags"><span class="proj-tag accent">UX Audit</span><span class="proj-tag">Info Architecture</span></div>
-          <h3 class="proj-title">St. Andrew's College</h3>
-          <p class="proj-desc">Full UX audit and architectural overhaul of a historic college website. Resolved 9 critical user pain points.</p>
-          <div class="proj-impact"><span class="proj-impact-badge">9 pain points</span><span class="proj-impact-badge">UX Architecture</span></div>
-          <div class="proj-footer"><span class="proj-year">April 2026</span><a href="StAndrews_casestudy_full.html" class="proj-link">View case study &rarr;</a></div>
-        </div>
-      </div>
-
-      <!-- ETS2 Case Study -->
-      <div class="proj-card" data-category="audit" onclick="window.location.href='ETS2_case_study.html'">
-        <div class="proj-visual"><img src="ets2_preview.png" loading="lazy" alt="Euro Truck Simulator 2 UI"></div>
-        <div class="proj-body">
-          <div class="proj-tags"><span class="proj-tag accent">Heuristic Review</span><span class="proj-tag">Conversion Flows</span></div>
-          <h3 class="proj-title">Euro Truck Simulator 2</h3>
-          <p class="proj-desc">Detailed heuristic evaluation and sitemapping of the game's official web presence. Identified 13 conversion pitfalls.</p>
-          <div class="proj-impact"><span class="proj-impact-badge">13 pitfalls</span><span class="proj-impact-badge">UX Audit</span></div>
-          <div class="proj-footer"><span class="proj-year">March 2026</span><a href="ETS2_case_study.html" class="proj-link">View case study &rarr;</a></div>
-        </div>
-      </div>
-
-      <!-- Cozy Cafe Self-Order -->
-      <div class="proj-card" data-category="mobile" onclick="window.location.href='CafeMenu.html'">
-        <div class="proj-visual" style="background:#1c3328;">
-          <img src="Cafe_Menu_Project/Main Screen.png" style="height: 90%; width: auto; object-fit: contain; border-radius: 8px;" loading="lazy" alt="Cozy Cafe Mobile UI">
-        </div>
-        <div class="proj-body">
-          <div class="proj-tags"><span class="proj-tag accent">UI Showcase</span><span class="proj-tag">Mobile B2C</span></div>
-          <h3 class="proj-title">Cozy Cafe self-order</h3>
-          <p class="proj-desc">Seamless web-app flow for dining guests to self-order items via table QR codes. Focused on appetizing visual states.</p>
-          <div class="proj-impact"><span class="proj-impact-badge">QR-first flow</span><span class="proj-impact-badge">Mobile web</span></div>
-          <div class="proj-footer"><span class="proj-year">February 2026</span><a href="CafeMenu.html" class="proj-link">View case study &rarr;</a></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <div class="project-explorer " data-explorer><div class="explorer-toolbar"><div class="filter-container" role="group" aria-label="Filter projects by discipline"><button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All work <span>08</span></button><button class="filter-btn" type="button" data-filter="uiux" aria-pressed="false">UI/UX design <span>05</span></button><button class="filter-btn" type="button" data-filter="game" aria-pressed="false">Game design <span>03</span></button></div><label class="project-search"><span class="sr-only">Search projects by name, tool, or skill</span><span aria-hidden="true">⌕</span><input type="search" placeholder="Search projects, tools, skills…" data-project-search autocomplete="off"></label></div><div class="explorer-caption"><p>Find a project that speaks to your brief.</p><p data-result-count role="status" aria-live="polite">8 projects</p></div><div class="portfolio-grid"><article class="proj-card" data-discipline="uiux" data-search="novelnest mobile ux interface design reader journeys a reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens."><div class="proj-visual "><div class="project-art novelnest" aria-hidden="true"><span class="art-book">N</span><span>NovelNest</span><small>A home for every story.</small></div><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Interface design</span><span class="proj-tag">Reader journeys</span></div><h3 class="proj-title"><a class="project-title-link" href="NovelNest_Project.html">NovelNest</a></h3><p class="proj-desc">A reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens.</p><p class="project-deliverable">16 screens · Mobile experience</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="game" data-search="curse of osiris game &amp; level design unity systems design an egyptian mythology roguelite prototype exploring combat, branching rooms, and a narrative-driven progression loop."><div class="proj-visual "><img src="assets/images/thumbnails/osiris.webp" alt="Curse of Osiris project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Unity</span><span class="proj-tag">Systems design</span></div><h3 class="proj-title"><a class="project-title-link" href="curse-of-osiris.html">Curse of Osiris</a></h3><p class="proj-desc">An Egyptian mythology roguelite prototype exploring combat, branching rooms, and a narrative-driven progression loop.</p><p class="project-deliverable">Unity · Action roguelite</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="uiux" data-search="ecommerce dashboard web &amp; b2b product design design systems a seller portal redesign that connects inventory, earnings, and shipping across 12 high-fidelity screens."><div class="proj-visual "><img src="assets/images/thumbnails/dashboard.webp" alt="eCommerce Dashboard project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Product design</span><span class="proj-tag">Design systems</span></div><h3 class="proj-title"><a class="project-title-link" href="eCommerce_Dashboard_Portal.html">eCommerce Dashboard</a></h3><p class="proj-desc">A seller portal redesign that connects inventory, earnings, and shipping across 12 high-fidelity screens.</p><p class="project-deliverable">12 screens · Seller experience</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="game" data-search="deep into dreams narrative &amp; environment unreal engine narrative design a psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world."><div class="proj-visual "><img src="assets/images/thumbnails/dreams.webp" alt="Deep Into Dreams project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Unreal Engine</span><span class="proj-tag">Narrative design</span></div><h3 class="proj-title"><a class="project-title-link" href="deep-into-dreams.html">Deep Into Dreams</a></h3><p class="proj-desc">A psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world.</p><p class="project-deliverable">Unreal Engine · Psychological horror</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="uiux" data-search="st. andrew’s college ux audit information architecture web design an audit and proposed redesign that brings admissions, programmes, and student tasks into a clearer structure."><div class="proj-visual "><div class="project-art college" aria-hidden="true"><span class="art-college">St. Andrew’s</span><small>Heritage meets clarity.</small></div><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Information architecture</span><span class="proj-tag">Web design</span></div><h3 class="proj-title"><a class="project-title-link" href="StAndrews_casestudy_full.html">St. Andrew’s College</a></h3><p class="proj-desc">An audit and proposed redesign that brings admissions, programmes, and student tasks into a clearer structure.</p><p class="project-deliverable">UX audit · Proposed redesign</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="game" data-search="742 blackwood lane level design player flow spatial design a phasmophobia-inspired map balancing escape routes, choke points, and escalating tension from home to workshop."><div class="proj-visual "><img src="assets/images/thumbnails/blackwood.webp" alt="742 Blackwood Lane project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Player flow</span><span class="proj-tag">Spatial design</span></div><h3 class="proj-title"><a class="project-title-link" href="blackwood-lane.html">742 Blackwood Lane</a></h3><p class="proj-desc">A Phasmophobia-inspired map balancing escape routes, choke points, and escalating tension from home to workshop.</p><p class="project-deliverable">Level concept · Ghost investigation</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="uiux" data-search="euro truck simulator 2 ux audit heuristic evaluation conversion flows a heuristic review of the official website, identifying 13 usability pitfalls and opportunities to improve discovery."><div class="proj-visual "><img src="assets/images/thumbnails/ets2.webp" alt="Euro Truck Simulator 2 project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Heuristic evaluation</span><span class="proj-tag">Conversion flows</span></div><h3 class="proj-title"><a class="project-title-link" href="ETS2_case_study.html">Euro Truck Simulator 2</a></h3><p class="proj-desc">A heuristic review of the official website, identifying 13 usability pitfalls and opportunities to improve discovery.</p><p class="project-deliverable">13 findings · Website evaluation</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+<article class="proj-card" data-discipline="uiux" data-search="cozy cafe self-order mobile ux interaction design ordering flow a qr-first ordering experience, guiding guests from browsing the menu to reviewing their cart and tracking an order."><div class="proj-visual cafe-visual"><img src="assets/images/thumbnails/cafe.webp" alt="Cozy Cafe Self-Order project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Interaction design</span><span class="proj-tag">Ordering flow</span></div><h3 class="proj-title"><a class="project-title-link" href="CafeMenu.html">Cozy Cafe Self-Order</a></h3><p class="proj-desc">A QR-first ordering experience, guiding guests from browsing the menu to reviewing their cart and tracking an order.</p><p class="project-deliverable">Mobile web · Self-service ordering</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article></div><div class="empty-state" hidden><h3>No matching projects</h3><p>Try a different name or tool, or explore all the work.</p><button type="button" class="btn-outline" data-reset-filters>Reset filters</button></div></div>
 
   <!-- ════════════════ FOOTER ════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <p class="footer-tagline">Building things that <span class="serif">actually work.</span></p>
-        <p class="footer-sub">Currently accepting new partnerships. <a href="mailto:aditya.gamedesigner0402@gmail.com">Say hello &rarr;</a></p>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/adityanair0402/" class="footer-link" target="_blank">LinkedIn &nearr;</a>
-        <a href="index.html" class="footer-link">Home</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Aditya Nair</span>
-      <span>Form and function, aligned.</span>
-    </div>
-  </footer>
+  </main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><p class="site-footer-title">Interfaces to explore.<br>Worlds to <em>get lost in.</em></p><p class="site-footer-sub">UI/UX &amp; game design · Mumbai, India</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="projects.html">Explore the work</a><a href="experience.html">Experience</a><a href="mailto:aditya.gamedesigner0402@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/adityanair0402/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
+  </div>
+  <div class="site-footer-bottom"><span>© 2026 Aditya Nair</span><span>Designed around people. Built with intention.</span></div>
+</footer>
+
 
   <!-- ════════════════ SCRIPTS ════════════════ -->
-  <script>
-  (function() {
-    'use strict';
+  
 
-    // ── Dynamic iPhone Island Style Nav ──
-    const nav = document.getElementById('mainNav');
-    const logo = document.getElementById('navLogo');
-    const cta = document.getElementById('navCta');
-    
-    function onNavScroll() {
-      if (window.scrollY > 80) {
-        nav.classList.add('nav-island');
-        logo.classList.add('hide-element');
-        cta.classList.add('hide-element');
-      } else {
-        nav.classList.remove('nav-island');
-        logo.classList.remove('hide-element');
-        cta.classList.remove('hide-element');
-      }
-    }
-    window.addEventListener('scroll', onNavScroll, { passive: true });
-
-    // ── Scroll reveal (IntersectionObserver) ──
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          revealObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-    reveals.forEach(function(el) { revealObs.observe(el); });
-
-    // ── Email Copy Clipboard Handler ──
-    const emailToCopy = "aditya.gamedesigner0402@gmail.com";
-    const toast = document.getElementById("toastNotification");
-
-    document.querySelectorAll(".copy-email-btn").forEach(function(btn) {
-      btn.addEventListener("click", function(e) {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(emailToCopy).then(showToast).catch(function(err) {
-            console.error("Could not copy text: ", err);
-          });
-        } else {
-          const textarea = document.createElement("textarea");
-          textarea.value = emailToCopy;
-          textarea.style.position = "fixed";
-          document.body.appendChild(textarea);
-          textarea.select();
-          try {
-            document.execCommand("copy");
-            showToast();
-          } catch (err) {
-            console.error("Fallback copy failed", err);
-          }
-          document.body.removeChild(textarea);
-        }
-      });
-    });
-
-    function showToast() {
-      toast.classList.add("show-toast");
-      setTimeout(function() {
-        toast.classList.remove("show-toast");
-      }, 2500);
-    }
-
-    // ── Project Grid Card Filtering System ──
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.proj-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        const filter = btn.getAttribute('data-filter');
-        
-        cards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-  })();
-  </script>
 
 </body>
 </html>

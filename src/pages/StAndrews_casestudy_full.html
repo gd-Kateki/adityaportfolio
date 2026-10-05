@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>St. Andrew's College Redesign — UX Case Study · Aditya Nair</title>
+<meta name="description" content="A comprehensive UX audit, information architecture overhaul, and homepage redesign for St. Andrew's College Mumbai by Aditya Nair, UI/UX Designer."/>
+<meta name="author" content="Aditya Nair"/>
+<meta property="og:title" content="St. Andrew's College Redesign — UX Case Study | Aditya Nair"/>
+<meta property="og:description" content="A comprehensive UX audit, information architecture overhaul, and homepage redesign for St. Andrew's College Mumbai."/>
+<meta property="og:type" content="article"/>
+<link rel="icon" type="image/png" href="assets/images/favicon-small.png"/>
+<link rel="apple-touch-icon" href="assets/images/favicon-small.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="assets/css/cases/StAndrews_casestudy_full.css">
+<link rel="stylesheet" href="assets/css/cases/StAndrews_casestudy_full-layout.css">
+<link rel="stylesheet" href="assets/css/enhancements.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body class="case-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+{{nav}}
+<main id="main-content">
+
+<!-- ═══════ STICKY NAV ═══════ -->
+
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">UI / UX Case Study · 2026</p>
+      <h1 class="hero-title">Redesigning <em>St. Andrew's College</em> for the Modern Student</h1>
+      <p class="hero-sub">A comprehensive UX audit, information architecture overhaul, and homepage redesign for one of Mumbai's oldest educational institutions.</p>
+      <div class="hero-meta">
+        <span class="hero-pill">standrewscollege.ac.in</span>
+        <span class="hero-pill">Education · Institutional</span>
+        <span class="hero-pill">Mumbai, Maharashtra</span>
+        <span class="hero-pill">Est. 1927</span>
+      </div>
+    </div>
+    <div>
+      <div class="score-badge reveal">
+        <div class="score-num">A+</div>
+        <div class="score-label">NAAC Grade</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-n">9</div><div class="hero-stat-l">Issues Found</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">60+</div><div class="hero-stat-l">Nav Items</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">150+</div><div class="hero-stat-l">Notices</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">3.35</div><div class="hero-stat-l">CGPA Score</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ MAIN CONTENT ═══════ -->
+<div class="page-wrap">
+
+  <!-- OVERVIEW -->
+  <section class="section section-border" id="overview">
+    <div class="cs-wrap">
+      <p class="section-label">01 — Project Overview</p>
+      <h2 class="section-title">A prestigious college with a digital identity crisis</h2>
+      <p class="section-sub">St. Andrew's College has held a NAAC A+ accreditation since 2023 and a legacy spanning nearly a century. Yet its website — the first point of contact for thousands of prospective students every year — fails to communicate that prestige, or serve its users effectively.</p>
+
+      <div class="problem-grid">
+        <div class="problem-card big reveal">
+          <p class="pc-num">01</p>
+          <p class="pc-label">Core Problem</p>
+          <h3 class="pc-title">The website tries to be an archive, a noticeboard, and a brochure simultaneously — and succeeds at none of them.</h3>
+          <p class="pc-body layout-1">With 60+ navigation links, 150+ notice entries on a single homepage, and critical information buried in un-searchable PDFs, users cannot complete basic tasks like finding fee structures, checking exam dates, or understanding how to apply. The design has no clear hierarchy, no defined user journeys, and no visual identity that reflects the college's standing.</p>
+        </div>
+        <div class="problem-card reveal reveal-delay-1">
+          <p class="pc-num">02</p>
+          <p class="pc-label">Primary Users</p>
+          <h3 class="pc-title">Four distinct audiences with conflicting needs</h3>
+          <p class="pc-body">Prospective students want course info and how to apply. Current students need timetables and exam notices. Parents seek fee structures and admission updates. Faculty need internal tools and resources. The current site treats them all identically.</p>
+        </div>
+        <div class="problem-card reveal reveal-delay-2">
+          <p class="pc-num">03</p>
+          <p class="pc-label">Opportunity</p>
+          <h3 class="pc-title">A strong institution deserves a site that shows it</h3>
+          <p class="pc-body">An A+ NAAC grade, 50+ years of operation, 3,000+ students, a 360° campus tour, and multiple best-college awards — none of this is communicated above the fold. A redesign would not just improve UX; it would actively strengthen recruitment and institutional reputation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIT -->
+  <section class="section section-border" id="audit">
+    <div class="cs-wrap">
+      <p class="section-label">02 — UX Audit</p>
+      <h2 class="section-title">What's broken, and why it matters</h2>
+      <p class="section-sub">A systematic heuristic evaluation of the current homepage and navigation, rated by severity. Click each item to see the full detail and recommended fix.</p>
+
+      <div class="audit-grid">
+
+        <details class="audit-item reveal">
+          <summary class="audit-head">
+            <div class="audit-sev critical"></div>
+            <span class="audit-cat">Navigation</span>
+            <span class="audit-title">Dual navigation bar with 60+ items</span>
+            <span class="audit-badge critical">Critical</span>
+          </summary><div class="audit-body">
+            <p>The site features two separate navigation bars stacked atop each other — a utility bar with links to Administration, UNESCO, SOP, and Knimbus, and a main menu with 10 top-level dropdowns each containing 5–20 sub-items. This violates the principle of progressive disclosure and creates immediate cognitive overload for any first-time visitor.</p>
+            <div class="audit-impact"><strong>User Impact</strong>Prospective students cannot find "how to apply" without exploring multiple dropdown paths. The information exists, but navigation friction makes it effectively invisible.</div>
+            <div class="audit-impact"><strong>Recommended Fix</strong>Consolidate to a single navbar with 5 primary items (About, Admissions, Academics, Student Life, Contact) and a global search. Move utility links to the footer.</div>
+</div></details>
+
+        <details class="audit-item reveal">
+          <summary class="audit-head">
+            <div class="audit-sev critical"></div>
+            <span class="audit-cat">Homepage</span>
+            <span class="audit-title">150+ unfiltered notices as the primary homepage content</span>
+            <span class="audit-badge critical">Critical</span>
+          </summary><div class="audit-body">
+            <p>Scrolling the homepage reveals an enormous wall of PDF notices dating from 2021 to present, with no categorisation, search, or filtering. Critical 2026 admission notices are interspersed with 2022 exam timetables and 2021 grade card announcements. The list has no visual hierarchy — everything is bold text, creating sensory noise.</p>
+            <div class="audit-impact"><strong>User Impact</strong>Students with urgent time-sensitive questions (exam dates, admission deadlines) cannot quickly find relevant information. The cognitive cost of scanning 150+ items causes abandonment.</div>
+            <div class="audit-impact"><strong>Recommended Fix</strong>Replace with a tabbed "Latest Updates" widget showing the 5 most recent items per category (Junior College / Degree College / General). Archive older items in a searchable notices database.</div>
+</div></details>
+
+        <details class="audit-item reveal">
+          <summary class="audit-head">
+            <div class="audit-sev critical"></div>
+            <span class="audit-cat">Visual Hierarchy</span>
+            <span class="audit-title">No hero, no CTA, no value proposition above the fold</span>
+            <span class="audit-badge critical">Critical</span>
+          </summary><div class="audit-body">
+            <p>The homepage opens with a plain text heading "Welcome to St. Andrew's College of Arts, Science & Commerce" on a white background, followed immediately by the notice wall. There is no imagery, no accreditation badge, no statistics, and no directional call-to-action. A prospective student arriving for the first time has no clear next step.</p>
+            <div class="audit-impact"><strong>User Impact</strong>Bounce rate is likely high from prospective students. The A+ NAAC grade — the single most important trust signal for Indian college admissions — is invisible unless you know to look for it in a small table mid-page.</div>
+            <div class="audit-impact"><strong>Recommended Fix</strong>Create a full-bleed hero with campus photography, the NAAC A+ badge prominently displayed, key stats, and two primary CTAs: "Apply Now" and "Explore Courses".</div>
+</div></details>
+
+        <details class="audit-item reveal">
+          <summary class="audit-head">
+            <div class="audit-sev high"></div>
+            <span class="audit-cat">Accessibility</span>
+            <span class="audit-title">user-scalable=0 disables pinch-to-zoom on mobile</span>
+            <span class="audit-badge high">High</span>
+          </summary><div class="audit-body">
+            <p>The viewport meta tag contains <code>user-scalable=0</code>, which prevents users from zooming on mobile devices. This is a direct violation of WCAG 2.1 Success Criterion 1.4.4 (Resize Text) and is especially harmful for users with low vision. It also signals a poor approach to responsive design.</p>
+            <div class="audit-impact"><strong>User Impact</strong>Users with visual impairments cannot increase text size. The small font sizes used throughout the site (particularly in notices and dropdowns) become effectively unreadable on mobile.</div>
+            <div class="audit-impact"><strong>Recommended Fix</strong>Remove user-scalable=0 immediately. Implement proper responsive design so zoom doesn't break layouts rather than disabling zoom.</div>
+</div></details>
+
+        <details class="audit-item reveal">
+          <summary class="audit-head">
+            <div class="audit-sev high"></div>
+            <span class="audit-cat">Information Access</span>
+            <span class="audit-title">Critical information locked in unindexed PDFs</span>
+            <span class="audit-badge high">High</span>
+          </summary><div class="audit-body">
+            <p>Fee structures, academic calendars, syllabi, exam timetables, merit lists, and attendance notices are all delivered as downloadable PDFs. This means: (1) the content cannot be indexed by Google, so students searching for "St Andrews College fee structure" cannot find it via search; (2) PDFs are inaccessible to screen readers; (3) PDFs require download before reading, creating significant friction on mobile.</p>
+            <div class="audit-impact"><strong>User Impact</strong>The college is invisible to search engines for its most queried content. Students from remote areas on slow connections cannot easily download large PDFs.</div>
+            <div class="audit-impact"><strong>Recommended Fix</strong>Publish key content as structured HTML pages. Academic calendars as iCal-compatible web pages. Merit lists as filterable HTML tables. Fee structures as formatted web content.</div>
+</div></details>
+
+        <details class="audit-item reveal">
+          <summary class="audit-head">
+            <div class="audit-sev high"></div>
+            <span class="audit-cat">Mobile UX</span>
+            <span class="audit-title">Desktop mega-menu fails entirely on mobile</span>
+            <span class="audit-badge high">High</span>
+          </summary><div class="audit-body">
+            <p>The multi-level dropdown navigation is designed for desktop hover interactions. On mobile touch interfaces, accessing nested dropdown items requires multiple taps with no visual affordance, and the menus frequently close before users can reach sub-items. There is no mobile-specific navigation pattern (e.g. hamburger drawer with accordion sections).</p>
+            <div class="audit-impact"><strong>User Impact</strong>Given that India has >80% mobile internet usage, the majority of the college's audience is using a navigation system that functionally does not work for them.</div>
+            <div class="audit-impact"><strong>Recommended Fix</strong>Implement a full-screen mobile drawer with accordion navigation. Each primary item expands to reveal sub-items on tap, with clear back/close controls.</div>
+</div></details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section section-border">
+    <div class="cs-wrap">
+      <p class="section-label">02b — Before &amp; After</p>
+      <h2 class="section-title">Current state vs proposed direction</h2>
+      <div class="ba-grid">
+        <div class="ba-card reveal">
+          <div class="ba-head before">✕ &nbsp;Current Homepage</div>
+          <div class="ba-body">
+            <ul class="ba-list before">
+              <li>Text-only header, no visual identity</li>
+              <li>Dual navigation bar, 60+ links immediately visible</li>
+              <li>No CTA, no accreditation badge above fold</li>
+              <li>150+ unfiltered notices from 2021–2026</li>
+              <li>No search anywhere on the page</li>
+              <li>All critical info in PDF files</li>
+              <li>user-scalable=0 blocks zoom on mobile</li>
+              <li>No user journey differentiation</li>
+              <li>Desktop mega-menu, broken on mobile</li>
+              <li>No quick actions or shortcuts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ba-card reveal reveal-delay-1">
+          <div class="ba-head after">✓ &nbsp;Redesigned Homepage</div>
+          <div class="ba-body">
+            <ul class="ba-list after">
+              <li>Full-bleed hero with campus photography</li>
+              <li>Single navbar, 5 items + search (Cmd+K)</li>
+              <li>NAAC A+ badge + two clear CTAs above fold</li>
+              <li>Tabbed notices widget, 5 items, categorised</li>
+              <li>Persistent search in navbar</li>
+              <li>Key content as HTML pages with PDF download option</li>
+              <li>Accessibility-compliant, zoom enabled</li>
+              <li>"I am a…" journey selector adapts content</li>
+              <li>Mobile drawer navigation with accordions</li>
+              <li>6-icon quick-action bar for top tasks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IA -->
+  <section class="section section-border" id="ia">
+    <div class="cs-wrap">
+      <p class="section-label">03 — Information Architecture</p>
+      <h2 class="section-title">Simplified navigation structure</h2>
+      <p class="section-sub">Collapsing 10 top-level navigation items and 60+ links into a focused 5-item primary navigation with logical grouping.</p>
+      <div class="ia-wrap reveal">
+        <div class="ia-title">Proposed primary navigation — 5 top-level items</div>
+        <div class="ia-tree">
+          <div class="ia-col">
+            <div class="ia-root">About</div>
+            <div class="ia-sub">
+              <div class="ia-node">Vision &amp; Mission</div>
+              <div class="ia-node">Management</div>
+              <div class="ia-node">Principal's Page</div>
+              <div class="ia-node">NAAC Reports</div>
+              <div class="ia-node">Awards</div>
+              <div class="ia-node">NIRF</div>
+            </div>
+          </div>
+          <div class="ia-divider">·</div>
+          <div class="ia-col">
+            <div class="ia-root">Admissions</div>
+            <div class="ia-sub">
+              <div class="ia-node">How to Apply</div>
+              <div class="ia-node">FYJC Admissions</div>
+              <div class="ia-node">Degree Admissions</div>
+              <div class="ia-node">Merit Lists</div>
+              <div class="ia-node">Fee Structure</div>
+              <div class="ia-node">Scholarships</div>
+            </div>
+          </div>
+          <div class="ia-divider">·</div>
+          <div class="ia-col">
+            <div class="ia-root">Academics</div>
+            <div class="ia-sub">
+              <div class="ia-node">Degree Courses</div>
+              <div class="ia-node">Junior College</div>
+              <div class="ia-node">Self-Financed</div>
+              <div class="ia-node">Departments</div>
+              <div class="ia-node">Syllabus</div>
+              <div class="ia-node">Library</div>
+            </div>
+          </div>
+          <div class="ia-divider">·</div>
+          <div class="ia-col">
+            <div class="ia-root">Student Life</div>
+            <div class="ia-sub">
+              <div class="ia-node">Examinations</div>
+              <div class="ia-node">Timetables</div>
+              <div class="ia-node">Clubs &amp; NSS</div>
+              <div class="ia-node">Placement</div>
+              <div class="ia-node">Counselling</div>
+              <div class="ia-node">Sports</div>
+            </div>
+          </div>
+          <div class="ia-divider">·</div>
+          <div class="ia-col">
+            <div class="ia-root">Contact</div>
+            <div class="ia-sub">
+              <div class="ia-node">Contact Us</div>
+              <div class="ia-node">Faculty Directory</div>
+              <div class="ia-node">Alumni</div>
+              <div class="ia-node">Job Openings</div>
+              <div class="ia-node">IQAC</div>
+              <div class="ia-node">Grievance Cell</div>
+            </div>
+          </div>
+        </div>
+        <p class="layout-2">Utility links (Login, NIRF, UNESCO, Knimbus) moved to footer or a compact utility row. Research, Mandatory Disclosure, IQAC grouped under relevant primary items or a secondary tab.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="section section-border" id="recommendations">
+    <div class="cs-wrap">
+      <p class="section-label">04 — Recommendations</p>
+      <h2 class="section-title">Five strategic changes, in priority order</h2>
+      <p class="section-sub">Each recommendation addresses a specific failure mode identified in the audit, with clear rationale and expected outcome.</p>
+
+      <div class="rec-list">
+        <div class="rec-item reveal">
+          <div class="rec-num">1</div>
+          <div>
+            <div class="layout-3">
+              <div class="rec-title">Fix accessibility violations immediately</div>
+              <span class="rec-priority p1">P0 · Urgent</span>
+            </div>
+            <p class="rec-body">Remove <code>user-scalable=0</code> from the viewport meta tag. Add skip navigation links. Announce PDF links with an icon. Ensure all interactive elements have visible focus states. These changes have zero design cost and eliminate legal and ethical liability. WCAG 2.1 compliance is mandatory for Indian government-affiliated institutions under the Rights of Persons with Disabilities Act, 2016.</p>
+            <div class="rec-tags"><span class="rec-tag">Accessibility</span><span class="rec-tag">Zero Cost</span><span class="rec-tag">WCAG 2.1</span></div>
+          </div>
+        </div>
+        <div class="rec-item reveal">
+          <div class="rec-num">2</div>
+          <div>
+            <div class="layout-4">
+              <div class="rec-title">Consolidate navigation to 5 primary items with search</div>
+              <span class="rec-priority p1">P1 · High</span>
+            </div>
+            <p class="rec-body">Replace the dual navbar with a single bar containing About, Admissions, Academics, Student Life, and Contact. Each opens a two-panel fly-out on desktop and an accordion in a mobile drawer. Add a global search with Cmd+K keyboard shortcut. This single change reduces the navigation decision space from 60+ options to 5, dramatically reducing cognitive load for new visitors.</p>
+            <div class="rec-tags"><span class="rec-tag">Navigation</span><span class="rec-tag">IA</span><span class="rec-tag">Search</span><span class="rec-tag">Mobile</span></div>
+          </div>
+        </div>
+        <div class="rec-item reveal">
+          <div class="rec-num">3</div>
+          <div>
+            <div class="layout-5">
+              <div class="rec-title">Redesign homepage around clear user journeys</div>
+              <span class="rec-priority p1">P1 · High</span>
+            </div>
+            <p class="rec-body">Add a "I am a…" selector (Prospective Student / Current Student / Parent / Alumni) above the hero that filters homepage content. Replace the 150+ notice wall with a tabbed updates widget showing 5 most-recent items. Create a 6-icon quick-action bar for the most-visited tasks. Display the NAAC A+ badge and key stats prominently above the fold. Add a real hero image of the campus.</p>
+            <div class="rec-tags"><span class="rec-tag">Homepage</span><span class="rec-tag">Content Strategy</span><span class="rec-tag">User Journeys</span></div>
+          </div>
+        </div>
+        <div class="rec-item reveal">
+          <div class="rec-num">4</div>
+          <div>
+            <div class="layout-6">
+              <div class="rec-title">Convert critical PDFs to web-native content</div>
+              <span class="rec-priority p2">P2 · Medium</span>
+            </div>
+            <p class="rec-body">Publish academic calendars as filterable web pages with iCal export. Convert merit lists to searchable HTML tables with roll number filtering. Create structured department pages for each course with syllabus content in HTML. This improves SEO substantially — students searching "St Andrews BSc IT syllabus" or "FYJC merit list 2026" should land directly on the relevant page, not navigate through menus.</p>
+            <div class="rec-tags"><span class="rec-tag">SEO</span><span class="rec-tag">Content</span><span class="rec-tag">Accessibility</span><span class="rec-tag">Mobile</span></div>
+          </div>
+        </div>
+        <div class="rec-item reveal">
+          <div class="rec-num">5</div>
+          <div>
+            <div class="layout-7">
+              <div class="rec-title">Establish and roll out a visual design system</div>
+              <span class="rec-priority p2">P2 · Medium</span>
+            </div>
+            <p class="rec-body">Define a token-based design system: two typefaces (a serif for headings, a clean sans for body), a 6-colour palette, spacing scale, component library of cards, badges, and notice types. Standardise the notice/alert component with colour-coded severity. Apply consistently across all 100+ pages. This work amortises across every future update — consistent design reduces maintenance cost and strengthens the institutional brand.</p>
+            <div class="rec-tags"><span class="rec-tag">Design System</span><span class="rec-tag">Branding</span><span class="rec-tag">Typography</span><span class="rec-tag">Components</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LO-FI WIREFRAME -->
+  <section class="section section-border" id="lofi">
+    <div class="cs-wrap">
+      <p class="section-label">05 — Lo-fi Wireframe</p>
+      <h2 class="section-title">Layout logic before visual design</h2>
+      <p class="section-sub">A low-fidelity wireframe strips colour, photography, and typography decisions away — leaving only the structural questions: what goes where, in what order, and why. Every zone is annotated with the reasoning behind its placement and interaction pattern.</p>
+    </div>
+
+    <div class="cs-wrap lofi-wrap">
+
+      <!-- Legend -->
+      <div class="lf-legend reveal">
+        <div class="lf-legend-item"><div class="lf-legend-dash"></div><span>Content zone boundary</span></div>
+        <div class="lf-legend-item"><div class="layout-8"></div><span>Placeholder / grey block</span></div>
+        <div class="lf-legend-item"><span class="layout-9">note</span><span>Design annotation</span></div>
+        <div class="lf-legend-item"><span class="layout-10">new</span><span>New pattern not in current site</span></div>
+      </div>
+
+      <!-- 1. NAV -->
+      <div class="lofi-card reveal">
+        <div class="lofi-head">
+          <span class="lofi-head-title">① Global navigation bar — 52px height, sticky</span>
+          <span class="lofi-badge">Persistent on scroll</span>
+        </div>
+        <div class="lofi-body">
+          <div class="layout-11">
+            <div class="lf-block layout-12">
+              <span class="lf-label-bold">Logo + wordmark</span>
+            </div>
+            <div class="layout-13">
+              <div class="lf-block layout-14"><span class="lf-label">About</span></div>
+              <div class="lf-block layout-15"><span class="lf-label">Admissions</span></div>
+              <div class="lf-block layout-16"><span class="lf-label">Academics</span></div>
+              <div class="lf-block layout-17"><span class="lf-label">Student Life</span></div>
+              <div class="lf-block layout-18"><span class="lf-label">Contact</span></div>
+            </div>
+            <div class="layout-19">
+              <div class="lf-block layout-20"><span class="lf-label layout-21">⌕</span></div>
+              <div class="lf-block layout-22"><span class="lf-label-bold">Login</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="lofi-note"><strong>Structural decision</strong>5 primary items (down from 10). Search icon triggers Cmd+K overlay — not an always-visible input field, which saves horizontal space. Login moved out of primary nav. Utility links (NIRF, UNESCO, Knimbus) relocated to footer.</div>
+      </div>
+
+      <!-- 2. HERO -->
+      <div class="lofi-card reveal">
+        <div class="lofi-head">
+          <span class="lofi-head-title">② Hero — above the fold, ~340px</span>
+          <span class="lofi-badge new">new — persona journey selector</span>
+        </div>
+        <div class="lofi-body layout-23">
+          <div class="layout-24">
+            <div class="lf-label layout-25">I am a —</div>
+            <div class="layout-26">
+              <span class="lf-pill lf-pill-on">Prospective Student</span>
+              <span class="lf-pill">Current Student</span>
+              <span class="lf-pill">Parent</span>
+              <span class="lf-pill">Alumni</span>
+              <span class="lf-pill">Faculty</span>
+            </div>
+          </div>
+          <div class="layout-27">
+            <div class="lf-label layout-28">Est. 1927 · Bandra, Mumbai</div>
+            <div class="lf-text layout-29"></div>
+            <div class="lf-text layout-30"></div>
+            <div class="lf-text layout-31"></div>
+            <div class="lf-text layout-32"></div>
+          </div>
+          <div class="layout-33">
+            <div class="lf-block layout-34"><span class="lf-label layout-35">● NAAC A+ Accredited · CGPA 3.35</span></div>
+            <div class="lf-row layout-36">
+              <div class="lf-block layout-37"><span class="lf-label-bold layout-38">Apply Now →</span></div>
+              <div class="lf-block layout-39"><span class="lf-label layout-40">Explore Courses</span></div>
+              <div class="lf-block layout-41"><span class="lf-label layout-42">360° Tour</span></div>
+            </div>
+          </div>
+          <div class="lf-row layout-43">
+            <div class="lf-stat"><div class="lf-label-bold layout-44">50+</div><div class="lf-label layout-45">Years of excellence</div></div>
+            <div class="lf-stat"><div class="lf-label-bold layout-46">3,000+</div><div class="lf-label layout-47">Students enrolled</div></div>
+            <div class="lf-stat"><div class="lf-label-bold layout-48">15+</div><div class="lf-label layout-49">Programmes</div></div>
+            <div class="lf-stat"><div class="lf-label-bold layout-50">A+</div><div class="lf-label layout-51">NAAC grade</div></div>
+          </div>
+        </div>
+        <div class="lofi-note"><strong>Structural decision</strong>Persona selector sits above the headline — it's an interactive component that triggers content adaptation, not decorative text. "Prospective" shows Apply CTA; "Current Student" surfaces timetable + portal. 3 CTAs establish the primary user actions. Trust stats anchor the bottom of the hero before the page body begins.</div>
+      </div>
+
+      <!-- 3. QUICK ACTIONS -->
+      <div class="lofi-card reveal">
+        <div class="lofi-head">
+          <span class="lofi-head-title">③ Quick action bar — 1-click task access</span>
+          <span class="lofi-badge new">new — replaces deep navigation</span>
+        </div>
+        <div class="lofi-body">
+          <div class="lf-label layout-52">Quick access</div>
+          <div class="lf-row layout-53">
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-54">Academic Calendar</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-55">Fee Structure</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-56">Exam Timetable</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-57">Apply Online</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-58">Library &amp; Moodle</div></div>
+            <div class="lf-qa"><div class="lf-icon-ph"></div><div class="lf-label layout-59">Results</div></div>
+          </div>
+        </div>
+        <div class="lofi-note"><strong>Structural decision</strong>6 direct-link tiles — no sub-menus. Each resolves the top 6 user tasks found in the audit in a single click. Icon circles are placeholders; the lo-fi deliberately withholds specific icon choices so that decision happens separately. Background shift from hero signals a new content zone.</div>
+      </div>
+
+      <!-- 4. NOTICES -->
+      <div class="lofi-card reveal">
+        <div class="lofi-head">
+          <span class="lofi-head-title">④ Latest notices widget — tabbed, filterable</span>
+          <span class="lofi-badge new">new — replaces 150+ unfiltered list</span>
+        </div>
+        <div class="lofi-body">
+          <div class="layout-60">
+            <div class="lf-label-bold">Latest updates</div>
+            <div class="lf-label layout-61">View all notices →</div>
+          </div>
+          <div class="layout-62">
+            <div class="lf-tab lf-tab-on">All</div>
+            <div class="lf-tab">Junior College</div>
+            <div class="lf-tab">Degree College</div>
+            <div class="lf-tab">General</div>
+          </div>
+          <div>
+            <div class="lf-notice"><div class="lf-dot layout-63"></div><div class="layout-64"><span class="lf-label-bold">SY Field Project Brochure 2026–27 now available</span></div><div class="lf-block layout-65"><span class="lf-label layout-66">Degree</span></div><div class="lf-label layout-67">Jun 23</div></div>
+            <div class="lf-notice"><div class="lf-dot layout-68"></div><div class="layout-69"><span class="lf-label-bold">ATKT Aided &amp; SFC Notice No.1 — June 2026 Examinations</span></div><div class="lf-block layout-70"><span class="lf-label layout-71">Exam</span></div><div class="lf-label layout-72">Jun 20</div></div>
+            <div class="lf-notice"><div class="lf-dot layout-73"></div><div class="layout-74"><span class="lf-label-bold">Allotment Report Round 3 — Arts, Commerce, Science 2026–27</span></div><div class="lf-block layout-75"><span class="lf-label layout-76">JC Admissions</span></div><div class="lf-label layout-77">Jun 19</div></div>
+          </div>
+        </div>
+        <div class="lofi-note"><strong>Structural decision</strong>Coloured severity dot (blue = info, orange = exam/deadline, green = admissions) communicates urgency before reading. "View all notices →" is a persistent escape hatch to a dedicated searchable archive — the architecture that addresses the current site's hard limit of 5 visible notices. Tabs let users filter by their role without changing pages.</div>
+      </div>
+
+      <!-- 5. PROGRAMMES -->
+      <div class="lofi-card reveal">
+        <div class="lofi-head">
+          <span class="lofi-head-title">⑤ Explore programmes — 3×2 card grid</span>
+          <span class="lofi-badge">6 degree cards</span>
+        </div>
+        <div class="lofi-body layout-78">
+          <div class="layout-79">
+            <div class="lf-label-bold">Explore programmes</div>
+            <div class="lf-label layout-80">View all courses →</div>
+          </div>
+          <div class="lf-row layout-81">
+            <div class="lf-course"><div class="lf-label-bold layout-82">B.A.</div><div class="lf-label layout-83">Arts &amp; Humanities</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-84">B.Com.</div><div class="lf-label layout-85">Commerce</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-86">B.Sc. IT</div><div class="lf-label layout-87">Information Technology</div></div>
+          </div>
+          <div class="lf-row layout-88">
+            <div class="lf-course"><div class="lf-label-bold layout-89">B.M.S.</div><div class="lf-label layout-90">Management Studies</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-91">B.A.M.M.C.</div><div class="lf-label layout-92">Mass Media</div></div>
+            <div class="lf-course"><div class="lf-label-bold layout-93">B.Sc. HS</div><div class="lf-label layout-94">Hospitality Studies</div></div>
+          </div>
+        </div>
+        <div class="lofi-note"><strong>Structural decision</strong>Degree abbreviation (large) acts as the visual anchor — it's what students already call the course. Stream name (small, uppercase) provides context. Arrow glyph signals clickability without a full button component, keeping cards lightweight. Colour tinting per stream is a hi-fi decision deferred from this lo-fi.</div>
+      </div>
+
+      <!-- 6. ABOUT + TOUR -->
+      <div class="lofi-card reveal">
+        <div class="lofi-head">
+          <span class="lofi-head-title">⑥ About the college + virtual tour — 50/50 split</span>
+          <span class="lofi-badge new">new — surfaces buried tour</span>
+        </div>
+        <div class="lofi-body layout-95">
+          <div class="lf-row layout-96">
+            <div class="layout-97">
+              <div class="lf-label layout-98">About the college</div>
+              <div class="lf-label-bold layout-99">A Mumbai institution since 1927</div>
+              <div class="lf-text layout-100"></div>
+              <div class="lf-text layout-101"></div>
+              <div class="lf-text layout-102"></div>
+              <div class="lf-text layout-103"></div>
+              <div class="lf-text layout-104"></div>
+              <div class="lf-text layout-105"></div>
+              <div class="layout-106">Our story &amp; history →</div>
+            </div>
+            <div class="layout-107">
+              <div class="layout-108">▶</div>
+              <div class="lf-label-bold layout-109">360° Virtual Campus Tour</div>
+              <div class="lf-label layout-110">Explore campus before you apply</div>
+            </div>
+          </div>
+        </div>
+        <div class="lofi-note"><strong>Structural decision</strong>Two distinct content regions — text (left) and media (right) — separated by a layout boundary, not just whitespace. The virtual tour is currently buried deep in the site; surfacing it here addresses a key discoverability gap and speaks directly to prospective students. The 50/50 split gives both zones equal visual weight.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WIREFRAME -->
+  <section class="section section-border" id="wireframe">
+    <div class="cs-wrap">
+      <p class="section-label">06 — Hi-fi Wireframe</p>
+      <h2 class="section-title">The proposed homepage, designed</h2>
+      <p class="section-sub">With the layout logic established in the lo-fi above, the high-fidelity wireframe applies the design system — colour, typography, real copy, and component styling — to validate that the structure also works visually.</p>
+    </div>
+
+    <div class="cs-wrap reveal layout-111">
+      <div class="wf-section">
+        <!-- Browser chrome -->
+        <div class="wf-toolbar">
+          <div class="wf-dot layout-112"></div>
+          <div class="wf-dot layout-113"></div>
+          <div class="wf-dot layout-114"></div>
+          <div class="wf-url">standrewscollege.ac.in</div>
+        </div>
+
+        <div class="wf-page">
+
+          <!-- 1. NAV -->
+          <div class="wf-nav">
+            <div class="wf-nav-logo">St. Andrew's College</div>
+            <div class="wf-nav-links">
+              <span>About</span>
+              <span>Admissions</span>
+              <span>Academics</span>
+              <span>Student Life</span>
+              <span>Contact</span>
+            </div>
+            <div class="wf-nav-actions">
+              <div class="wf-search-btn">⌕</div>
+              <div class="wf-login-btn">Login</div>
+            </div>
+          </div>
+
+          <!-- 2. HERO -->
+          <div class="wf-hero">
+            <!-- Journey selector -->
+            <div class="layout-115">
+              <span class="layout-116">I AM A —</span>
+              <div class="wf-journey">
+                <span class="wj-active">Prospective Student</span>
+                <span>Current Student</span>
+                <span>Parent</span>
+                <span>Alumni</span>
+                <span>Faculty</span>
+              </div>
+            </div>
+
+            <div class="wf-hero-label">Est. 1927 · Bandra, Mumbai</div>
+            <h1 class="wf-hero-h1">Education for All,<br><em>Excellence for Life</em></h1>
+            <p class="wf-hero-sub">St. Andrew's College of Arts, Science & Commerce — shaping students through academics, ethics, and community.</p>
+
+            <div class="wf-accred">
+              <span class="layout-117"></span>
+              NAAC A+ Accredited · CGPA 3.35 · 2023
+            </div>
+
+            <div class="wf-ctas">
+              <button class="wf-cta-primary">Apply Now →</button>
+              <button class="wf-cta-secondary">Explore Courses</button>
+              <button class="wf-cta-secondary">360° Campus Tour</button>
+            </div>
+
+            <div class="wf-stats-row">
+              <div class="wf-stat"><div class="wf-stat-n">50+</div><div class="wf-stat-l">Years of Excellence</div></div>
+              <div class="wf-stat"><div class="wf-stat-n">3,000+</div><div class="wf-stat-l">Students Enrolled</div></div>
+              <div class="wf-stat"><div class="wf-stat-n">15+</div><div class="wf-stat-l">Programmes</div></div>
+              <div class="wf-stat"><div class="wf-stat-n">A+</div><div class="wf-stat-l">NAAC Grade</div></div>
+            </div>
+          </div>
+
+          <!-- 3. QUICK ACTIONS -->
+          <div class="wf-qa">
+            <div class="wf-qa-label">Quick access</div>
+            <div class="wf-qa-grid">
+              <div class="wf-qa-item"><span class="wf-qa-icon">📅</span><div class="wf-qa-text">Academic Calendar</div></div>
+              <div class="wf-qa-item"><span class="wf-qa-icon">💰</span><div class="wf-qa-text">Fee Structure</div></div>
+              <div class="wf-qa-item"><span class="wf-qa-icon">📝</span><div class="wf-qa-text">Exam Timetable</div></div>
+              <div class="wf-qa-item"><span class="wf-qa-icon">📋</span><div class="wf-qa-text">Apply Online</div></div>
+              <div class="wf-qa-item"><span class="wf-qa-icon">📚</span><div class="wf-qa-text">Library & Moodle</div></div>
+              <div class="wf-qa-item"><span class="wf-qa-icon">🎓</span><div class="wf-qa-text">Results</div></div>
+            </div>
+          </div>
+
+          <!-- 4. LATEST UPDATES -->
+          <div class="wf-updates">
+            <div class="wf-section-hd">
+              <h3>Latest updates</h3>
+              <a href="#">View all notices →</a>
+            </div>
+            <div class="wf-tabs">
+              <div class="wf-tab wt-active">All</div>
+              <div class="wf-tab">Junior College</div>
+              <div class="wf-tab">Degree College</div>
+              <div class="wf-tab">General</div>
+            </div>
+            <div>
+              <div class="wf-notice-item">
+                <div class="wf-notice-dot layout-118"></div>
+                <div class="wf-notice-text">SY Field Project Brochure 2026–2027 now available</div>
+                <span class="wf-notice-tag layout-119">Degree</span>
+                <div class="wf-notice-date">Jun 23, 2026</div>
+              </div>
+              <div class="wf-notice-item">
+                <div class="wf-notice-dot layout-120"></div>
+                <div class="wf-notice-text">TY Community Engagement Project Brochure 2026–2027</div>
+                <span class="wf-notice-tag layout-121">Degree</span>
+                <div class="wf-notice-date">Jun 22, 2026</div>
+              </div>
+              <div class="wf-notice-item">
+                <div class="wf-notice-dot layout-122"></div>
+                <div class="wf-notice-text">ATKT Aided & SFC Notice No.1 — June 2026 Examinations</div>
+                <span class="wf-notice-tag layout-123">Exam</span>
+                <div class="wf-notice-date">Jun 20, 2026</div>
+              </div>
+              <div class="wf-notice-item">
+                <div class="wf-notice-dot layout-124"></div>
+                <div class="wf-notice-text">Allotment Report Round 3 — Arts, Commerce, Science 2026–27</div>
+                <span class="wf-notice-tag layout-125">JC Admissions</span>
+                <div class="wf-notice-date">Jun 19, 2026</div>
+              </div>
+              <div class="wf-notice-item">
+                <div class="wf-notice-dot layout-126"></div>
+                <div class="wf-notice-text">Commencement of Lectures for First Year Degree Students</div>
+                <span class="wf-notice-tag layout-127">General</span>
+                <div class="wf-notice-date">Jun 18, 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. COURSES -->
+          <div class="wf-courses">
+            <div class="wf-section-hd">
+              <h3>Explore programmes</h3>
+              <a href="#">View all courses →</a>
+            </div>
+            <div class="wf-course-grid">
+              <div class="wf-course-card layout-128">
+                <div class="wf-course-deg layout-129">B.A.</div>
+                <div class="wf-course-name layout-130">Arts & Humanities</div>
+                <div class="wf-course-arrow layout-131">→</div>
+              </div>
+              <div class="wf-course-card layout-132">
+                <div class="wf-course-deg layout-133">B.Com.</div>
+                <div class="wf-course-name layout-134">Commerce</div>
+                <div class="wf-course-arrow layout-135">→</div>
+              </div>
+              <div class="wf-course-card layout-136">
+                <div class="wf-course-deg layout-137">B.Sc. IT</div>
+                <div class="wf-course-name layout-138">Information Technology</div>
+                <div class="wf-course-arrow layout-139">→</div>
+              </div>
+              <div class="wf-course-card layout-140">
+                <div class="wf-course-deg layout-141">B.M.S.</div>
+                <div class="wf-course-name layout-142">Management Studies</div>
+                <div class="wf-course-arrow layout-143">→</div>
+              </div>
+              <div class="wf-course-card layout-144">
+                <div class="wf-course-deg layout-145">B.A.M.M.C.</div>
+                <div class="wf-course-name layout-146">Mass Media</div>
+                <div class="wf-course-arrow layout-147">→</div>
+              </div>
+              <div class="wf-course-card layout-148">
+                <div class="wf-course-deg layout-149">B.Sc. HS</div>
+                <div class="wf-course-name layout-150">Hospitality Studies</div>
+                <div class="wf-course-arrow layout-151">→</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. ABOUT + TOUR -->
+          <div class="wf-about">
+            <div class="wf-about-left">
+              <div class="wf-about-label">About the college</div>
+              <div class="wf-about-title">A Mumbai institution since 1927</div>
+              <div class="wf-body-line layout-152"></div>
+              <div class="wf-body-line layout-153"></div>
+              <div class="wf-body-line layout-154"></div>
+              <div class="wf-body-line layout-155"></div>
+              <div class="wf-body-line layout-156"></div>
+              <div class="wf-body-line layout-157"></div>
+              <a class="wf-text-btn" href="#">Our story & history →</a>
+            </div>
+            <div class="wf-about-right">
+              <div class="wf-tour-overlay">
+                <div class="wf-tour-icon">▶</div>
+                <div class="wf-tour-label">360° Virtual Campus Tour</div>
+                <div class="layout-158">Explore the campus before you apply</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. EVENTS -->
+          <div class="wf-events">
+            <div class="wf-section-hd">
+              <h3>Upcoming events</h3>
+              <a href="#">Full calendar →</a>
+            </div>
+            <div class="wf-event-grid">
+              <div class="wf-event-card">
+                <div class="wf-event-date"><div class="wf-event-day">30</div><div class="wf-event-mon">Jun</div></div>
+                <div>
+                  <div class="wf-event-info-tag layout-159">Academics</div>
+                  <div class="wf-event-info-title">Commencement of Lectures — First Year Degree 2026–27</div>
+                </div>
+              </div>
+              <div class="wf-event-card">
+                <div class="wf-event-date"><div class="wf-event-day">05</div><div class="wf-event-mon">Jul</div></div>
+                <div>
+                  <div class="wf-event-info-tag layout-160">Admissions</div>
+                  <div class="wf-event-info-title">FYJC Admission — Special CAP Round 3</div>
+                </div>
+              </div>
+              <div class="wf-event-card">
+                <div class="wf-event-date"><div class="wf-event-day">10</div><div class="wf-event-mon">Jul</div></div>
+                <div>
+                  <div class="wf-event-info-tag layout-161">Student Life</div>
+                  <div class="wf-event-info-title">Orientation Day for New Students 2026–27</div>
+                </div>
+              </div>
+              <div class="wf-event-card">
+                <div class="wf-event-date"><div class="wf-event-day">15</div><div class="wf-event-mon">Jul</div></div>
+                <div>
+                  <div class="wf-event-info-tag layout-162">IQAC</div>
+                  <div class="wf-event-info-title">IQAC Planning Meeting — Academic Year 2026–27</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. TRUST BAR -->
+          <div class="wf-trust">
+            <div class="wf-trust-item">
+              <div class="wf-trust-val layout-163">A+</div>
+              <div class="wf-trust-label layout-164">NAAC Accreditation · 2023</div>
+            </div>
+            <div class="wf-trust-item">
+              <div class="wf-trust-val layout-165">Best College</div>
+              <div class="wf-trust-label layout-166">University Award · 2015–16</div>
+            </div>
+            <div class="wf-trust-item">
+              <div class="wf-trust-val layout-167">3,000+</div>
+              <div class="wf-trust-label layout-168">Students Graduated Annually</div>
+            </div>
+          </div>
+
+          <!-- 9. FOOTER -->
+          <div class="wf-footer">
+            <div>
+              <div class="wf-footer-brand">St. Andrew's College</div>
+              <div class="wf-footer-tagline">Arts, Science & Commerce · Bandra, Mumbai · Est. 1927</div>
+              <div class="wf-footer-link">📍 Bandra (W), Mumbai 400050</div>
+              <div class="wf-footer-link">📞 +91 22 2640 6350</div>
+              <div class="wf-footer-link">✉ standrewscollege.ac.in</div>
+            </div>
+            <div>
+              <div class="wf-footer-col-title">Explore</div>
+              <div class="wf-footer-link">About the College</div>
+              <div class="wf-footer-link">Admissions</div>
+              <div class="wf-footer-link">Courses</div>
+              <div class="wf-footer-link">Faculty</div>
+              <div class="wf-footer-link">Alumni</div>
+            </div>
+            <div>
+              <div class="wf-footer-col-title">Students</div>
+              <div class="wf-footer-link">Moodle LMS</div>
+              <div class="wf-footer-link">Exam Timetables</div>
+              <div class="wf-footer-link">Results</div>
+              <div class="wf-footer-link">Attendance</div>
+              <div class="wf-footer-link">Student Login</div>
+            </div>
+            <div>
+              <div class="wf-footer-col-title">Legal</div>
+              <div class="wf-footer-link">RTI Declaration</div>
+              <div class="wf-footer-link">Fee Refund Policy</div>
+              <div class="wf-footer-link">Grievance Cell</div>
+              <div class="wf-footer-link">Accessibility</div>
+              <div class="wf-footer-link">Privacy Policy</div>
+            </div>
+          </div>
+          <div class="wf-footer-bottom">
+            <span class="wf-footer-copy">© 2026 St. Andrew's College of Arts, Science and Commerce, Mumbai. All rights reserved.</span>
+            <span class="wf-footer-copy">NAAC A+ · University of Mumbai Affiliated</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wireframe annotations -->
+      <div class="layout-169">
+        <div class="layout-170">
+          <div class="layout-171">① Navigation</div>
+          <p class="layout-172">Single dark bar. 5 primary items. Global search button + Login. No utility cluttering the primary path.</p>
+        </div>
+        <div class="layout-173">
+          <div class="layout-174">② Journey selector</div>
+          <p class="layout-175">Pill selector above hero lets visitors self-identify. Content adapts — prospective students see Apply CTA; current students see timetables.</p>
+        </div>
+        <div class="layout-176">
+          <div class="layout-177">③ Hero</div>
+          <p class="layout-178">Campus photography behind dark overlay. NAAC A+ badge visible immediately. Two primary CTAs. Stats row anchors authority.</p>
+        </div>
+        <div class="layout-179">
+          <div class="layout-180">④ Quick actions</div>
+          <p class="layout-181">6-icon bar for the most-visited tasks. Replaces the need to navigate deep into the menu for routine lookups.</p>
+        </div>
+        <div class="layout-182">
+          <div class="layout-183">⑤ Notices widget</div>
+          <p class="layout-184">Tabbed, recent-first. Colour-coded dots show category. 5 items visible. Replaces the 150+ unfiltered list.</p>
+        </div>
+        <div class="layout-185">
+          <div class="layout-186">⑥ Courses</div>
+          <p class="layout-187">Six colour-coded programme cards, each linking to the full course page. Colour communicates stream at a glance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN SYSTEM -->
+  <section class="section section-border" id="design">
+    <div class="cs-wrap">
+      <p class="section-label">07 — Design System</p>
+      <h2 class="section-title">Proposed colour &amp; typography</h2>
+      <p class="section-sub">A token-based system that creates consistency without genericness. The palette draws from the college's formal institutional character — deep navy primary, warm gold for prestige, clean sans for clarity.</p>
+
+      <div class="design-grid">
+        <div class="reveal">
+          <p class="layout-188">Colour Palette</p>
+          <div class="swatch-row">
+            <div class="color-item"><div class="swatch layout-189"></div><div class="swatch-label">Navy<br>#1a3a5c</div></div>
+            <div class="color-item"><div class="swatch layout-190"></div><div class="swatch-label">Blue<br>#2d6a9f</div></div>
+            <div class="color-item"><div class="swatch layout-191"></div><div class="swatch-label">Gold<br>#b8922a</div></div>
+            <div class="color-item"><div class="swatch layout-192"></div><div class="swatch-label">Cream<br>#fafaf8</div></div>
+            <div class="color-item"><div class="swatch layout-193"></div><div class="swatch-label">Ink<br>#0f0f0f</div></div>
+          </div>
+          <div class="swatch-row layout-194">
+            <div class="color-item"><div class="swatch layout-195"></div><div class="swatch-label">Success</div></div>
+            <div class="color-item"><div class="swatch layout-196"></div><div class="swatch-label">Warning</div></div>
+            <div class="color-item"><div class="swatch layout-197"></div><div class="swatch-label">Critical</div></div>
+            <div class="color-item"><div class="swatch layout-198"></div><div class="swatch-label">Border</div></div>
+          </div>
+        </div>
+
+        <div class="type-row reveal reveal-delay-1">
+          <p class="layout-199">Typography</p>
+          <div class="type-sample">
+            <div class="type-meta">DM Serif Display · Headings</div>
+            <div class="layout-200">Excellence in Education</div>
+          </div>
+          <div class="type-sample">
+            <div class="type-meta">Inter 400 · Body text</div>
+            <div class="layout-201">Admissions for the academic year 2026–27 are now open for all undergraduate programmes.</div>
+          </div>
+          <div class="type-sample">
+            <div class="type-meta">Inter 600 · Labels &amp; UI</div>
+            <div class="layout-202">Quick access · Latest updates · NAAC Reports</div>
+          </div>
+          <div class="type-sample">
+            <div class="type-meta">Inter 500 · Nav &amp; Buttons</div>
+            <div class="layout-203">Apply Now → &nbsp; Explore Courses &nbsp; View All</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Component examples -->
+      <p class="reveal layout-204">Notice component — severity system</p>
+      <div class="reveal layout-205">
+        <div class="layout-206">
+          <span class="layout-207">Urgent</span>
+          <span class="layout-208">Last date for ATKT examination form submission: 28 June 2026</span>
+          <span class="layout-209">Jun 20</span>
+        </div>
+        <div class="layout-210">
+          <span class="layout-211">Important</span>
+          <span class="layout-212">SY Field Project Brochure 2026–2027 is now available for download</span>
+          <span class="layout-213">Jun 23</span>
+        </div>
+        <div class="layout-214">
+          <span class="layout-215">Info</span>
+          <span class="layout-216">Commencement of lectures for FY Degree students — Monday, June 30, 2026</span>
+          <span class="layout-217">Jun 18</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPECTED IMPACT -->
+  <section class="section" id="impact">
+    <div class="cs-wrap">
+      <p class="section-label">08 — Expected Impact</p>
+      <h2 class="section-title">Measurable outcomes from the redesign</h2>
+      <p class="section-sub">Conservative estimates based on industry benchmarks for institutional website redesigns with improved IA, mobile experience, and SEO.</p>
+
+      <div class="impact-grid">
+        <div class="impact-card blue reveal">
+          <div class="impact-num">↓ 40%</div>
+          <div class="impact-label">Reduction in navigation depth to reach key tasks</div>
+        </div>
+        <div class="impact-card green reveal reveal-delay-1">
+          <div class="impact-num">↑ 3×</div>
+          <div class="impact-label">Improvement in organic search visibility for course pages</div>
+        </div>
+        <div class="impact-card gold reveal reveal-delay-2">
+          <div class="impact-num">↓ 35%</div>
+          <div class="impact-label">Estimated drop in bounce rate from mobile visitors</div>
+        </div>
+        <div class="impact-card blue reveal">
+          <div class="impact-num">WCAG</div>
+          <div class="impact-label">Full 2.1 AA compliance from day one</div>
+        </div>
+        <div class="impact-card green reveal reveal-delay-1">
+          <div class="impact-num">5 → 60</div>
+          <div class="impact-label">Notices visible from before (5 latest) vs full archive (60+) in separate, searchable view</div>
+        </div>
+        <div class="impact-card gold reveal reveal-delay-2">
+          <div class="impact-num">1 click</div>
+          <div class="impact-label">To reach any top-6 task from homepage via quick action bar</div>
+        </div>
+      </div>
+
+      <div class="reveal layout-218">
+        <p class="layout-219">Recommended Implementation Order</p>
+        <div class="layout-220">
+          <div class="layout-221">
+            <span class="layout-222">1</span>
+            <div><span class="layout-223">Week 1</span><span class="layout-224">Fix viewport meta, add skip navigation, announce PDF links — zero cost, immediate compliance</span></div>
+          </div>
+          <div class="layout-225">
+            <span class="layout-226">2</span>
+            <div><span class="layout-227">Month 1</span><span class="layout-228">Consolidate navigation to 5 items, implement mobile drawer, add global search</span></div>
+          </div>
+          <div class="layout-229">
+            <span class="layout-230">3</span>
+            <div><span class="layout-231">Month 2</span><span class="layout-232">Redesign homepage — hero, notices widget, quick actions, programme cards</span></div>
+          </div>
+          <div class="layout-233">
+            <span class="layout-234">4</span>
+            <div><span class="layout-235">Month 3–4</span><span class="layout-236">Convert PDFs to web content; build searchable notices database; department pages</span></div>
+          </div>
+          <div class="layout-237">
+            <span class="layout-238">5</span>
+            <div><span class="layout-239">Month 5–6</span><span class="layout-240">Roll out design system across all pages; establish component library for future maintenance</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR CREDIT -->
+  <div class="reveal layout-241">
+    <div class="layout-242">
+      <div>
+        <p class="layout-243">Case Study Author</p>
+        <p class="layout-244">Aditya Nair</p>
+        <p class="layout-245">UI/UX Designer &nbsp;·&nbsp; April 2026</p>
+      </div>
+      <div class="layout-246">
+        <p class="layout-247">This is a design portfolio case study.<br>Not affiliated with St. Andrew's College.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- BACK CTA -->
+
+
+<!-- FOOTER -->
+
+
+
+
+{{case-footer}}
+</main>
+{{footer}}
+</body>
+</html>

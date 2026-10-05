@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Curse of Osiris — Aditya Nair</title><meta name="description" content="Curse of Osiris: a game and level design case study by Aditya Nair."><link rel="icon" href="assets/images/favicon-small.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/game-case.css"><link rel="stylesheet" href="assets/css/enhancements.css"><script src="assets/js/main.js" defer></script><link rel="stylesheet" href="assets/css/cases/curse-of-osiris-layout.css"></head><body class="portfolio-page game-case"><a class="skip-link" href="#main-content">Skip to content</a>{{nav}}<main id="main-content"><header class="proj-hero" aria-label="Project overview">
+      <img class="proj-hero-img" src="assets/images/games/CurseOfOsiris/CO1.webp"
+        alt="Curse of Osiris — Egyptian-themed dungeon level concept art" width="1400" height="701">
+      <div class="proj-hero-overlay" aria-hidden="true"></div>
+      <div class="proj-hero-meta">
+        <div class="proj-num">Project 01</div>
+        <h1 class="proj-title">Curse Of Osiris</h1>
+        <div class="proj-type">Level Design · Game Design · Prototype</div>
+        <dl class="proj-meta-row">
+          <div>
+            <dt class="proj-meta-label">Engine</dt>
+            <dd class="proj-meta-value">Unity</dd>
+          </div>
+          <div>
+            <dt class="proj-meta-label">Genre</dt>
+            <dd class="proj-meta-value">Action Roguelite</dd>
+          </div>
+          <div>
+            <dt class="proj-meta-label">Inspired By</dt>
+            <dd class="proj-meta-value">Hades (Supergiant Games)</dd>
+          </div>
+          <div>
+            <dt class="proj-meta-label">Duration</dt>
+            <dd class="proj-meta-value">1 Month</dd>
+          </div>
+        </dl>
+      </div>
+    </header><div class="proj-content">
+
+      <section class="proj-section" aria-labelledby="overview-title">
+        <div class="proj-section-label" aria-hidden="true">Overview</div>
+        <h2 id="overview-title" class="proj-section-title">An underworld steeped in myth.</h2>
+        <div class="proj-body">
+          <p>Curse of Osiris is a personal prototype set in ancient Egypt — a roguelite dungeon crawler built in Unity
+            and heavily inspired by Supergiant's Hades. The core premise: a soul condemned to the Egyptian underworld
+            must fight through procedurally-arranged rooms, slowly uncovering the betrayal that led to their death.</p>
+          <p>Rather than simply mimicking Hades aesthetically, the design goal was to study what makes that game's loop
+            so satisfying — then transplant those principles into a completely different mythology, tone, and set of
+            mechanics.</p>
+        </div>
+        <blockquote class="proj-pull">
+          "The mythology isn't decoration — it's the rulebook. Every mechanic had to feel like it belonged to this
+          world."
+        </blockquote>
+      </section>
+
+      <section class="proj-section" aria-labelledby="design-title">
+        <div class="proj-section-label" aria-hidden="true">Design Goals</div>
+        <h2 id="design-title" class="proj-section-title">What I set out to solve.</h2>
+        <ul class="proj-list" role="list">
+          <li>Create a narrative-driven combat loop where story rewards are tied to mechanical progression</li>
+          <li>Design room layouts with natural chokepoints and looping escape routes</li>
+          <li>Build a boon system grounded in Egyptian deities (Ra, Anubis, Thoth) with distinct playstyle identities
+          </li>
+          <li>Ensure the death-and-rebirth loop feels intentional — not punishing, but purposeful</li>
+          <li>Script ambient dialogue that reacts to player decisions without breaking pace</li>
+        </ul>
+      </section>
+
+      <section class="proj-section" aria-labelledby="process-title">
+        <div class="proj-section-label" aria-hidden="true">Process</div>
+        <h2 id="process-title" class="proj-section-title">From concept to prototype.</h2>
+        <div class="process-steps" role="list">
+          <div class="process-step" role="listitem">
+            <div class="process-step-title">Research &amp; Reference</div>
+            <div class="process-step-body">Deep analysis of Hades' loop — beat maps, room density, dialogue triggers,
+              and boon probability curves. Mapped Egyptian mythology's structure to find equivalent narrative beats.
+            </div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-step-title">GDD Draft</div>
+            <div class="process-step-body">Wrote a detailed Game Design Document covering the core loop, room archetypes
+              (combat, elite, rest, shop, boss), currency systems, and narrative delivery method.</div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-step-title">Level Blocking</div>
+            <div class="process-step-body">Built blockout levels in Unity using modular tile sets. Playtested for
+              movement feel, sightlines, and spawn-point fairness before adding any visual dressing.</div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-step-title">Narrative Layer</div>
+            <div class="process-step-body">Scripted reactive dialogue for the guide character (based on Osiris) using a
+              simple state machine — different lines triggered by low health, first-time room encounters, and run count
+              milestones.</div>
+          </div>
+          <div class="process-step" role="listitem">
+            <div class="process-step-title">Playtest &amp; Iteration</div>
+            <div class="process-step-body">Three rounds of internal playtesting focused on pacing, difficulty curve, and
+              whether players understood the boon system without explicit tutorialisation.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proj-section" aria-labelledby="tools-title">
+        <div class="proj-section-label" aria-hidden="true">Tools Used</div>
+        <h2 id="tools-title" class="proj-section-title">Built with.</h2>
+        <div class="proj-tools-grid" role="list">
+          <span class="proj-tool" role="listitem">Unity (ProBuilder)</span>
+          <span class="proj-tool" role="listitem">Graph Paper + Pencil</span>
+          <span class="proj-tool" role="listitem">C# (Basic Scripting)</span>
+          <span class="proj-tool" role="listitem">Google Docs (LDD)</span>
+        </div>
+      </section>
+
+      <section class="proj-section" aria-labelledby="docs-title">
+        <div class="proj-section-label" aria-hidden="true">Documentation</div>
+        <h2 id="docs-title" class="proj-section-title">Read the details.</h2>
+        <div class="game-layout-1">
+          <a href="https://drive.google.com/file/d/1STw49LzNZlm0-vP50LW_tkBIPZIM_9pm/view?usp=drive_link"
+            class="btn btn-ghost game-layout-2" target="_blank" rel="noopener noreferrer"
+           >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+              <path d="M14 3v5h5" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <line x1="10" y1="9" x2="8" y2="9" />
+            </svg>
+            Level Design Document
+          </a>
+          <a href="https://drive.google.com/file/d/1STw49LzNZlm0-vP50LW_tkBIPZIM_9pm/view?usp=drive_link"
+            class="btn btn-ghost game-layout-3" target="_blank" rel="noopener noreferrer"
+           >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+              <path d="M14 3v5h5" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <line x1="10" y1="9" x2="8" y2="9" />
+            </svg>
+            Game Concept Document
+          </a>
+        </div>
+      </section>
+
+    </div><!-- /.proj-content --><section class="proj-gallery" aria-labelledby="gallery-title">
+      <div class="proj-gallery-inner">
+        <div class="section-label" aria-hidden="true">Gallery</div>
+        <h2 id="gallery-title" class="section-title">Visuals &amp; Documentation.</h2>
+        <div class="proj-gallery-grid">
+          <div class="gallery-item wide">
+            <img data-zoom="" class="proj-gallery-img" src="assets/images/games/CurseOfOsiris/CO1.webp" alt="Curse of Osiris — overview" loading="lazy" width="1400" height="701">
+            <div class="gallery-caption">CO1 — Full level overview</div>
+          </div>
+          <div class="gallery-item">
+            <img data-zoom="" class="proj-gallery-img" src="assets/images/games/CurseOfOsiris/CO2.webp" alt="Curse of Osiris — CO2" loading="lazy" width="1662" height="816">
+            <div class="gallery-caption">CO2</div>
+          </div>
+          <div class="gallery-item">
+            <img data-zoom="" class="proj-gallery-img" src="assets/images/games/CurseOfOsiris/CO3.webp" alt="Curse of Osiris — CO3" loading="lazy" width="1605" height="837">
+            <div class="gallery-caption">CO3</div>
+          </div>
+        </div>
+      </div>
+    </section>{{case-footer}}</main>{{footer}}</body></html>
