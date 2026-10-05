@@ -4,12 +4,13 @@ const fs = require('node:fs');
 const assert = require('node:assert/strict');
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: process.env.BROWSER_CHANNEL || 'chrome' });
-  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  // Exercise behavior without native transition races; motion-check covers animation.
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   const base = 'http://127.0.0.1:4173/';
   fs.mkdirSync('test-results', { recursive: true });
-  const files = fs.readdirSync('.').filter(file => file.endsWith('.html') && file !== '404.html');
+  const files = fs.readdirSync('dist').filter(file => file.endsWith('.html') && file !== '404.html');
   for (const width of process.env.INTERACTIONS_ONLY ? [] : [1440, 390, 320]) {
     await page.setViewportSize({ width, height: 900 });
     for (const file of files) {
@@ -103,6 +104,8 @@ const assert = require('node:assert/strict');
   await page.waitForTimeout(500);
   assert.ok(await page.locator('.image-unavailable:visible').count() > 0);
   await page.unroute('**/thumbnails/osiris.webp');
+  // Changing opt-in while a native transition runs aborts that transition.
+  await page.waitForFunction(() => !document.getAnimations().some(animation => animation.effect?.pseudoElement?.startsWith('::view-transition')));
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(base);
   assert.equal(await page.locator('.reveal-pending').count(), 0);

@@ -2,10 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
-import { fileURLToPath } from 'node:url';
-const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-process.chdir(root);
-const pages=fs.readdirSync(root).filter(f=>f.endsWith('.html'));
+import { root, output } from './lib/paths.mjs';
+process.chdir(output);
+const pages=fs.readdirSync(output).filter(f=>f.endsWith('.html'));
+assert.ok(pages.length > 0, 'Build output should contain pages');
+const sourcePages=fs.readdirSync(path.join(root,'src/pages')).filter(f=>f.endsWith('.html'));
+assert.deepEqual(pages.sort(),sourcePages.sort(),'Every source page should have exactly one built page');
+for(const privateFolder of ['src','scripts','tests','docs','design']) {
+ assert.ok(!fs.existsSync(path.join(output,privateFolder)),`${privateFolder} must not be published`);
+}
+assert.ok(fs.existsSync('styles.css'),'Keep the legacy stylesheet URL available');
 let errors=[],links=0;
 const fail=(file,message)=>errors.push(`${file}: ${message}`);
 for(const file of pages){
@@ -28,7 +34,7 @@ for(const file of pages){
 }
 new vm.Script(fs.readFileSync('assets/js/main.js','utf8'));
 new vm.Script(fs.readFileSync('assets/js/motion.js','utf8'));
-const projects=JSON.parse(fs.readFileSync('src/data/projects.json','utf8'));
+const projects=JSON.parse(fs.readFileSync(path.join(root,'src/data/projects.json'),'utf8'));
 assert.equal(projects.length,8);
 assert.equal(projects.filter(p=>p.discipline==='game').length,3);
 assert.equal(new Set(projects.map(p=>p.id)).size,projects.length);

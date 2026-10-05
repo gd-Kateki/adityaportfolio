@@ -1,0 +1,90 @@
+/* Portfolio art direction: warm paper, teal details, and authentic project imagery. */
+.portfolio-page { --identity-accent: #23645c; --identity-soft: #e1ebe5; }
+.portfolio-page .eyebrow-text, .portfolio-page .see-all-link { color: var(--identity-accent); }
+.portfolio-page .eyebrow-line { background: var(--identity-accent); }
+.portfolio-page .site-logo span { color: var(--identity-accent); }
+.portfolio-page .site-links a[aria-current] { color: #194c45; background: #dce9e1aa; }
+.portfolio-page .btn-primary, .portfolio-page .filter-btn.active { background: var(--identity-accent); color: #fff; }
+.portfolio-page .btn-primary:hover, .portfolio-page .filter-btn.active:hover { background: #184e47; }
+.home-page .hero {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  max-width: 1248px; margin: auto; overflow: visible;
+  padding: 156px 24px 80px !important;
+}
+.home-page .hero-content { align-items: flex-start; text-align: left; min-width: 0; }
+.home-page .hero-status-tag { margin-bottom: 32px; font-size: 12px; }
+.home-page .hero-name-block { letter-spacing: -3px; margin-bottom: 22px; }
+.home-page .hero-firstname, .home-page .hero-lastname { font-size: clamp(48px, 5.5vw, 78px); }
+.home-page .hero-lastname { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--identity-accent); }
+.home-page .hero-role { font-size: 14px; letter-spacing: 0; color: #364b45; }
+.home-page .hero-intro { margin: 0 0 30px; font-size: 17px; }
+.home-page .hero-actions { justify-content: flex-start; gap: 12px 20px; }
+.home-page .resume-download { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; }
+.hero-composition { position: relative; height: 405px; min-width: 0; isolation: isolate; }
+.composition-orbit { position: absolute; width: 340px; height: 340px; top: 20px; right: 24px; border: 1px solid #b9ccc1; border-radius: 50%; z-index: -1; }
+.composition-orbit::after { content: ''; position: absolute; inset: 30px; border: 1px dashed #b9ccc18c; border-radius: inherit; }
+.hero-world { position: absolute; inset: 35px 0 auto 60px; height: 260px; border: 6px solid #fafbf7; border-radius: 20px; overflow: hidden; transform: rotate(3deg); box-shadow: 0 22px 50px #213e3824; }
+.hero-world img { width: 100%; height: 100%; object-fit: cover; }
+.hero-world-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 38px 20px 17px 150px; display: flex; justify-content: space-between; gap: 8px; background: linear-gradient(transparent, #071512de); color: #fff; font-size: 12px; }
+.hero-interface { position: absolute; left: 8px; top: 90px; width: 145px; border: 5px solid #f8f8f3; border-radius: 24px; overflow: hidden; transform: rotate(-7deg); box-shadow: 0 18px 35px #153d3733; background: #0a0a10; }
+.hero-interface img { width: 100%; display: block; height: auto; }
+.hero-world, .hero-interface { transition: transform .3s ease, box-shadow .3s ease; }
+.hero-world:hover { transform: rotate(1deg) translateY(-5px); }
+.hero-interface:hover { transform: rotate(-3deg) translateY(-5px); }
+.composition-note { position: absolute; top: 330px; left: 200px; font-size: 13px; line-height: 1.8; color: #53645b; }
+.composition-note em { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: #23645c; }
+.composition-index { position: absolute; right: 14px; top: 5px; font-size: 9px; letter-spacing: 2px; color: #53645b; }
+.home-page .work-section { padding-top: 48px; }
+.home-page .section-header-row { border-top: 1px solid #d5ddd5; padding-top: 36px; }
+.home-project-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; }
+.home-project-grid .proj-card { grid-column: span 5; }
+.home-project-grid .proj-card:first-child, .home-project-grid .proj-card:nth-child(4) { grid-column: span 7; }
+.home-project-grid .proj-visual { height: 310px; }
+.home-project-grid .proj-title { font-size: 25px; letter-spacing: -.7px; }
+.novelnest-cover { width: 100%; height: 100%; display: flex; align-items: flex-start; justify-content: center; gap: 24px; padding: 46px 28px 0; background: radial-gradient(ellipse at 20% 0, #fff7e6, transparent 70%), #e9d4ad; overflow: hidden; }
+.portfolio-grid .novelnest-cover img { width: 34%; max-width: 180px; height: auto; object-fit: contain; border: 4px solid #282522; border-radius: 21px; box-shadow: 0 20px 35px #57422438; transform: rotate(-8deg); }
+.portfolio-grid .novelnest-cover img + img { margin-top: 32px; transform: rotate(8deg); }
+.portfolio-grid .proj-card:hover .novelnest-cover img { transform: rotate(-5deg) translateY(-7px); }
+.portfolio-grid .proj-card:hover .novelnest-cover img + img { transform: rotate(5deg) translateY(-7px); }
+.portfolio-grid [data-project="dashboard"] .proj-visual { padding: 40px 24px 22px; background: radial-gradient(ellipse at top left, #f0f1ff, #d8ddef); }
+.portfolio-grid [data-project="dashboard"] .proj-visual img { object-fit: contain; height: auto; max-height: 100%; border-radius: 7px; box-shadow: 0 16px 30px #39367025; }
+.portfolio-grid [data-discipline="game"] .proj-visual::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(transparent 65%, #10231d33); }
+.home-page #about { background: #e6ece5; border: 0; margin-top: 24px; }
+.home-page #about .section-title { max-width: 400px; font-size: clamp(36px, 4vw, 54px); }
+.home-page #about .overview-copy { font-size: 18px; }
+.home-page #experience { background: transparent; border-top: 0; }
+.home-page .contact-headline .serif { color: var(--identity-accent); }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .home-page .hero { gap: 20px; }
+  .home-page .hero-firstname, .home-page .hero-lastname { font-size: 50px; }
+  .hero-world { left: 30px; }
+  .hero-interface { width: 125px; }
+  .composition-note { left: 155px; }
+  .hero-world-caption { padding-left: 110px; }
+}
+@media (max-width: 760px) {
+  .home-page .hero { grid-template-columns: 1fr; gap: 32px; padding: 118px 24px 40px !important; }
+  .home-page .hero-status-tag { margin-bottom: 22px; }
+  .home-page .hero-name-block { letter-spacing: -2px; }
+  .home-page .hero-firstname, .home-page .hero-lastname { font-size: clamp(44px, 10vw, 64px); }
+  .home-page .hero-intro { font-size: 15px; }
+  .hero-composition { height: 300px; width: 100%; max-width: 430px; margin: auto; }
+  .composition-orbit { width: 240px; height: 240px; right: 0; }
+  .hero-world { left: 32px; top: 20px; height: 190px; border-width: 4px; }
+  .hero-interface { width: 106px; left: 4px; top: 65px; border-width: 3px; border-radius: 18px; }
+  .hero-world-caption { font-size: 10px; padding: 32px 10px 12px 90px; }
+  .composition-note { top: 237px; left: 134px; font-size: 11px; }
+  .composition-note em { font-size: 16px; }
+  .composition-index { font-size: 8px; top: -6px; }
+  .home-project-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .home-project-grid .proj-card { grid-column: auto !important; }
+  .home-project-grid .proj-visual { height: 260px; }
+  .home-project-grid .proj-title { font-size: 22px; }
+  .home-page .work-section { padding-top: 12px; }
+  .home-page #about .overview-copy { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-world, .hero-interface { transition: none; }
+  .hero-world:hover { transform: rotate(3deg); }
+  .hero-interface:hover { transform: rotate(-7deg); }
+}

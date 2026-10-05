@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 (async () => {
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     await page.addInitScript(() => {
@@ -11,6 +11,15 @@ const assert = require('node:assert/strict');
     });
     await page.goto('http://127.0.0.1:4173/');
     assert.deepEqual(await page.locator('.project-title-link').allTextContents(), ['NovelNest','Curse of Osiris','eCommerce Dashboard','742 Blackwood Lane']);
+    // Navigate after the initial hero has rendered and its entrance has settled.
+    await page.locator('.hero-content').evaluate(async element => {
+      await document.fonts.ready;
+      await Promise.all(element.getAnimations({ subtree: true })
+        .filter(animation => animation.effect.getComputedTiming().iterations !== Infinity)
+        .map(animation => animation.finished));
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    });
+    await page.waitForTimeout(600); // Let Chrome commit the first rendered frame before cross-document capture.
     await page.locator('.hero-actions .btn-primary').click();
     await page.waitForURL('**/projects.html');
     await page.waitForFunction(() => window.hadPageTransition === true);
@@ -20,6 +29,7 @@ const assert = require('node:assert/strict');
     await page.goBack();
     await page.waitForURL('http://127.0.0.1:4173/');
     assert.equal(await page.locator('.project-title-link').count(), 4);
+    await page.waitForFunction(() => !document.getAnimations().some(animation => animation.effect?.pseudoElement?.startsWith('::view-transition')));
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('http://127.0.0.1:4173/projects.html');
     await page.getByRole('button', { name: 'Game design' }).click();
