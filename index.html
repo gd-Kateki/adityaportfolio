@@ -17,8 +17,9 @@
 <link rel="stylesheet" href="assets/css/enhancements.css">
 <script src="assets/js/main.js" defer></script>
 <link rel="stylesheet" href="assets/css/site-shell.css">
+<link rel="stylesheet" href="assets/css/hierarchy.css">
 </head>
-<body class="portfolio-page">
+<body class="portfolio-page home-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 
@@ -37,11 +38,11 @@
     <a href="index.html" class="site-logo" aria-label="Aditya Nair, home">AN<span aria-hidden="true">.</span></a>
     <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-links" hidden>Menu <span aria-hidden="true">☰</span></button>
     <ul class="site-links" id="site-links">
-      <li><a href="index.html#about">About</a></li>
       <li><a href="projects.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="experience.html">Experience</a></li>
     </ul>
-    <a href="mailto:aditya.gamedesigner0402@gmail.com" class="site-contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    <a href="index.html#contact" class="site-contact">Contact <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
 
@@ -97,130 +98,16 @@
       <p class="hero-intro">Thoughtful interfaces. Memorable worlds.<br>One human-centered approach to both.</p>
       <!-- CTAs -->
       <div class="hero-actions">
-        <a href="#work" class="btn-primary">View Work</a>
-        <a href="projects.html?discipline=game" class="btn-outline">Explore Game Design <span aria-hidden="true">↗</span></a>
+        <a href="projects.html" class="btn-primary">View work <span aria-hidden="true">↗</span></a>
+        <a href="about.html" class="text-link">About me →</a>
       </div>
 
-      <!-- Scroll cue -->
-      <div class="hero-scroll-cue" aria-hidden="true">
-        <div class="scroll-cue-line"></div>
-      </div>
+
 
     </div>
 
   </section>
 
-  <!-- ════════════════ REVAMPED ABOUT ME ════════════════ -->
-  <section class="about-section" id="about">
-    <div class="about-inner">
-      
-      <div class="about-section-header reveal">
-        <div class="section-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">About Me</span>
-        </div>
-        <h2 class="section-title">Designing experiences with <span class="serif">logical clarity.</span></h2>
-      </div>
-
-      <div class="about-layout-grid">
-        
-        <!-- Large Bio Card -->
-        <div class="about-card-large reveal">
-          <div class="about-avatar-row">
-            <div class="about-avatar">AN</div>
-            <div class="about-identity">
-              <h3>Aditya Nair</h3>
-              <p>UI/UX &amp; Game Designer</p>
-            </div>
-          </div>
-          
-          <p class="about-bio-text">
-            I'm Aditya Nair, a UI/UX and game designer based in Mumbai. I design clear interfaces, engaging game systems, and worlds that invite exploration. My work connects user flows with player journeys: understanding people, shaping decisions, and making every interaction feel intentional.
-          </p>
-          <p class="about-bio-text">
-            My approach prioritizes clarity above decoration. I believe digital products perform best when they respect the user's focus and reduce unnecessary friction.
-          </p>
-
-          <div class="about-cta-row">
-            <a href="https://www.linkedin.com/in/adityanair0402/" rel="noopener noreferrer" target="_blank" class="about-link">LinkedIn &nearr;</a>
-            <a href="mailto:aditya.gamedesigner0402@gmail.com" class="about-link ">Email</a>
-            <a href="experience.html" class="about-link">Experience Details &rarr;</a>
-            <a href="projects.html?discipline=game" class="about-link">Game Design &rarr;</a>
-          </div>
-        </div>
-
-        <!-- Capability and Mindset Cards -->
-        <div class="about-cards-subgrid">
-          
-          <!-- Capabilities Glass Card -->
-          <div class="about-card-small reveal">
-            <h4 class="about-card-label">Core Competencies</h4>
-            <div class="capability-list"><span>Interface &amp; interaction design</span><span>Game systems &amp; level design</span><span>Narrative &amp; player experience</span><span>Prototyping &amp; playtesting</span></div>
-          </div>
-
-          <!-- Tools Glass Card -->
-          <div class="about-card-small reveal">
-            <h4 class="about-card-label">Toolsets</h4>
-            <div class="tools-chip-list">
-              <span class="tool-chip">Figma</span>
-              <span class="tool-chip">FigJam</span>
-              <span class="tool-chip">Framer</span>
-              <span class="tool-chip">HTML/CSS</span>
-              <span class="tool-chip">UX Research</span>
-              <span class="tool-chip">Design Tokens</span><span class="tool-chip">Unity</span><span class="tool-chip">Unreal Engine</span><span class="tool-chip">Blender</span>
-            </div>
-          </div>
-
-          <!-- Mindset card 1 -->
-          <div class="about-card-small mindset-card-flat reveal">
-            <span class="mindset-icon">&#9889;</span>
-            <div class="mindset-title">Structured Thinking</div>
-            <p class="mindset-desc">Designing interfaces as cohesive systems where every button and link follows logical hierarchy.</p>
-          </div>
-
-          <!-- Mindset card 2 -->
-          <div class="about-card-small mindset-card-flat reveal">
-            <span class="mindset-icon">&#10022;</span>
-            <div class="mindset-title">Creative Precision</div>
-            <p class="mindset-desc">Clean, simple aesthetics backed by sound usability principles that support cognitive tasks.</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ════════════════ MARQUEE ════════════════ -->
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-item">
-        Figma <span class="marquee-dot"></span>
-        UX Research <span class="marquee-dot"></span>
-        Information Architecture <span class="marquee-dot"></span>
-        Interaction Design <span class="marquee-dot"></span>
-        Design Systems <span class="marquee-dot"></span>
-        Prototyping <span class="marquee-dot"></span>
-        Heuristic Evaluation <span class="marquee-dot"></span>
-        Motion Design <span class="marquee-dot"></span>
-        Accessibility <span class="marquee-dot"></span>
-      </div>
-      <div class="marquee-item">
-        Figma <span class="marquee-dot"></span>
-        UX Research <span class="marquee-dot"></span>
-        Information Architecture <span class="marquee-dot"></span>
-        Interaction Design <span class="marquee-dot"></span>
-        Design Systems <span class="marquee-dot"></span>
-        Prototyping <span class="marquee-dot"></span>
-        Heuristic Evaluation <span class="marquee-dot"></span>
-        Motion Design <span class="marquee-dot"></span>
-        Accessibility <span class="marquee-dot"></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════════════════ WORK ════════════════ -->
   <section class="work-section" id="work">
     <div class="work-section-inner">
       <div class="section-header-row reveal">
@@ -229,48 +116,19 @@
             <span class="eyebrow-line"></span>
             <span class="eyebrow-text">Selected Work</span>
           </div>
-          <h2 class="section-title">Projects that <span class="serif">matter.</span></h2>
+          <h2 class="section-title">A selection of <span class="serif">my work.</span></h2>
         </div>
         <a href="projects.html" class="see-all-link">All projects &rarr;</a>
       </div>
 
-      <div class="project-explorer featured-explorer" data-explorer><div class="explorer-toolbar"><div class="filter-container" role="group" aria-label="Filter projects by discipline"><button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All work <span>08</span></button><button class="filter-btn" type="button" data-filter="uiux" aria-pressed="false">UI/UX design <span>05</span></button><button class="filter-btn" type="button" data-filter="game" aria-pressed="false">Game design <span>03</span></button></div></div><div class="explorer-caption"><p>Two disciplines. One considered approach.</p><p data-result-count role="status" aria-live="polite">8 projects</p></div><div class="portfolio-grid"><article class="proj-card" data-discipline="uiux" data-search="novelnest mobile ux interface design reader journeys a reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens."><div class="proj-visual "><div class="project-art novelnest" aria-hidden="true"><span class="art-book">N</span><span>NovelNest</span><small>A home for every story.</small></div><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Interface design</span><span class="proj-tag">Reader journeys</span></div><h3 class="proj-title"><a class="project-title-link" href="NovelNest_Project.html">NovelNest</a></h3><p class="proj-desc">A reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens.</p><p class="project-deliverable">16 screens · Mobile experience</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
+      <div class="home-work-preview"><div class="discipline-routes" aria-label="Explore work by discipline"><a href="projects.html?discipline=uiux">UI/UX design <span aria-hidden="true">↗</span></a><a href="projects.html?discipline=game">Game design <span aria-hidden="true">↗</span></a></div><div class="portfolio-grid home-project-grid"><article class="proj-card" data-discipline="uiux" data-search="novelnest mobile ux interface design reader journeys a reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens."><div class="proj-visual "><div class="project-art novelnest" aria-hidden="true"><span class="art-book">N</span><span>NovelNest</span><small>A home for every story.</small></div><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Interface design</span><span class="proj-tag">Reader journeys</span></div><h3 class="proj-title"><a class="project-title-link" href="NovelNest_Project.html">NovelNest</a></h3><p class="proj-desc">A reading and authoring ecosystem, connecting discovery, reading, and publishing across 16 high-fidelity screens.</p><p class="project-deliverable">16 screens · Mobile experience</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
 <article class="proj-card" data-discipline="game" data-search="curse of osiris game &amp; level design unity systems design an egyptian mythology roguelite prototype exploring combat, branching rooms, and a narrative-driven progression loop."><div class="proj-visual "><img src="assets/images/thumbnails/osiris.webp" alt="Curse of Osiris project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Unity</span><span class="proj-tag">Systems design</span></div><h3 class="proj-title"><a class="project-title-link" href="curse-of-osiris.html">Curse of Osiris</a></h3><p class="proj-desc">An Egyptian mythology roguelite prototype exploring combat, branching rooms, and a narrative-driven progression loop.</p><p class="project-deliverable">Unity · Action roguelite</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
 <article class="proj-card" data-discipline="uiux" data-search="ecommerce dashboard web &amp; b2b product design design systems a seller portal redesign that connects inventory, earnings, and shipping across 12 high-fidelity screens."><div class="proj-visual "><img src="assets/images/thumbnails/dashboard.webp" alt="eCommerce Dashboard project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Product design</span><span class="proj-tag">Design systems</span></div><h3 class="proj-title"><a class="project-title-link" href="eCommerce_Dashboard_Portal.html">eCommerce Dashboard</a></h3><p class="proj-desc">A seller portal redesign that connects inventory, earnings, and shipping across 12 high-fidelity screens.</p><p class="project-deliverable">12 screens · Seller experience</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
-<article class="proj-card" data-discipline="game" data-search="deep into dreams narrative &amp; environment unreal engine narrative design a psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world."><div class="proj-visual "><img src="assets/images/thumbnails/dreams.webp" alt="Deep Into Dreams project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Unreal Engine</span><span class="proj-tag">Narrative design</span></div><h3 class="proj-title"><a class="project-title-link" href="deep-into-dreams.html">Deep Into Dreams</a></h3><p class="proj-desc">A psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world.</p><p class="project-deliverable">Unreal Engine · Psychological horror</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
-<article class="proj-card" data-discipline="uiux" data-search="st. andrew’s college ux audit information architecture web design an audit and proposed redesign that brings admissions, programmes, and student tasks into a clearer structure."><div class="proj-visual "><div class="project-art college" aria-hidden="true"><span class="art-college">St. Andrew’s</span><small>Heritage meets clarity.</small></div><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Information architecture</span><span class="proj-tag">Web design</span></div><h3 class="proj-title"><a class="project-title-link" href="StAndrews_casestudy_full.html">St. Andrew’s College</a></h3><p class="proj-desc">An audit and proposed redesign that brings admissions, programmes, and student tasks into a clearer structure.</p><p class="project-deliverable">UX audit · Proposed redesign</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
-<article class="proj-card" data-discipline="game" data-search="742 blackwood lane level design player flow spatial design a phasmophobia-inspired map balancing escape routes, choke points, and escalating tension from home to workshop."><div class="proj-visual "><img src="assets/images/thumbnails/blackwood.webp" alt="742 Blackwood Lane project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Player flow</span><span class="proj-tag">Spatial design</span></div><h3 class="proj-title"><a class="project-title-link" href="blackwood-lane.html">742 Blackwood Lane</a></h3><p class="proj-desc">A Phasmophobia-inspired map balancing escape routes, choke points, and escalating tension from home to workshop.</p><p class="project-deliverable">Level concept · Ghost investigation</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
-<article class="proj-card" data-discipline="uiux" data-search="euro truck simulator 2 ux audit heuristic evaluation conversion flows a heuristic review of the official website, identifying 13 usability pitfalls and opportunities to improve discovery."><div class="proj-visual "><img src="assets/images/thumbnails/ets2.webp" alt="Euro Truck Simulator 2 project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Heuristic evaluation</span><span class="proj-tag">Conversion flows</span></div><h3 class="proj-title"><a class="project-title-link" href="ETS2_case_study.html">Euro Truck Simulator 2</a></h3><p class="proj-desc">A heuristic review of the official website, identifying 13 usability pitfalls and opportunities to improve discovery.</p><p class="project-deliverable">13 findings · Website evaluation</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article>
-<article class="proj-card" data-discipline="uiux" data-search="cozy cafe self-order mobile ux interaction design ordering flow a qr-first ordering experience, guiding guests from browsing the menu to reviewing their cart and tracking an order."><div class="proj-visual cafe-visual"><img src="assets/images/thumbnails/cafe.webp" alt="Cozy Cafe Self-Order project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">UI/UX design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Interaction design</span><span class="proj-tag">Ordering flow</span></div><h3 class="proj-title"><a class="project-title-link" href="CafeMenu.html">Cozy Cafe Self-Order</a></h3><p class="proj-desc">A QR-first ordering experience, guiding guests from browsing the menu to reviewing their cart and tracking an order.</p><p class="project-deliverable">Mobile web · Self-service ordering</p><div class="proj-footer"><span class="proj-year">2026</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article></div><div class="empty-state" hidden><h3>No matching projects</h3><p>Try a different name or tool, or explore all the work.</p><button type="button" class="btn-outline" data-reset-filters>Reset filters</button></div></div>
+<article class="proj-card" data-discipline="game" data-search="deep into dreams narrative &amp; environment unreal engine narrative design a psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world."><div class="proj-visual "><img src="assets/images/thumbnails/dreams.webp" alt="Deep Into Dreams project preview" loading="lazy" decoding="async" width="760" height="440"><span class="discipline-label">Game design</span></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Unreal Engine</span><span class="proj-tag">Narrative design</span></div><h3 class="proj-title"><a class="project-title-link" href="deep-into-dreams.html">Deep Into Dreams</a></h3><p class="proj-desc">A psychological horror project told through architecture, lighting, and the unsettling details of a fractured inner world.</p><p class="project-deliverable">Unreal Engine · Psychological horror</p><div class="proj-footer"><span class="proj-year">Personal project</span><span class="proj-link" aria-hidden="true">Explore project <span class="card-arrow">↗</span></span></div></div></article></div><a class="text-link preview-more" href="projects.html">Explore all 8 projects <span aria-hidden="true">→</span></a></div>
     </div>
   </section>
-
-  <!-- ════════════════ PROCESS ════════════════ -->
-  <div class="process-strip reveal">
-    <div class="process-strip-inner">
-      <div class="process-item">
-        <div class="process-num">01</div>
-        <div class="process-title">Discover</div>
-        <div class="process-desc">User research, heuristic audits, stakeholder interviews before drawing a single frame.</div>
-      </div>
-      <div class="process-item">
-        <div class="process-num">02</div>
-        <div class="process-title">Define</div>
-        <div class="process-desc">Synthesise insights into problem statements. Map flows, find friction, prioritise impact.</div>
-      </div>
-      <div class="process-item">
-        <div class="process-num">03</div>
-        <div class="process-title">Design</div>
-        <div class="process-desc">Lo-fi to hi-fi &mdash; wireframes, systems, component libraries, interactive prototypes.</div>
-      </div>
-      <div class="process-item">
-        <div class="process-num">04</div>
-        <div class="process-title">Deliver</div>
-        <div class="process-desc">Polished specs, documentation, and iterative refinement based on feedback loops.</div>
-      </div>
-    </div>
-  </div>
-
+<section class="home-overview" id="about" aria-labelledby="about-title"><div class="overview-inner"><div><div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-text">About</span></div><h2 class="section-title" id="about-title">Thoughtful by <span class="serif">design.</span></h2></div><div class="overview-copy"><p>I'm Aditya, a UI/UX and game designer based in Mumbai. I work on clear interfaces, engaging systems, and worlds that invite exploration.</p><p>My approach starts with understanding people and making each interaction feel intentional.</p><a class="text-link" href="about.html">More about me <span aria-hidden="true">→</span></a></div></div></section>
+<section class="home-overview" id="experience" aria-labelledby="experience-title"><div class="overview-inner"><div><div class="section-eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-text">Experience</span></div><h2 class="section-title" id="experience-title">Across teams.<br>Across <span class="serif">disciplines.</span></h2></div><div><ul class="experience-preview"><li><strong>UI/UX Designer · Intern</strong><span>Quitebox Tech Labs · Feb – Apr 2026</span></li><li><strong>Game Designer · Volunteer</strong><span>Quiet Collective Studios · Sep 2025 – Mar 2026</span></li><li><strong>Junior Game Designer</strong><span>Games2Win · Jun – Aug 2025</span></li></ul><a class="text-link" href="experience.html">View full experience <span aria-hidden="true">→</span></a></div></div></section>
   <!-- ════════════════ CONTACT ════════════════ -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
@@ -290,7 +148,7 @@
 <footer class="site-footer">
   <div class="site-footer-inner">
     <div><p class="site-footer-title">Interfaces to explore.<br>Worlds to <em>get lost in.</em></p><p class="site-footer-sub">UI/UX &amp; game design · Mumbai, India</p></div>
-    <nav class="site-footer-links" aria-label="Footer navigation"><a href="projects.html">Explore the work</a><a href="experience.html">Experience</a><a href="mailto:aditya.gamedesigner0402@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/adityanair0402/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="projects.html">Work</a><a href="about.html">About</a><a href="experience.html">Experience</a><a href="index.html#contact">Contact</a><a href="https://www.linkedin.com/in/adityanair0402/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
   </div>
   <div class="site-footer-bottom"><span>© 2026 Aditya Nair</span><span>Designed around people. Built with intention.</span></div>
 </footer>

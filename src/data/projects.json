@@ -12,7 +12,8 @@
     "url": "NovelNest_Project.html",
     "visual": "novelnest",
     "year": "2026",
-    "label": "16 screens · Mobile experience"
+    "label": "16 screens · Mobile experience",
+    "featured": true
   },
   {
     "id": "osiris",
@@ -27,7 +28,8 @@
     "url": "curse-of-osiris.html",
     "image": "assets/images/thumbnails/osiris.webp",
     "year": "Personal project",
-    "label": "Unity · Action roguelite"
+    "label": "Unity · Action roguelite",
+    "featured": true
   },
   {
     "id": "dashboard",
@@ -42,7 +44,8 @@
     "url": "eCommerce_Dashboard_Portal.html",
     "image": "assets/images/thumbnails/dashboard.webp",
     "year": "2026",
-    "label": "12 screens · Seller experience"
+    "label": "12 screens · Seller experience",
+    "featured": true
   },
   {
     "id": "dreams",
@@ -57,7 +60,8 @@
     "url": "deep-into-dreams.html",
     "image": "assets/images/thumbnails/dreams.webp",
     "year": "Personal project",
-    "label": "Unreal Engine · Psychological horror"
+    "label": "Unreal Engine · Psychological horror",
+    "featured": true
   },
   {
     "id": "standrews",
@@ -72,7 +76,8 @@
     "url": "StAndrews_casestudy_full.html",
     "visual": "college",
     "year": "2026",
-    "label": "UX audit · Proposed redesign"
+    "label": "UX audit · Proposed redesign",
+    "featured": false
   },
   {
     "id": "blackwood",
@@ -87,7 +92,8 @@
     "url": "blackwood-lane.html",
     "image": "assets/images/thumbnails/blackwood.webp",
     "year": "Personal project",
-    "label": "Level concept · Ghost investigation"
+    "label": "Level concept · Ghost investigation",
+    "featured": false
   },
   {
     "id": "ets2",
@@ -102,7 +108,8 @@
     "url": "ETS2_case_study.html",
     "image": "assets/images/thumbnails/ets2.webp",
     "year": "2026",
-    "label": "13 findings · Website evaluation"
+    "label": "13 findings · Website evaluation",
+    "featured": false
   },
   {
     "id": "cafe",
@@ -117,6 +124,7 @@
     "url": "CafeMenu.html",
     "image": "assets/images/thumbnails/cafe.webp",
     "year": "2026",
-    "label": "Mobile web · Self-service ordering"
+    "label": "Mobile web · Self-service ordering",
+    "featured": false
   }
 ]

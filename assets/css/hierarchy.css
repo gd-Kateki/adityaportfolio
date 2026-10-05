@@ -1,0 +1,60 @@
+/* Page hierarchy: one introduction, one primary destination, clear onward routes. */
+.home-page .hero { min-height:0 !important; padding:116px 24px 42px !important; }
+.home-page .avatar-scene { width:106px; height:106px; margin-bottom:12px; }
+.home-page .avatar-circle { width:66px; height:66px; }
+.home-page .avatar-initials { font-size:20px; }
+.home-page .hero-status-tag { margin-bottom:16px; }
+.home-page .hero-firstname,.home-page .hero-lastname { font-size:clamp(46px,6vw,70px); }
+.home-page .hero-role { margin-bottom:22px; }
+.home-page .hero-intro { margin-bottom:22px; }
+.home-page .hero-actions { gap:24px; }
+.text-link { color:var(--site-ink); font-size:14px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:12px; padding:10px 0; }
+.text-link:hover { text-decoration:underline; text-underline-offset:5px; }
+.home-page .work-section { padding-top:42px; }
+.home-project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.home-project-grid .proj-visual { height:260px; }
+.home-project-grid .proj-body { padding:24px 28px; }
+.discipline-routes { display:flex; gap:24px; margin:-16px 0 28px; }
+.discipline-routes a { color:var(--site-muted); font-size:13px; text-decoration:none; padding:10px 0; }
+.discipline-routes a:hover { color:var(--site-ink); text-decoration:underline; text-underline-offset:5px; }
+.discipline-routes span { margin-left:8px; }
+.preview-more { margin-top:24px; }
+.home-overview { padding:var(--site-space) 24px; border-top:1px solid var(--site-line); }
+.home-overview:nth-of-type(odd) { background:#eeede8; }
+.overview-inner { max-width:1200px; margin:auto; display:grid; grid-template-columns:1fr 1.1fr; gap:80px; align-items:start; }
+.overview-copy { color:var(--site-muted); font-size:16px; line-height:1.85; }
+.overview-copy p { margin-bottom:18px; }
+.experience-preview { list-style:none; margin:0; padding:0; }
+.experience-preview li { padding:18px 0; border-bottom:1px solid var(--site-line); }
+.experience-preview li:first-child { padding-top:0; }
+.experience-preview strong { display:block; color:var(--site-ink); font-size:15px; }
+.experience-preview span { display:block; font-size:13px; color:var(--site-muted); margin-top:4px; }
+.experience-preview+ .text-link { margin-top:18px; }
+.home-page .contact-inner>.section-eyebrow { justify-content:flex-start; }
+.page-intro { max-width:1200px; margin:auto; padding:140px 24px 48px; }
+.page-intro h1 { font-size:clamp(40px,6vw,64px); line-height:1.12; font-weight:800; letter-spacing:-2px; margin-bottom:20px; }
+.page-intro h1 em { font-family:Georgia,serif; font-weight:400; color:var(--site-muted); }
+.page-intro>p { max-width:620px; color:var(--site-muted); font-size:16px; line-height:1.8; }
+.about-page .about-section { background:transparent; border:0; padding-top:0; }
+.about-page .about-section-header { display:none; }
+.about-page .about-layout-grid { margin-top:0; }
+.page-next-step { max-width:1152px; margin:0 auto 64px; padding:32px 0; border-top:1px solid var(--site-line); display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.page-next-step h2 { font-size:24px; letter-spacing:-.7px; }
+.page-next-step p { margin-top:8px; color:var(--site-muted); font-size:14px; }
+.page-next-step a { flex-shrink:0; }
+@media(max-width:1240px) { .page-next-step { margin-left:24px; margin-right:24px; } }
+@media(max-width:760px) {
+ .home-page .hero { padding-top:104px !important; padding-bottom:32px !important; }
+ .home-page .hero-actions { flex-direction:row; }
+ .home-page .hero-actions a { width:auto; }
+ .home-page .work-section { padding-top:32px; }
+ .home-project-grid { grid-template-columns:minmax(0,1fr); }
+ .home-project-grid .proj-visual { height:220px; }
+ .overview-inner { grid-template-columns:1fr; gap:28px; }
+ .overview-copy { font-size:15px; }
+ .home-overview { padding:48px 20px; }
+ .page-intro { padding:116px 20px 36px; }
+ .page-intro h1 { letter-spacing:-1px; }
+ .page-next-step { flex-direction:column; align-items:flex-start; margin-bottom:40px; }
+ .discipline-routes { gap:20px; }
+}

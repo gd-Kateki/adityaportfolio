@@ -26,7 +26,7 @@ const assert = require('node:assert/strict');
       }));
       console.log(`${width}px ${file}: ${JSON.stringify(layout)}`);
       assert.ok(layout.scrollWidth <= width + 1, `${file} overflows at ${width}px`);
-      if (width !== 320 && ['index.html','projects.html','curse-of-osiris.html'].includes(file)) {
+      if (width !== 320 && ['index.html','about.html','projects.html','curse-of-osiris.html'].includes(file)) {
         // Reveal all sections by scrolling before capturing full-page output.
         await page.evaluate(async () => { for(let y=0;y<document.body.scrollHeight;y+=600){scrollTo({top:y,behavior:'instant'});await new Promise(r=>setTimeout(r,100))} scrollTo({top:0,behavior:'instant'}); });
         await page.locator('img[loading="lazy"]').evaluateAll(async images => {
@@ -38,6 +38,18 @@ const assert = require('node:assert/strict');
     }
   }
   await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto(base);
+  assert.deepEqual(await page.locator('main>section[id]').evaluateAll(elements => elements.map(el => el.id)), ['home','work','about','experience','contact']);
+  assert.equal(await page.locator('.proj-card').count(), 4);
+  assert.equal(await page.locator('[data-explorer]').count(), 0);
+  assert.deepEqual(await page.locator('.site-links a').allTextContents(), ['Work','About','Experience']);
+  await page.getByRole('button', { name: 'Menu' }).click();
+  await page.locator('.site-links').getByRole('link', { name: 'About', exact: true }).click();
+  assert.ok(page.url().endsWith('/about.html'));
+  assert.equal(await page.locator('h1').textContent(), 'About.');
+  await page.locator('.site-contact').click();
+  await page.waitForURL('**/index.html#contact');
+  assert.equal(await page.locator('#contact').isVisible(), true);
   await page.goto(base + 'projects.html');
   await page.getByRole('button', { name: 'Game design' }).click();
   assert.equal(await page.locator('.proj-card:visible').count(), 3);

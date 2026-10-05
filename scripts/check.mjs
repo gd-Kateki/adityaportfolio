@@ -34,7 +34,11 @@ assert.equal(new Set(projects.map(p=>p.id)).size,projects.length);
 for(const p of projects)assert.ok(fs.existsSync(p.url),`Missing case study ${p.url}`);
 for(const page of ['index.html','projects.html']){
  const html=fs.readFileSync(page,'utf8');
- assert.equal((html.match(/data-discipline=/g)||[]).length,8,`${page} should contain eight static project cards`);
+ assert.equal((html.match(/data-discipline=/g)||[]).length,page==='index.html'?projects.filter(p=>p.featured).length:projects.length,`${page} should show its intended selection`);
  assert.ok(!html.includes('gdPortfolioPrompt'));
 }
+const home=fs.readFileSync('index.html','utf8');
+const sectionOrder=['home','work','about','experience','contact'].map(id=>home.indexOf(`id="${id}"`));
+assert.ok(sectionOrder.every((position,index)=>position>=0&&(index===0||position>sectionOrder[index-1])),'Homepage sections should follow the agreed hierarchy');
+assert.ok(!home.includes('data-explorer'),'Homepage should preview work, not repeat catalogue controls');
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1}else console.log(`Passed: ${pages.length} pages, ${links} local references, all project routes, static cards, unique IDs, landmarks, and JavaScript syntax.`);
