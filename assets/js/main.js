@@ -131,6 +131,7 @@
       });
       $('[data-result-count]', explorer).textContent = `${count} ${count === 1 ? 'project' : 'projects'}`;
       $('.empty-state', explorer).hidden = count > 0;
+      if (save) explorer.dispatchEvent(new CustomEvent('projects:filtered', { bubbles: true }));
       if (save && isCatalogue) {
         const url = new URL(location.href);
         active === 'all' ? url.searchParams.delete('discipline') : url.searchParams.set('discipline', active);

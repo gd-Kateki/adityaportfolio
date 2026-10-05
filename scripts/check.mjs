@@ -27,6 +27,7 @@ for(const file of pages){
  for(const script of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g))try{new vm.Script(script[1])}catch(e){fail(file,e.message)}
 }
 new vm.Script(fs.readFileSync('assets/js/main.js','utf8'));
+new vm.Script(fs.readFileSync('assets/js/motion.js','utf8'));
 const projects=JSON.parse(fs.readFileSync('src/data/projects.json','utf8'));
 assert.equal(projects.length,8);
 assert.equal(projects.filter(p=>p.discipline==='game').length,3);

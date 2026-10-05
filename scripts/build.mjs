@@ -19,7 +19,7 @@ for(const file of fs.readdirSync(path.join(root,'src/pages')).filter(f=>f.endsWi
  const project=projects.find(p=>p.url===file);
  if(project) html=caseTools(html,project);
  if(project) html=reserveImageSpace(html,root,fs);
- html=html.replace('</head>','<link rel="stylesheet" href="assets/css/site-shell.css">\n<link rel="stylesheet" href="assets/css/hierarchy.css">\n</head>');
+ html=html.replace('</head>','<link rel="stylesheet" href="assets/css/site-shell.css">\n<link rel="stylesheet" href="assets/css/hierarchy.css">\n<link rel="stylesheet" href="assets/css/motion.css">\n<script src="assets/js/motion.js" defer></script>\n</head>');
  html=html.replace(/\{\{(nav|footer)\}\}/g,(_,part)=>read(`src/partials/${part}.html`));
  html=html.replace('{{featured-projects}}',explorer(true)).replace('{{project-explorer}}',explorer());
  const current=projects.findIndex(p=>p.url===file),next=projects[(current+1)%projects.length];

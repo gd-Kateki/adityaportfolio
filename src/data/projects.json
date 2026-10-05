@@ -61,7 +61,7 @@
     "image": "assets/images/thumbnails/dreams.webp",
     "year": "Personal project",
     "label": "Unreal Engine · Psychological horror",
-    "featured": true
+    "featured": false
   },
   {
     "id": "standrews",
@@ -93,7 +93,7 @@
     "image": "assets/images/thumbnails/blackwood.webp",
     "year": "Personal project",
     "label": "Level concept · Ghost investigation",
-    "featured": false
+    "featured": true
   },
   {
     "id": "ets2",

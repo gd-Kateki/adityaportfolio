@@ -30,9 +30,11 @@ assets/
   css/enhancements.css     Responsive components and accessibility
   css/site-shell.css       Shared navigation, footer, spacing and interaction states
   css/hierarchy.css        Homepage previews and consistent interior-page introductions
+  css/motion.css           Native page transitions and control animations
   css/game-case.css        Unified game case-study layouts
   css/cases/               Existing case-study themes and extracted layout rules
   js/main.js               Filters, search, reveals, clipboard, image dialog
+  js/motion.js             Staggered entrances and filter feedback; honors reduced motion
   images/ui/               Original UI project screenshots
   images/games/            Imported game project screenshots
 scripts/
@@ -67,6 +69,8 @@ Every page uses the navigation and footer partials. `site-shell.css` owns the ou
 The shared script handles mobile menu disclosure, current-section tracking, back-to-top focus, search clearing, clipboard feedback, image loading/error states, and scrollable diagram guidance. Image viewing uses a native modal dialog. Content and section links remain available without JavaScript; nonfunctional filter controls are hidden in that mode.
 
 The browser suite checks the shared frame at 1440, 390, and 320 CSS pixels, then exercises menus, section navigation, filter restoration, search clearing, broken-image fallback, gallery focus return, reduced motion, and no-JavaScript content. These are browser-emulated sizes, not physical-device or screen-reader certification. Set `INTERACTIONS_ONLY=1` to rerun only the behavior checks after a test-only change.
+
+Page transitions use native cross-document View Transitions when supported, with ordinary navigation elsewhere. No links are intercepted or delayed. `motion.js` adds short staggered entrances with the Web Animations API, and cancels its animations when reduced motion is enabled. Run `node scripts/motion-check.cjs` with Playwright available and the local preview running to verify native transitions, filter animation, browser history, reduced motion, and the selected homepage projects.
 
 ## Manual release checks
 
