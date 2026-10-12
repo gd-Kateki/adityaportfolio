@@ -46,8 +46,28 @@
 .portfolio-grid .novelnest-cover img + img { margin-top: 32px; transform: rotate(8deg); }
 .portfolio-grid .proj-card:hover .novelnest-cover img { transform: rotate(-5deg) translateY(-7px); }
 .portfolio-grid .proj-card:hover .novelnest-cover img + img { transform: rotate(5deg) translateY(-7px); }
-.portfolio-grid [data-project="dashboard"] .proj-visual { padding: 40px 24px 22px; background: radial-gradient(ellipse at top left, #f0f1ff, #d8ddef); }
-.portfolio-grid [data-project="dashboard"] .proj-visual img { object-fit: contain; height: auto; max-height: 100%; border-radius: 7px; box-shadow: 0 16px 30px #39367025; }
+
+/* Cozy Cafe mobile showcase */
+.cafe-cover { width: 100%; height: 100%; display: flex; align-items: flex-start; justify-content: center; gap: 24px; padding: 46px 28px 0; background: radial-gradient(ellipse at 20% 0, #2c4a3e, transparent 70%), #162920; overflow: hidden; }
+.portfolio-grid .cafe-cover img { width: 34%; max-width: 180px; height: auto; object-fit: contain; border: 4px solid #0f1c15; border-radius: 21px; box-shadow: 0 20px 35px rgba(5, 15, 10, 0.55); transform: rotate(-8deg); }
+.portfolio-grid .cafe-cover img + img { margin-top: 32px; transform: rotate(8deg); }
+.portfolio-grid .proj-card:hover .cafe-cover img { transform: rotate(-5deg) translateY(-7px); }
+.portfolio-grid .proj-card:hover .cafe-cover img + img { transform: rotate(5deg) translateY(-7px); }
+
+/* eCommerce Dashboard laptop showcase */
+.dashboard-cover { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 22px 28px 18px; background: radial-gradient(ellipse at 50% 20%, #f4f5fd, transparent 70%), #dbe0f2; overflow: hidden; }
+.laptop-mockup { position: relative; width: 84%; max-width: 330px; display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 18px 26px rgba(28, 35, 65, 0.22)); transition: transform .45s cubic-bezier(0.2, 0.8, 0.2, 1), filter .45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.home-project-grid .laptop-mockup { max-width: 380px; }
+.laptop-lid { width: 100%; background: #16171d; border-radius: 9px 9px 0 0; padding: 7px 7px 5px; position: relative; box-shadow: inset 0 0 0 1px #2d303d, 0 1px 2px rgba(0, 0, 0, 0.3); }
+.laptop-lid::before { content: ''; position: absolute; top: 3px; left: 50%; transform: translateX(-50%); width: 3px; height: 3px; border-radius: 50%; background: #3c404f; box-shadow: 0 0 1px rgba(0, 0, 0, 0.8); }
+.laptop-screen { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 3px; overflow: hidden; background: #0f1015; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.laptop-screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.laptop-base { width: 112%; height: 9px; background: linear-gradient(to bottom, #d2d6e3 0%, #b2b7c7 40%, #8a91a3 100%); border-radius: 0 0 6px 6px; position: relative; box-shadow: 0 3px 6px rgba(20, 24, 40, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.85); }
+.laptop-notch { width: 15%; max-width: 42px; height: 3px; background: #616777; border-radius: 0 0 3px 3px; margin: 0 auto; }
+.portfolio-grid .proj-card:hover .laptop-mockup { transform: translateY(-7px) scale(1.02); filter: drop-shadow(0 26px 36px rgba(28, 35, 65, 0.32)); }
+.portfolio-grid .proj-card:hover .dashboard-cover .laptop-screen img { transform: none; }
+.portfolio-grid [data-project="dashboard"] .proj-visual { padding: 0; background: none; }
+.portfolio-grid [data-project="cafe"] .proj-visual { padding: 0; background: none; }
 .portfolio-grid [data-discipline="game"] .proj-visual::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(transparent 65%, #10231d33); }
 .home-page #about { background: #e6ece5; border: 0; margin-top: 24px; }
 .home-page #about .section-title { max-width: 400px; font-size: clamp(36px, 4vw, 54px); }
