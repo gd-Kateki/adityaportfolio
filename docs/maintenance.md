@@ -44,7 +44,7 @@ Page transitions use native cross-document View Transitions when supported, with
 
 ## Manual release checks
 
-The homepage combines real project imagery in a responsive hero and alternates featured-card widths on desktop. Showcase cards use responsive device mockups: NovelNest and Cozy Cafe display tilted mobile screens from `assets/images/thumbnails/`, and eCommerce Dashboard displays a laptop device frame. Floating controls keep their glass finish, while teal accents and a tinted About section provide visual hierarchy.
+The homepage combines real project imagery in a responsive hero and alternates featured-card widths on desktop. Showcase cards use responsive device and audit mockups: NovelNest and Cozy Cafe display tilted mobile screens, eCommerce Dashboard displays a laptop frame, St. Andrew’s College displays a collegiate desktop browser redesign, and Euro Truck Simulator 2 displays an evaluation telemetry scorecard from `assets/images/thumbnails/`. Floating controls keep their glass finish, while teal accents and a tinted About section provide visual hierarchy.
 
 Optional automated browser checks are in `tests/browser/interactions.cjs`. With Playwright available and Chrome installed, start the preview, then run `npm run test:browser`. Set `BROWSER_CHANNEL` to use another installed Playwright-supported channel. These tests are separate from the dependency-free default checks.
 
