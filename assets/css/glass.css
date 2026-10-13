@@ -34,10 +34,6 @@
 .portfolio-page .filter-btn.active { background: #202321; color: #fff; box-shadow: 0 3px 10px #1a2e2226; }
 .portfolio-page .project-search:focus-within { border-color: #ffffffed; }
 .image-dialog { background: #1d2523f2; border-color: #ffffff40; box-shadow: 0 24px 90px #0005, inset 0 1px 0 #ffffff25; }
-.site-header, .page-tools, .back-to-top, .toast-notification {
-  transform: translateZ(0);
-  will-change: transform;
-}
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header, .site-header.nav-compact, .page-tools, .section-menu nav,
   .back-to-top, .portfolio-page .hero-status-tag, .portfolio-page .filter-container,
