@@ -57,23 +57,39 @@
   progress.setAttribute('aria-hidden', 'true');
   document.body.append(progress);
   let scheduled = false;
+  let lastSectionId = null;
   function updateScroll() {
-    nav?.classList.toggle('nav-compact', scrollY > 70);
+    const y = window.scrollY || document.documentElement.scrollTop;
+    nav?.classList.toggle('nav-compact', y > 70);
     const max = document.documentElement.scrollHeight - innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? Math.min(scrollY / max, 1) : 0})`;
-    backToTop.hidden = scrollY < 650;
-    const current = readingSections.filter(section => section.getBoundingClientRect().top <= 190).at(-1);
-    if (currentLabel) currentLabel.textContent = current?.textContent.trim() || 'Overview';
-    sectionLinks.forEach(link => {
-      if (current && link.hash === '#' + current.id) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+    backToTop.hidden = y < 650;
+    if (readingSections.length) {
+      let current = null;
+      for (let i = readingSections.length - 1; i >= 0; i--) {
+        if (readingSections[i].getBoundingClientRect().top <= 190) {
+          current = readingSections[i];
+          break;
+        }
+      }
+      const currentId = current?.id || '';
+      if (currentId !== lastSectionId) {
+        lastSectionId = currentId;
+        if (currentLabel) currentLabel.textContent = current?.textContent.trim() || 'Overview';
+        sectionLinks.forEach(link => {
+          if (current && link.hash === '#' + current.id) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+    }
     scheduled = false;
   }
   addEventListener('scroll', () => {
     if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); }
   }, { passive: true });
-  addEventListener('resize', updateScroll);
+  addEventListener('resize', () => {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); }
+  }, { passive: true });
   updateScroll();
   $$('.site-links a').forEach(link => {
     const target = new URL(link.href);

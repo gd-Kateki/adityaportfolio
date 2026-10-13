@@ -34,25 +34,38 @@
 .portfolio-page .filter-btn.active { background: #202321; color: #fff; box-shadow: 0 3px 10px #1a2e2226; }
 .portfolio-page .project-search:focus-within { border-color: #ffffffed; }
 .image-dialog { background: #1d2523f2; border-color: #ffffff40; box-shadow: 0 24px 90px #0005, inset 0 1px 0 #ffffff25; }
+.site-header, .page-tools, .back-to-top, .toast-notification {
+  transform: translateZ(0);
+  will-change: transform;
+}
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header, .site-header.nav-compact, .page-tools, .section-menu nav,
   .back-to-top, .portfolio-page .hero-status-tag, .portfolio-page .filter-container,
   .portfolio-page .project-search, .toast-notification {
     background: var(--glass-sheen), var(--glass-fill);
-    -webkit-backdrop-filter: blur(20px) saturate(145%);
-    backdrop-filter: blur(20px) saturate(145%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
   }
   .site-header, .site-header.nav-compact {
     background: var(--glass-sheen), rgba(248, 250, 246, .6);
-    -webkit-backdrop-filter: blur(24px) saturate(155%);
-    backdrop-filter: blur(24px) saturate(155%);
+    -webkit-backdrop-filter: blur(20px) saturate(145%);
+    backdrop-filter: blur(20px) saturate(145%);
   }
   .section-menu nav, .site-header.menu-open { background: var(--glass-sheen), rgba(248, 250, 246, .88); }
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .site-header, .site-header.nav-compact {
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
+  }
+  .page-tools, .section-menu nav, .back-to-top {
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+    backdrop-filter: blur(10px) saturate(125%);
+  }
+  .portfolio-page .filter-container, .portfolio-page .project-search {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--glass-solid);
   }
 }
 @media (prefers-reduced-transparency: reduce) {

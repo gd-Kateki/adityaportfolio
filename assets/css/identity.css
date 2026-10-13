@@ -44,15 +44,19 @@
 .novelnest-cover { width: 100%; height: 100%; display: flex; align-items: flex-start; justify-content: center; gap: 24px; padding: 46px 28px 0; background: radial-gradient(ellipse at 20% 0, #fff7e6, transparent 70%), #e9d4ad; overflow: hidden; }
 .portfolio-grid .novelnest-cover img { width: 34%; max-width: 180px; height: auto; object-fit: contain; border: 4px solid #282522; border-radius: 21px; box-shadow: 0 20px 35px #57422438; transform: rotate(-8deg); }
 .portfolio-grid .novelnest-cover img + img { margin-top: 32px; transform: rotate(8deg); }
-.portfolio-grid .proj-card:hover .novelnest-cover img { transform: rotate(-5deg) translateY(-7px); }
-.portfolio-grid .proj-card:hover .novelnest-cover img + img { transform: rotate(5deg) translateY(-7px); }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-grid .proj-card:hover .novelnest-cover img { transform: rotate(-5deg) translateY(-7px); }
+  .portfolio-grid .proj-card:hover .novelnest-cover img + img { transform: rotate(5deg) translateY(-7px); }
+}
 
 /* Cozy Cafe mobile showcase */
 .cafe-cover { width: 100%; height: 100%; display: flex; align-items: flex-start; justify-content: center; gap: 24px; padding: 46px 28px 0; background: radial-gradient(ellipse at 20% 0, #2c4a3e, transparent 70%), #162920; overflow: hidden; }
 .portfolio-grid .cafe-cover img { width: 34%; max-width: 180px; height: auto; object-fit: contain; border: 4px solid #0f1c15; border-radius: 21px; box-shadow: 0 20px 35px rgba(5, 15, 10, 0.55); transform: rotate(-8deg); }
 .portfolio-grid .cafe-cover img + img { margin-top: 32px; transform: rotate(8deg); }
-.portfolio-grid .proj-card:hover .cafe-cover img { transform: rotate(-5deg) translateY(-7px); }
-.portfolio-grid .proj-card:hover .cafe-cover img + img { transform: rotate(5deg) translateY(-7px); }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-grid .proj-card:hover .cafe-cover img { transform: rotate(-5deg) translateY(-7px); }
+  .portfolio-grid .proj-card:hover .cafe-cover img + img { transform: rotate(5deg) translateY(-7px); }
+}
 
 /* eCommerce Dashboard laptop showcase */
 .dashboard-cover { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 22px 28px 18px; background: radial-gradient(ellipse at 50% 20%, #f4f5fd, transparent 70%), #dbe0f2; overflow: hidden; }
@@ -64,7 +68,9 @@
 .laptop-screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
 .laptop-base { width: 112%; height: 9px; background: linear-gradient(to bottom, #d2d6e3 0%, #b2b7c7 40%, #8a91a3 100%); border-radius: 0 0 6px 6px; position: relative; box-shadow: 0 3px 6px rgba(20, 24, 40, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.85); }
 .laptop-notch { width: 15%; max-width: 42px; height: 3px; background: #616777; border-radius: 0 0 3px 3px; margin: 0 auto; }
-.portfolio-grid .proj-card:hover .laptop-mockup { transform: translateY(-7px) scale(1.02); filter: drop-shadow(0 26px 36px rgba(28, 35, 65, 0.32)); }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-grid .proj-card:hover .laptop-mockup { transform: translateY(-7px) scale(1.02); filter: drop-shadow(0 26px 36px rgba(28, 35, 65, 0.32)); }
+}
 .portfolio-grid .proj-card:hover .dashboard-cover .laptop-screen img { transform: none; }
 .portfolio-grid [data-project="dashboard"] .proj-visual { padding: 0; background: none; }
 .portfolio-grid [data-project="cafe"] .proj-visual { padding: 0; background: none; }
@@ -74,7 +80,9 @@
 /* St. Andrew's College browser showcase */
 .standrews-cover { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 20%, #eef3f9, transparent 75%), #d5e0ec; overflow: hidden; position: relative; }
 .portfolio-grid .standrews-cover img { width: 90%; max-width: 360px; height: auto; object-fit: contain; filter: drop-shadow(0 16px 26px rgba(18, 38, 58, 0.22)); transition: transform .45s cubic-bezier(0.2, 0.8, 0.2, 1), filter .45s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.portfolio-grid .proj-card:hover .standrews-cover img { transform: translateY(-7px) scale(1.02); filter: drop-shadow(0 24px 34px rgba(18, 38, 58, 0.32)); }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-grid .proj-card:hover .standrews-cover img { transform: translateY(-7px) scale(1.02); filter: drop-shadow(0 24px 34px rgba(18, 38, 58, 0.32)); }
+}
 
 /* Euro Truck Simulator 2 audit showcase */
 .ets2-cover { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 16px 20px; background: radial-gradient(ellipse at 50% 20%, #1d212d, transparent 75%), #0c0e14; overflow: hidden; position: relative; }
@@ -83,7 +91,9 @@
 .ets2-badge { width: 100%; background: #151822; color: #fbbf24; font-size: 10px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; padding: 5px 10px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(245, 158, 11, 0.15); }
 .audit-dot { width: 6px; height: 6px; border-radius: 50%; background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
 .ets2-mockup img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; }
-.portfolio-grid .proj-card:hover .ets2-mockup { transform: translateY(-7px) scale(1.02); box-shadow: 0 24px 38px rgba(0, 0, 0, 0.75), 0 0 18px rgba(245, 158, 11, 0.28); }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-grid .proj-card:hover .ets2-mockup { transform: translateY(-7px) scale(1.02); box-shadow: 0 24px 38px rgba(0, 0, 0, 0.75), 0 0 18px rgba(245, 158, 11, 0.28); }
+}
 .portfolio-grid .proj-card:hover .ets2-cover img { transform: none; }
 .portfolio-grid [data-discipline="game"] .proj-visual::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(transparent 65%, #10231d33); }
 .home-page #about { background: #e6ece5; border: 0; margin-top: 24px; }
@@ -98,6 +108,9 @@
   .hero-interface { width: 125px; }
   .composition-note { left: 155px; }
   .hero-world-caption { padding-left: 110px; }
+  .home-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .home-project-grid .proj-card { grid-column: auto !important; }
+  .home-project-grid .proj-visual { height: 260px; }
 }
 @media (max-width: 760px) {
   .home-page .hero { grid-template-columns: 1fr; gap: 32px; padding: 118px 24px 40px !important; }
@@ -113,12 +126,20 @@
   .composition-note { top: 237px; left: 134px; font-size: 11px; }
   .composition-note em { font-size: 16px; }
   .composition-index { font-size: 8px; top: -6px; }
-  .home-project-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .home-project-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .home-project-grid .proj-card { grid-column: auto !important; }
-  .home-project-grid .proj-visual { height: 260px; }
+  .home-project-grid .proj-visual { height: 230px; }
   .home-project-grid .proj-title { font-size: 22px; }
   .home-page .work-section { padding-top: 12px; }
   .home-page #about .overview-copy { font-size: 16px; }
+  /* Responsive device covers on mobile */
+  .novelnest-cover, .cafe-cover { padding: 24px 16px 0; gap: 14px; }
+  .novelnest-cover img + img, .cafe-cover img + img { margin-top: 20px; }
+  .dashboard-cover { padding: 14px 16px 10px; }
+  .laptop-mockup { width: 92%; max-width: 290px; }
+  .standrews-cover img { width: 92%; max-width: 320px; }
+  .ets2-cover { padding: 12px 14px; }
+  .ets2-mockup { width: 92%; max-width: 300px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-world, .hero-interface { transition: none; }
