@@ -1,5 +1,21 @@
 [
   {
+    "id": "tripsplit",
+    "title": "TripSplit",
+    "discipline": "uiux",
+    "category": "Mobile UX",
+    "tags": [
+      "Itinerary planning",
+      "Expense splitting"
+    ],
+    "description": "A group travel and expense management app bringing itineraries, voting, and bill splitting into one shared workspace.",
+    "url": "tripsplit.html",
+    "visual": "tripsplit",
+    "year": "2026",
+    "label": "10 screens · Group travel app",
+    "featured": true
+  },
+  {
     "id": "novelnest",
     "title": "NovelNest",
     "discipline": "uiux",
@@ -13,7 +29,7 @@
     "visual": "novelnest",
     "year": "2026",
     "label": "16 screens · Mobile experience",
-    "featured": true
+    "featured": false
   },
   {
     "id": "osiris",
@@ -65,7 +81,7 @@
   },
   {
     "id": "standrews",
-    "title": "St. Andrew’s College",
+    "title": "St. Andrew's College",
     "discipline": "uiux",
     "category": "UX audit",
     "tags": [
@@ -126,22 +142,6 @@
     "image": "assets/images/thumbnails/cafe.webp",
     "year": "2026",
     "label": "Mobile web · Self-service ordering",
-    "featured": false
-  },
-  {
-    "id": "tripsplit",
-    "title": "TripSplit",
-    "discipline": "uiux",
-    "category": "Mobile UX",
-    "tags": [
-      "Itinerary planning",
-      "Expense splitting"
-    ],
-    "description": "A group travel and expense management app bringing itineraries, voting, and bill splitting into one shared workspace.",
-    "url": "tripsplit.html",
-    "visual": "tripsplit",
-    "year": "2026",
-    "label": "10 screens · Group travel app",
     "featured": false
   }
 ]
