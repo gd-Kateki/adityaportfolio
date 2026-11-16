@@ -35,7 +35,7 @@ for(const file of pages){
 new vm.Script(fs.readFileSync('assets/js/main.js','utf8'));
 new vm.Script(fs.readFileSync('assets/js/motion.js','utf8'));
 const projects=JSON.parse(fs.readFileSync(path.join(root,'src/data/projects.json'),'utf8'));
-assert.equal(projects.length,8);
+assert.equal(projects.length,9);
 assert.equal(projects.filter(p=>p.discipline==='game').length,3);
 assert.equal(new Set(projects.map(p=>p.id)).size,projects.length);
 for(const p of projects)assert.ok(fs.existsSync(p.url),`Missing case study ${p.url}`);

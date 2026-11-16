@@ -127,5 +127,21 @@
     "year": "2026",
     "label": "Mobile web · Self-service ordering",
     "featured": false
+  },
+  {
+    "id": "tripsplit",
+    "title": "TripSplit",
+    "discipline": "uiux",
+    "category": "Mobile UX",
+    "tags": [
+      "Itinerary planning",
+      "Expense splitting"
+    ],
+    "description": "A group travel and expense management app bringing itineraries, voting, and bill splitting into one shared workspace.",
+    "url": "tripsplit.html",
+    "visual": "tripsplit",
+    "year": "2026",
+    "label": "10 screens · Group travel app",
+    "featured": false
   }
 ]
